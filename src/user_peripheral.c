@@ -246,19 +246,19 @@ void app_adcval1_timer_cb_handler()
     char sample[4];                                      // Initialize array to send
     sprintf(sample, "%d", output);                         // Add first ADC reading to array
 
-    // int i;
-    // for (i = 1; i<=50; i++) {
-    //     uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
-    //     int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
-    //     char sample0[4];                                  // Get enough space to store value
-    //     sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
-    //     strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
-    // }
+    int i;
+    for (i = 1; i<=10; i++) {
+        uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
+        int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
+        char sample0[4];                                  // Get enough space to store value
+        sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
+        strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
+    }
 
     req->handle = SVC1_IDX_ADC_VAL_1_VAL;
-    req->length = 4;
+    req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
     req->notification = true;
-    memcpy(req->value, &sample[0], 4);
+    memcpy(req->value, &sample[0], DEF_SVC1_ADC_VAL_1_CHAR_LEN);
 
     ke_msg_send(req);
 

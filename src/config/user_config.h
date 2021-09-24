@@ -51,12 +51,7 @@
  * VARIABLES
  ****************************************************************************************
  */
-
-/******************************************
- * Default sleep mode. Possible values are:
- * - ARCH_SLEEP_OFF, ARCH_EXT_SLEEP_ON, ARCH_EXT_SLEEP_OTP_COPY_ON
- ******************************************
- */
+// Possible values: ARCH_SLEEP_OFF, ARCH_EXT_SLEEP_ON, ARCH_EXT_SLEEP_OTP_COPY_ON
 // static const sleep_state_t app_default_sleep_mode = ARCH_SLEEP_OFF;
 static const sleep_state_t app_default_sleep_mode = ARCH_EXT_SLEEP_ON;
 
