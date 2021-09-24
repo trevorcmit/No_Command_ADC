@@ -241,17 +241,54 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
+    char sample[120];   // Initialize array to send
+
     uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
     int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
-    char sample[41];                                      // Initialize array to send
-    sprintf(sample, "%d", output);                        // Add first ADC reading to array
+    // char sample1[5];
+    sprintf(sample, "%d", output);
+
+    char space[1] = " ";
+    strcat(sample, space);
+    // int digits1 = 0;
+    // while (output != 0) {
+    //     digits1++;
+    //     output /= 10;
+    // }
+
+    // int j1;
+    // int zzz = 0;
+    // char zero1[1];
+    // sprintf(zero1, "%d", zzz);
+    // int max1 = 4 - digits1;
+    // for (j1 = 0; j1 <= max1; j1++) {
+    //     strcat(sample, zero1);
+    // }
+    // strcat(sample, sample1); 
 
     int i;
-    for (i = 1; i<=10; i++) {
+    for (i = 1; i<=20; i++) {
         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
-        char sample0[4];                                  // Get enough space to store value
+        char sample0[5];                                  // Get enough space to store value
         sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
+
+        char space0[1] = " ";
+        strcat(sample0, space0);
+        // int digits = 0;
+        // while (output0 != 0) {
+        //     digits++;
+        //     output0 /= 10;
+        // }
+
+        // int j;
+        // int zzzz = 0;
+        // char zero[1];
+        // printf(zero, "%d", zzzz);
+        // int max = 4 - digits;
+        // for (j = 0; j <= max; j++) {
+        //     strcat(sample, zero);
+        // }
         strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
     }
 
@@ -264,7 +301,7 @@ void app_adcval1_timer_cb_handler()
 
     if (ke_state_get(TASK_APP) == APP_CONNECTED)
     {
-        timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler);
+        timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler);
     }
 }
 
@@ -272,19 +309,12 @@ void app_adcval1_timer_cb_handler()
 void user_app_init(void)
 {
     app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
-
-    // Initialize Manufacturer Specific Data
-    mnf_data_init();
-
-    // Initialize Advertising and Scan Response Data
-    memcpy(stored_adv_data, USER_ADVERTISE_DATA, USER_ADVERTISE_DATA_LEN);
+    mnf_data_init(); // Initialize Manufacturer Specific Data
+    memcpy(stored_adv_data, USER_ADVERTISE_DATA, USER_ADVERTISE_DATA_LEN); // Init. Advertising and Scan Response Data
     stored_adv_data_len = USER_ADVERTISE_DATA_LEN;
     memcpy(stored_scan_rsp_data, USER_ADVERTISE_SCAN_RESPONSE_DATA, USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN);
     stored_scan_rsp_data_len = USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN;
-
     default_app_on_init();
-
-    // timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler);
 }
 
 
@@ -308,31 +338,24 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     if (app_env[connection_idx].conidx != GAP_INVALID_CONIDX)
     {
         app_connection_idx = connection_idx;
-
-        // Stop the advertising data update timer
-        app_easy_timer_cancel(app_adv_data_update_timer_used);
-
-        // Check if the parameters of the established connection are the preferred ones.
-        // If not then schedule a connection parameter update request.
-        if ((param->con_interval < user_connection_param_conf.intv_min) ||
-            (param->con_interval > user_connection_param_conf.intv_max) ||
+        app_easy_timer_cancel(app_adv_data_update_timer_used); // Stop advertising data update timer
+        if ((param->con_interval < user_connection_param_conf.intv_min) || // Check if parameters are preferred ones.
+            (param->con_interval > user_connection_param_conf.intv_max) || // If not, schedule connect. param. update req.
             (param->con_latency != user_connection_param_conf.latency) ||
             (param->sup_to != user_connection_param_conf.time_out))
         {
-            // Connection params are not these that we expect
             app_param_update_request_timer_used = app_easy_timer(APP_PARAM_UPDATE_REQUEST_TO, param_update_request_timer_cb);
         }
     }
     else
     {
-        // No connection has been established, restart advertising
-        user_app_adv_start(); 
+        user_app_adv_start(); // No connection has been established, restart advertising
     }
 
-    default_app_on_connection(connection_idx, param);
-
-    timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler);
+    default_app_on_connection(connection_idx, param);             // Default app callback on connection
+    timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
+
 
 void user_app_adv_undirect_complete(uint8_t status)
 {
