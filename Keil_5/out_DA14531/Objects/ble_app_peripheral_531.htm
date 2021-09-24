@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\out_DA14531\Objects\ble_app_peripheral_531.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\out_DA14531\Objects\ble_app_peripheral_531.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Sep 24 12:46:22 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Sep 24 13:08:45 2021
 <BR><P>
-<H3>Maximum Stack Usage =        120 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        144 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; system_init &rArr; periph_init &rArr; set_pad_functions &rArr; GPIO_ConfigurePin &rArr; GPIO_SetPinFunction
+app_adcval1_timer_cb_handler &rArr; gpadc_read &rArr; adc_offset_calibrate &rArr; adc_init &rArr; adc_configure
 <P>
 <H3>
 Function Pointers
@@ -2037,8 +2037,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
-<P><STRONG><a name="[2e]"></a>app_adcval1_timer_cb_handler</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, user_peripheral.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = app_adcval1_timer_cb_handler &rArr; gpadc_read &rArr; adc_offset_calibrate &rArr; adc_init &rArr; adc_configure
+<P><STRONG><a name="[2e]"></a>app_adcval1_timer_cb_handler</STRONG> (Thumb, 132 bytes, Stack size 64 bytes, user_peripheral.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = app_adcval1_timer_cb_handler &rArr; gpadc_read &rArr; adc_offset_calibrate &rArr; adc_init &rArr; adc_configure
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_get
@@ -2420,7 +2420,7 @@ Local Symbols
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_prf_enable
 </UL>
 
-<P><STRONG><a name="[15a]"></a>app_easy_gap_undirected_advertise_start_create_msg</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, app.o(.text))
+<P><STRONG><a name="[15a]"></a>app_easy_gap_undirected_advertise_start_create_msg</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = app_easy_gap_undirected_advertise_start_create_msg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy

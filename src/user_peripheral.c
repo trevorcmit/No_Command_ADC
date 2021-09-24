@@ -241,10 +241,10 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    uint16_t result = gpadc_read();                        // Get uint16_t ADC reading
-    int output = (int) gpadc_sample_to_mv(result);         // Turn into integer
-    char sample[4];                                      // Initialize array to send
-    sprintf(sample, "%d", output);                         // Add first ADC reading to array
+    uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
+    int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
+    char sample[41];                                      // Initialize array to send
+    sprintf(sample, "%d", output);                        // Add first ADC reading to array
 
     int i;
     for (i = 1; i<=10; i++) {
