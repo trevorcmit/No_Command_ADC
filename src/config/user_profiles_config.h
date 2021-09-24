@@ -4,7 +4,6 @@
  * @brief Configuration file for the profiles used in the application.
  ****************************************************************************************
  */
-
 #ifndef _USER_PROFILES_CONFIG_H_
 #define _USER_PROFILES_CONFIG_H_
 
@@ -25,7 +24,6 @@
 /***************************************************************************************/
 /* Used BLE profiles (used by "rwprf_config.h").                                       */
 /***************************************************************************************/
-
 #define CFG_PRF_DISS
 #define CFG_PRF_CUST1
 

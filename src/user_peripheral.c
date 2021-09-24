@@ -351,10 +351,8 @@ void user_app_disconnect(struct gapc_disconnect_ind const *param)
         app_easy_timer_cancel(app_param_update_request_timer_used);
         app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
     }
-    // Update manufacturer data for the next advertsing event
-    mnf_data_update();
-    // Restart Advertising
-    user_app_adv_start();
+    mnf_data_update();    // Update manufacturer data for the next advertsing event
+    user_app_adv_start(); // Restart Advertising
 }
 
 void user_catch_rest_hndl(ke_msg_id_t const msgid,
@@ -373,31 +371,24 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                 case SVC1_IDX_CONTROL_POINT_VAL:
                     user_svc1_ctrl_wr_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 case SVC1_IDX_LED_STATE_VAL:
                     user_svc1_led_wr_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 case SVC1_IDX_ADC_VAL_1_NTF_CFG:
                     user_svc1_adc_val_1_cfg_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 case SVC1_IDX_BUTTON_STATE_NTF_CFG:
                     user_svc1_button_cfg_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 case SVC1_IDX_INDICATEABLE_IND_CFG:
                     user_svc1_long_val_cfg_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 case SVC1_IDX_LONG_VALUE_NTF_CFG:
                     user_svc1_long_val_cfg_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 case SVC1_IDX_LONG_VALUE_VAL:
                     user_svc1_long_val_wr_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 default:
                     break;
             }
@@ -440,7 +431,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
         case CUSTS1_ATT_INFO_REQ:
         {
             struct custs1_att_info_req const *msg_param = (struct custs1_att_info_req const *)param;
-
             switch (msg_param->att_idx)
             {
                 case SVC1_IDX_LONG_VALUE_VAL:
@@ -457,7 +447,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
         {
             // Cast the "param" pointer to the appropriate message structure
             struct gapc_param_updated_ind const *msg_param = (struct gapc_param_updated_ind const *)(param);
-
             // Check if updated Conn Params filled to preferred ones
             if ((msg_param->con_interval >= user_connection_param_conf.intv_min) &&
                 (msg_param->con_interval <= user_connection_param_conf.intv_max) &&
@@ -485,16 +474,10 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                                                                     src_id,
                                                                     dest_id,
                                                                     custs1_value_req_rsp);
-
-                    // Provide the connection index.
                     rsp->conidx  = app_env[msg_param->conidx].conidx;
-                    // Provide the attribute index.
                     rsp->att_idx = msg_param->att_idx;
-                    // Force current length to zero.
                     rsp->length = 0;
-                    // Set Error status
                     rsp->status  = ATT_ERR_APP_ERROR;
-                    // Send message
                     ke_msg_send(rsp);
                 } break;
              }

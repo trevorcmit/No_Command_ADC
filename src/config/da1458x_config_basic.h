@@ -7,7 +7,6 @@
 
 #ifndef _DA1458X_CONFIG_BASIC_H_
 #define _DA1458X_CONFIG_BASIC_H_
-
 #include "da1458x_stack_config.h"
 #include "user_profiles_config.h"
 
