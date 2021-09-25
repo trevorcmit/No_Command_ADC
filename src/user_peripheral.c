@@ -241,54 +241,25 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    char sample[120];   // Initialize array to send
+    char sample[110];   // Initialize array to send
 
     uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
     int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
     // char sample1[5];
     sprintf(sample, "%d", output);
 
-    char space[1] = " ";
-    strcat(sample, space);
-    // int digits1 = 0;
-    // while (output != 0) {
-    //     digits1++;
-    //     output /= 10;
-    // }
-
-    // int j1;
-    // int zzz = 0;
-    // char zero1[1];
-    // sprintf(zero1, "%d", zzz);
-    // int max1 = 4 - digits1;
-    // for (j1 = 0; j1 <= max1; j1++) {
-    //     strcat(sample, zero1);
-    // }
-    // strcat(sample, sample1); 
+    // char space[1] = " ";
+    // strcat(sample, space);
 
     int i;
     for (i = 1; i<=20; i++) {
         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
-        char sample0[5];                                  // Get enough space to store value
+        char sample0[4];                                  // Get enough space to store value
         sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
 
-        char space0[1] = " ";
-        strcat(sample0, space0);
-        // int digits = 0;
-        // while (output0 != 0) {
-        //     digits++;
-        //     output0 /= 10;
-        // }
-
-        // int j;
-        // int zzzz = 0;
-        // char zero[1];
-        // printf(zero, "%d", zzzz);
-        // int max = 4 - digits;
-        // for (j = 0; j <= max; j++) {
-        //     strcat(sample, zero);
-        // }
+        // char space0[1] = " ";
+        // strcat(sample0, space0);
         strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
     }
 
