@@ -4,20 +4,18 @@
  * @brief Peripheral project source code.
  ****************************************************************************************
  */
-
 /**
  ****************************************************************************************
  * @addtogroup APP
  * @{
  ****************************************************************************************
  */
-
 /*
  * INCLUDE FILES
  ****************************************************************************************
  */
 #include "app_api.h"
-#include "rwip_config.h"             // SW configuration
+#include "rwip_config.h"            // SW configuration
 #include "gap.h"
 #include "app_easy_timer.h"
 #include "arch_console.h"
@@ -66,11 +64,6 @@ uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN] __SECTION_ZERO("retention_mem_ar
  ****************************************************************************************
 
 */
-// static void timer_cb(void);
-// static uint16_t gpadc_read(void);
-// static uint16_t gpadc_sample_to_mv(uint16_t sample);
-// static timer_hnd timer_id __attribute__((section("retention_mem_area0"),zero_init));
-
 static uint16_t gpadc_read(void)
 {
     /* Initialize the ADC */
@@ -188,14 +181,10 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
         // Manufacturer Specific Data do not fit in either Advertising Data or Scan Response Data
         ASSERT_WARNING(0);
     }
-    // Store advertising data length
-    stored_adv_data_len = cmd->info.host.adv_data_len;
-    // Store advertising data
-    memcpy(stored_adv_data, cmd->info.host.adv_data, stored_adv_data_len);
-    // Store scan response data length
-    stored_scan_rsp_data_len = cmd->info.host.scan_rsp_data_len;
-    // Store scan_response data
-    memcpy(stored_scan_rsp_data, cmd->info.host.scan_rsp_data, stored_scan_rsp_data_len);
+    stored_adv_data_len = cmd->info.host.adv_data_len;                                    // Store advertising data length
+    memcpy(stored_adv_data, cmd->info.host.adv_data, stored_adv_data_len);                // Store advertising data
+    stored_scan_rsp_data_len = cmd->info.host.scan_rsp_data_len;                          // Store scan response data length
+    memcpy(stored_scan_rsp_data, cmd->info.host.scan_rsp_data, stored_scan_rsp_data_len); // Store scan_response data
 }
 
 /**
@@ -241,25 +230,24 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    char sample[110];   // Initialize array to send
+    char sample[236];   // Initialize array to send
 
     uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
     int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
-    // char sample1[5];
     sprintf(sample, "%d", output);
 
     char space[1] = " ";
     strcat(sample, space);
 
     int i;
-    for (i = 1; i<=20; i++) {
+    for (i = 1; i<=46; i++) {
         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
         char sample0[5];                                  // Get enough space to store value
         sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
 
-        char space0[1] = " ";
-        strcat(sample0, space0);
+        // char space0[1] = " ";
+        strcat(sample0, space);
         strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
     }
 
@@ -267,27 +255,24 @@ void app_adcval1_timer_cb_handler()
     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
     req->notification = true;
     memcpy(req->value, &sample[0], DEF_SVC1_ADC_VAL_1_CHAR_LEN);
-
     ke_msg_send(req);
 
     if (ke_state_get(TASK_APP) == APP_CONNECTED)
     {
-        timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler);
+        timer_used = app_easy_timer(8, app_adcval1_timer_cb_handler);
     }
 }
-
 
 void user_app_init(void)
 {
     app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
-    mnf_data_init(); // Initialize Manufacturer Specific Data
+    mnf_data_init();                                                       // Initialize Manufacturer Specific Data
     memcpy(stored_adv_data, USER_ADVERTISE_DATA, USER_ADVERTISE_DATA_LEN); // Init. Advertising and Scan Response Data
     stored_adv_data_len = USER_ADVERTISE_DATA_LEN;
     memcpy(stored_scan_rsp_data, USER_ADVERTISE_SCAN_RESPONSE_DATA, USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN);
     stored_scan_rsp_data_len = USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN;
     default_app_on_init();
 }
-
 
 void user_app_adv_start(void)
 {
@@ -303,13 +288,12 @@ void user_app_adv_start(void)
     app_easy_gap_undirected_advertise_start();
 }
 
-
 void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param)
 {
     if (app_env[connection_idx].conidx != GAP_INVALID_CONIDX)
     {
         app_connection_idx = connection_idx;
-        app_easy_timer_cancel(app_adv_data_update_timer_used); // Stop advertising data update timer
+        app_easy_timer_cancel(app_adv_data_update_timer_used);             // Stop advertising data update timer
         if ((param->con_interval < user_connection_param_conf.intv_min) || // Check if parameters are preferred ones.
             (param->con_interval > user_connection_param_conf.intv_max) || // If not, schedule connect. param. update req.
             (param->con_latency != user_connection_param_conf.latency) ||
@@ -322,11 +306,9 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     {
         user_app_adv_start(); // No connection has been established, restart advertising
     }
-
     default_app_on_connection(connection_idx, param);             // Default app callback on connection
-    timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
+    timer_used = app_easy_timer(8, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
-
 
 void user_app_adv_undirect_complete(uint8_t status)
 {
@@ -339,8 +321,7 @@ void user_app_adv_undirect_complete(uint8_t status)
 
 void user_app_disconnect(struct gapc_disconnect_ind const *param)
 {
-    // Cancel the parameter update request timer
-    if (app_param_update_request_timer_used != EASY_TIMER_INVALID_TIMER)
+    if (app_param_update_request_timer_used != EASY_TIMER_INVALID_TIMER) // Cancel the parameter update request timer
     {
         app_easy_timer_cancel(app_param_update_request_timer_used);
         app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;

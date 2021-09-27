@@ -4,7 +4,6 @@
  * @brief Peripheral project Custom1 Server implementation source code.
  ****************************************************************************************
  */
-
 /*
  * INCLUDE FILES
  ****************************************************************************************
@@ -187,43 +186,6 @@ void user_svc1_rest_att_info_req_handler(ke_msg_id_t const msgid,
     rsp->status  = ATT_ERR_WRITE_NOT_PERMITTED;   // Provide the ATT error code.
     ke_msg_send(rsp);
 }
-
-// void app_adcval1_timer_cb_handler()
-// {
-//     struct custs1_val_ntf_ind_req *req = KE_MSG_ALLOC_DYN(CUSTS1_VAL_NTF_REQ,
-//                                                           prf_get_task_from_id(TASK_ID_CUSTS1),
-//                                                           TASK_APP,
-//                                                           custs1_val_ntf_ind_req,
-//                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
-    
-//     uint16_t result = gpadc_read();                        // Get uint16_t ADC reading
-//     int output = (int) gpadc_sample_to_mv(result);         // Turn into integer
-//     char sample[248];                                      // Initialize array to send
-//     sprintf(sample, "%d", output);                         // Add first ADC reading to array
-
-//     int i;
-//     for (i = 1; i<=50; i++) {
-//         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
-//         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
-//         char sample0[4];                                  // Get enough space to store value
-//         sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
-//         strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
-//     }
-
-//     // size_t sample_len = sizeof(sample)/sizeof(sample[0]);
-//     //req->conhdl = app_env->conhdl;
-//     req->handle = SVC1_IDX_ADC_VAL_1_VAL;
-//     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
-//     req->notification = true;
-//     memcpy(req->value, &sample[0], DEF_SVC1_ADC_VAL_1_CHAR_LEN);
-
-//     ke_msg_send(req);
-
-//     // if (ke_state_get(TASK_APP) == APP_CONNECTED)
-//     // {
-//     //     timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler);
-//     // }
-// }
 
 void user_svc3_read_non_db_val_handler(ke_msg_id_t const msgid,
                                        struct custs1_value_req_ind const *param,
