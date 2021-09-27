@@ -245,8 +245,6 @@ void app_adcval1_timer_cb_handler()
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
         char sample0[5];                                  // Get enough space to store value
         sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
-
-        // char space0[1] = " ";
         strcat(sample0, space);
         strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
     }
