@@ -248,18 +248,18 @@ void app_adcval1_timer_cb_handler()
     // char sample1[5];
     sprintf(sample, "%d", output);
 
-    // char space[1] = " ";
-    // strcat(sample, space);
+    char space[1] = " ";
+    strcat(sample, space);
 
     int i;
     for (i = 1; i<=20; i++) {
         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
-        char sample0[4];                                  // Get enough space to store value
+        char sample0[5];                                  // Get enough space to store value
         sprintf(sample0, "%d", output0);                  // Convert ADC reading to array format
 
-        // char space0[1] = " ";
-        // strcat(sample0, space0);
+        char space0[1] = " ";
+        strcat(sample0, space0);
         strcat(sample, sample0);                          // Concatenate ADC reading onto ongoing list
     }
 
