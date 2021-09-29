@@ -230,7 +230,7 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    char sample[140];   // Initialize array to send
+    char sample[126];   // Initialize array to send
 
     uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
     int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
