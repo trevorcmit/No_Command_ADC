@@ -230,7 +230,7 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    char sample[236];   // Initialize array to send
+    char sample[140];   // Initialize array to send
 
     uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
     int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
@@ -240,7 +240,7 @@ void app_adcval1_timer_cb_handler()
     strcat(sample, space);
 
     int i;
-    for (i = 1; i<=46; i++) {
+    for (i = 1; i<=24; i++) {
         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
         char sample0[5];                                  // Get enough space to store value
@@ -257,7 +257,7 @@ void app_adcval1_timer_cb_handler()
 
     if (ke_state_get(TASK_APP) == APP_CONNECTED)
     {
-        timer_used = app_easy_timer(8, app_adcval1_timer_cb_handler);
+        timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler);
     }
 }
 
@@ -305,7 +305,7 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
         user_app_adv_start(); // No connection has been established, restart advertising
     }
     default_app_on_connection(connection_idx, param);             // Default app callback on connection
-    timer_used = app_easy_timer(8, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
+    timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
 
 void user_app_adv_undirect_complete(uint8_t status)
