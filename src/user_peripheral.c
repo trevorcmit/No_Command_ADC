@@ -230,7 +230,7 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    char sample[126];   // Initialize array to send
+    char sample[101];   // Initialize array to send
 
     uint16_t result = gpadc_read();                       // Get uint16_t ADC reading
     int output = (int) gpadc_sample_to_mv(result);        // Turn into integer
@@ -240,7 +240,7 @@ void app_adcval1_timer_cb_handler()
     strcat(sample, space);
 
     int i;
-    for (i = 1; i<=24; i++) {
+    for (i = 1; i<=19; i++) {
         uint16_t result0 = gpadc_read();                  // Get uint16_t ADC reading
         int output0 = (int) gpadc_sample_to_mv(result0);  // Turn into integer
         char sample0[5];                                  // Get enough space to store value
