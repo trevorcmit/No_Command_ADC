@@ -39,10 +39,9 @@
 #define USER_CFG_ADDRESS_MODE       APP_CFG_ADDR_PUB
 
 /*************************************************************************
- * Controller Privacy Mode:
+ * Controller Privacy Mode (Select only one option for controller privacy mode configuration):
  * - APP_CFG_CNTL_PRIV_MODE_NETWORK Controler Privacy Network mode (default)
  * - APP_CFG_CNTL_PRIV_MODE_DEVICE  Controler Privacy Device mode
- * Select only one option for controller privacy mode configuration.
  **************************************************************************
  */
 #define USER_CFG_CNTL_PRIV_MODE     APP_CFG_CNTL_PRIV_MODE_NETWORK
@@ -94,8 +93,7 @@ static const struct advertise_configuration user_adv_conf = {
     /// Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
     /// Advertising filter policy:
     /// - ADV_ALLOW_SCAN_ANY_CON_ANY: Allow both scan and connection requests from anyone
-    /// - ADV_ALLOW_SCAN_ANY_CON_WLST: Allow both scan req from anyone and connection req from
-    ///                                White List devices only
+    /// - ADV_ALLOW_SCAN_ANY_CON_WLST: Allow both scan req from anyone and connection req from White List devices only
     .adv_filt_policy = ADV_ALLOW_SCAN_ANY_CON_ANY,
 
     /// Address of peer device
@@ -155,7 +153,7 @@ static const struct advertise_configuration user_adv_conf = {
  ****************************************************************************************
  */
 /// Device name
-#define USER_DEVICE_NAME        "IFM-Fiber-8"
+#define USER_DEVICE_NAME        "IFM-Fiber-7"
 
 /// Device name length
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)
@@ -172,7 +170,7 @@ static const struct gapm_configuration user_gapm_conf = {
     /// Maximal MTU. Shall be set to 23 if Legacy Pairing is used, 65 if Secure Connection is used,
     /// more if required by the application
     // .max_mtu = 23,
-    .max_mtu = 228, 
+    .max_mtu = 203, 
 
     /// Device Address Type
     .addr_type = APP_CFG_ADDR_TYPE(USER_CFG_ADDRESS_MODE),
