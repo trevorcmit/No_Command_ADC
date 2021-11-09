@@ -40,11 +40,11 @@
 
 #define DEF_SVC1_CTRL_POINT_CHAR_LEN     1
 #define DEF_SVC1_LED_STATE_CHAR_LEN      1
-#define DEF_SVC1_ADC_VAL_1_CHAR_LEN      201// unit = bytes
+#define DEF_SVC1_ADC_VAL_1_CHAR_LEN      201 // unit = bytes
 #define DEF_SVC1_ADC_VAL_2_CHAR_LEN      2
 #define DEF_SVC1_BUTTON_STATE_CHAR_LEN   1
-#define DEF_SVC1_INDICATEABLE_CHAR_LEN   1 // 20
-#define DEF_SVC1_LONG_VALUE_CHAR_LEN     1 // 50
+#define DEF_SVC1_INDICATEABLE_CHAR_LEN   1   // 20
+#define DEF_SVC1_LONG_VALUE_CHAR_LEN     1   // 50
 
 #define DEF_SVC1_CONTROL_POINT_USER_DESC     "Control Point"
 #define DEF_SVC1_LED_STATE_USER_DESC         "LED State"
