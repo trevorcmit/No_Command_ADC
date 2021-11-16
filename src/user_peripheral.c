@@ -124,7 +124,6 @@ static void mnf_data_init()
 static void mnf_data_update()
 {
     uint16_t data;
-
     data = mnf_data.proprietary_data[0] | (mnf_data.proprietary_data[1] << 8);
     data += 1;
     mnf_data.proprietary_data[0] = data & 0xFF;
@@ -294,8 +293,7 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
 
 void user_app_adv_undirect_complete(uint8_t status)
 {
-    // If advertising was canceled then update advertising data and start advertising again
-    if (status == GAP_ERR_CANCELED)
+    if (status == GAP_ERR_CANCELED) // If advertising was canceled then update advertising data and start advertising again
     {
         user_app_adv_start();
     }
@@ -321,7 +319,7 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
     {
         case CUSTS1_VAL_WRITE_IND:
         {
-            struct custs1_val_write_ind const *msg_param = (struct custs1_val_write_ind const *)(param);
+            struct custs1_val_write_ind const *msg_param = (struct custs1_val_write_ind const *) (param);
 
             switch (msg_param->handle)
             {

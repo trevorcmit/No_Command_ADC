@@ -60,7 +60,6 @@ static const sleep_state_t app_default_sleep_mode = ARCH_EXT_SLEEP_ON;
  ****************************************************************************************
  */
 static const struct advertise_configuration user_adv_conf = {
-
     .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE),
 
     /// Minimum interval for advertising
@@ -161,24 +160,23 @@ static const struct advertise_configuration user_adv_conf = {
  ****************************************************************************************
  */
 static const struct gapm_configuration user_gapm_conf = {
-    /// Device Role: Central, Peripheral, Observer, Broadcaster or All roles. (@see enum gap_role)
+    // Device Role: Central, Peripheral, Observer, Broadcaster or All roles. (@see enum gap_role)
     .role = GAP_ROLE_PERIPHERAL,
 
-    /// Maximal MTU. Shall be set to 23 if Legacy Pairing is used, 65 if Secure Connection is used,
-    /// more if required by the application
-    // .max_mtu = 23,
+    // Maximal MTU. Shall be set to 23 if Legacy Pairing is used, 65 if Secure Connection is used,
+    // more if required by the application, default 23
     .max_mtu = 220, 
 
-    /// Device Address Type
+    // Device Address Type
     .addr_type = APP_CFG_ADDR_TYPE(USER_CFG_ADDRESS_MODE),
-    /// Duration before regenerating the Random Private Address when privacy is enabled
+    // Duration before regenerating the Random Private Address when privacy is enabled
     .renew_dur = 15000,    // 15000 * 10ms = 150s is the minimum value
 
     /***********************
      * Privacy configuration
      ***********************
      */
-    /// Random Static address
+    // Random Static address
     // NOTE: The address shall comply with the following requirements:
     // - the two most significant bits of the address shall be equal to 1,
     // - all the remaining bits of the address shall NOT be equal to 1,
@@ -187,7 +185,7 @@ static const struct gapm_configuration user_gapm_conf = {
     // random static address will be automatically generated.
     .addr = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
 
-    /// Device IRK used for Resolvable Private Address generation (LSB first)
+    // Device IRK used for Resolvable Private Address generation (LSB first)
     .irk = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f},
 
     /****************************
@@ -206,21 +204,16 @@ static const struct gapm_configuration user_gapm_conf = {
     /// - Bit [6]  : Reserved
     /// - Bit [7]  : Enable Debug Mode
     .att_cfg = GAPM_MASK_ATT_SVC_CHG_EN,
-    .gap_start_hdl = 0,    /// GAP service start handle
-    .gatt_start_hdl = 0,   /// GATT service start handle
+    .gap_start_hdl = 0,    // GAP service start handle
+    .gatt_start_hdl = 0,   // GATT service start handle
 
     /**************************************************
      * Data packet length extension configuration (4.2)
      **************************************************
      */
-    /// Maximal MPS
-    .max_mps = 0,
-
-    /// Maximal Tx octets (connInitialMaxTxOctets value, as defined in 4.2 Specification)
-    .max_txoctets = 251,
-
-    /// Maximal Tx time (connInitialMaxTxTime value, as defined in 4.2 Specification)
-    .max_txtime = 2120,
+    .max_mps = 0,         // Maximal MPS
+    .max_txoctets = 251,  // Maximal Tx octets (connInitialMaxTxOctets value, as defined in 4.2 Specification)
+    .max_txtime = 2120,   // Maximal Tx time (connInitialMaxTxTime value, as defined in 4.2 Specification)
 };
 
 /*
@@ -291,33 +284,15 @@ static const struct central_configuration user_central_conf = {
     /// - GAPM_CONNECTION_NAME_REQUEST: Name Request operation (requires to start a direct
     ///   connection)
     .code = GAPM_CONNECTION_DIRECT,
-
-    /// Own BD address source of the device:
-    .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE),
-
-    /// Scan interval
-    .scan_interval = 0x180,
-
-    /// Scan window size
-    .scan_window = 0x160,
-
-     /// Minimum of connection interval
-    .con_intv_min = 100,
-
-    /// Maximum of connection interval
-    .con_intv_max = 100,
-
-    /// Connection latency
-    .con_latency = 0,
-
-    /// Link supervision timeout
-    .superv_to = 0x1F4,
-
-     /// Minimum CE length
-    .ce_len_min = 0,
-
-    /// Maximum CE length
-    .ce_len_max = 0x5,
+    .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE), // Own BD address source of the device:
+    .scan_interval = 0x180,                              // Scan interval
+    .scan_window = 0x160,                                // Scan window size
+    .con_intv_min = 100,                                 // Minimum of connection interval
+    .con_intv_max = 100,                                 // Maximum of connection interval
+    .con_latency = 0,                                    // Connection latency
+    .superv_to = 0x1F4,                                  // Link to supervision timeout
+    .ce_len_min = 0,                                     // Minimum CE length
+    .ce_len_max = 0x5,                                   // Maximum CE length
 
     /**************************************************************************************
      * Peer device information (maximum number of peers = 8)
