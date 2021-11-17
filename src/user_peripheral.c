@@ -265,7 +265,6 @@ void user_app_adv_start(void)
 
     // Add manufacturer data to initial advertising or scan response data, if there is enough space
     app_add_ad_struct(cmd, &mnf_data, sizeof(struct mnf_specific_data_ad_structure), 1);
-
     app_easy_gap_undirected_advertise_start();
 }
 
@@ -283,20 +282,16 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
             app_param_update_request_timer_used = app_easy_timer(APP_PARAM_UPDATE_REQUEST_TO, param_update_request_timer_cb);
         }
     }
-    else
-    {
-        user_app_adv_start(); // No connection has been established, restart advertising
-    }
+    else {user_app_adv_start();} // No connection has been established, restart advertising
+    
     default_app_on_connection(connection_idx, param);             // Default app callback on connection
     timer_used = app_easy_timer(100, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
 
 void user_app_adv_undirect_complete(uint8_t status)
 {
-    if (status == GAP_ERR_CANCELED) // If advertising was canceled then update advertising data and start advertising again
-    {
-        user_app_adv_start();
-    }
+    // If advertising was canceled then update advertising data and start advertising again
+    if (status == GAP_ERR_CANCELED) {user_app_adv_start();}
 }
 
 void user_app_disconnect(struct gapc_disconnect_ind const *param)
