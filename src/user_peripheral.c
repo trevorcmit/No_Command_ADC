@@ -62,13 +62,17 @@ uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN] __SECTION_ZERO("retention_mem_ar
 /*
  * FUNCTION DEFINITIONS
  ****************************************************************************************
-
 */
-static uint16_t gpadc_read(void)
-{
+void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha) { 
+    output[0] = input[0];
+    for (int i = 1; i < 100; i++) {  
+        output[i] = (uint16_t)(output[i-1] + (alpha*(input[i] - output[i-1]))); 
+    } 
+}   
+
+static uint16_t gpadc_read(void) {
     /* Initialize the ADC */
-    adc_config_t adc_cfg =
-    {
+    adc_config_t adc_cfg = {
         .input_mode = ADC_INPUT_MODE_SINGLE_ENDED,
         .input = ADC_INPUT_SE_P0_6,
         .smpl_time_mult = 2,
@@ -85,7 +89,6 @@ static uint16_t gpadc_read(void)
     adc_start();
     uint16_t result = adc_correct_sample(adc_get_sample());
     adc_disable();
-
     return (result);
 }
 
@@ -106,8 +109,7 @@ static uint16_t gpadc_sample_to_mv(uint16_t sample)
  * @brief Initialize Manufacturer Specific Data
  ****************************************************************************************
  */
-static void mnf_data_init()
-{
+static void mnf_data_init() {
     mnf_data.ad_structure_size = sizeof(struct mnf_specific_data_ad_structure ) - sizeof(uint8_t); // minus the size of the ad_structure_size field
     mnf_data.ad_structure_type = GAP_AD_TYPE_MANU_SPECIFIC_DATA;
     mnf_data.company_id[0] = APP_AD_MSD_COMPANY_ID & 0xFF; // LSB
@@ -235,13 +237,20 @@ void app_adcval1_timer_cb_handler()
         out[i] = output;
     }
 
+    uint16_t packet[100];
+    float RC = 1.0f / (55 * 2 * 3.14159265); // 1 / (cutoff * 2 * pi)  
+    float dt = 1.0f / 2000.0f;               // 1 / sample rate  
+    float alpha = dt / (RC + dt); 
+
+    lowPassFrequency(out, packet, alpha);
+
     req->handle = SVC1_IDX_ADC_VAL_1_VAL;      // Location to send it to
     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
     req->notification = true;
-    memcpy(req->value, &out, DEF_SVC1_ADC_VAL_1_CHAR_LEN);
+    memcpy(req->value, &packet, DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     ke_msg_send(req);
 
-    if (ke_state_get(TASK_APP) == APP_CONNECTED) {timer_used = app_easy_timer(100, app_adcval1_timer_cb_handler);};
+    if (ke_state_get(TASK_APP) == APP_CONNECTED) {timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler);};
 }
 
 void user_app_init(void)
@@ -285,19 +294,16 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     else {user_app_adv_start();} // No connection has been established, restart advertising
     
     default_app_on_connection(connection_idx, param);             // Default app callback on connection
-    timer_used = app_easy_timer(100, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
+    timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
 
-void user_app_adv_undirect_complete(uint8_t status)
-{
+void user_app_adv_undirect_complete(uint8_t status) {
     // If advertising was canceled then update advertising data and start advertising again
     if (status == GAP_ERR_CANCELED) {user_app_adv_start();}
 }
 
-void user_app_disconnect(struct gapc_disconnect_ind const *param)
-{
-    if (app_param_update_request_timer_used != EASY_TIMER_INVALID_TIMER) // Cancel the parameter update request timer
-    {
+void user_app_disconnect(struct gapc_disconnect_ind const *param) {
+    if (app_param_update_request_timer_used != EASY_TIMER_INVALID_TIMER) { // Cancel the parameter update request timer
         app_easy_timer_cancel(app_param_update_request_timer_used);
         app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
     }
@@ -352,13 +358,10 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
             {
                 case SVC1_IDX_ADC_VAL_1_VAL:
                     break;
-
                 case SVC1_IDX_BUTTON_STATE_VAL:
                     break;
-
                 case SVC1_IDX_LONG_VALUE_VAL:
                     break;
-
                 default:
                     break;
             }
@@ -370,11 +373,8 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
 
             switch (msg_param->handle)
             {
-                case SVC1_IDX_INDICATEABLE_VAL:
-                    break;
-
-                default:
-                    break;
+                case SVC1_IDX_INDICATEABLE_VAL: break;
+                default:                        break;
              }
         } break;
 
@@ -386,15 +386,13 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                 case SVC1_IDX_LONG_VALUE_VAL:
                     user_svc1_long_val_att_info_req_handler(msgid, msg_param, dest_id, src_id);
                     break;
-
                 default:
                     user_svc1_rest_att_info_req_handler(msgid, msg_param, dest_id, src_id);
                     break;
              }
         } break;
 
-        case GAPC_PARAM_UPDATED_IND:
-        {
+        case GAPC_PARAM_UPDATED_IND: {
             // Cast the "param" pointer to the appropriate message structure
             struct gapc_param_updated_ind const *msg_param = (struct gapc_param_updated_ind const *)(param);
             // Check if updated Conn Params filled to preferred ones
@@ -412,13 +410,8 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
 
             switch (msg_param->att_idx)
             {
-                case SVC3_IDX_READ_4_VAL:
-                {
-                    user_svc3_read_non_db_val_handler(msgid, msg_param, dest_id, src_id);
-                } break;
-
-                default:
-                {
+                case SVC3_IDX_READ_4_VAL: {user_svc3_read_non_db_val_handler(msgid, msg_param, dest_id, src_id);} break;
+                default: {
                     // Send Error message
                     struct custs1_value_req_rsp *rsp = KE_MSG_ALLOC(CUSTS1_VALUE_REQ_RSP,
                                                                     src_id,
@@ -432,9 +425,7 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                 } break;
              }
         } break;
-
-        default:
-            break;
+        default: break;
     }
 }
 

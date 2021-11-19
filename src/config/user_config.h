@@ -151,7 +151,7 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
  */
-#define USER_DEVICE_NAME        "IFM-Fiber-2"                 // Device name
+#define USER_DEVICE_NAME        "IFM-Fiber-5"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 /*

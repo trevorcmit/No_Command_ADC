@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\out_DA14531\Objects\ble_app_peripheral_531.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\out_DA14531\Objects\ble_app_peripheral_531.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Nov 17 15:00:55 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Nov 19 16:01:14 2021
 <BR><P>
-<H3>Maximum Stack Usage =        296 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        508 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-app_adcval1_timer_cb_handler &rArr; adc_offset_calibrate &rArr; adc_init &rArr; adc_configure
+app_adcval1_timer_cb_handler &rArr; lowPassFrequency &rArr; __aeabi_fadd &rArr; _float_epilogue
 <P>
 <H3>
 Mutually Recursive functions
@@ -215,7 +215,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwble_isr
 </UL>
 
-<P><STRONG><a name="[183]"></a>smpc_pdu_recv</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[189]"></a>smpc_pdu_recv</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JT_l2cc_pdu_recv_ind_handler_func
 </UL>
 
@@ -263,11 +263,11 @@ Global Symbols
 <P><STRONG><a name="[73]"></a>lld_data_tx_prog_func</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
 <BR>[Address Reference Count : 1]<UL><LI> jump_table.o(.constdata)
 </UL>
-<P><STRONG><a name="[180]"></a>lld_evt_elt_insert</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[186]"></a>lld_evt_elt_insert</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JT_lld_test_mode_rx_func
 </UL>
 
-<P><STRONG><a name="[17e]"></a>lld_evt_adv_create</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[184]"></a>lld_evt_adv_create</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JT_lld_test_mode_rx_func
 </UL>
 
@@ -287,7 +287,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_sleep
 </UL>
 
-<P><STRONG><a name="[17f]"></a>lld_util_freq2chnl</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[185]"></a>lld_util_freq2chnl</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JT_lld_test_mode_rx_func
 </UL>
 
@@ -412,11 +412,11 @@ Global Symbols
 <P><STRONG><a name="[59]"></a>smpc_pdu_recv_func</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
 <BR>[Address Reference Count : 1]<UL><LI> jump_table.o(.constdata)
 </UL>
-<P><STRONG><a name="[181]"></a>gapc_lecnx_check_rx</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[187]"></a>gapc_lecnx_check_rx</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JT_l2cc_pdu_unpack_func
 </UL>
 
-<P><STRONG><a name="[182]"></a>l2cc_pdu_recv_ind_handler_func</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[188]"></a>l2cc_pdu_recv_ind_handler_func</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JT_l2cc_pdu_recv_ind_handler_func
 </UL>
 
@@ -445,7 +445,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_sleep
 </UL>
 
-<P><STRONG><a name="[1a3]"></a>ke_event_flush</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[1ad]"></a>ke_event_flush</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[bb]"></a>ke_mem_init</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
@@ -506,7 +506,7 @@ Global Symbols
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_timer
 </UL>
 
-<P><STRONG><a name="[199]"></a>ke_msg_send_basic</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[1a3]"></a>ke_msg_send_basic</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[48]"></a>ke_task_init_func</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
@@ -607,7 +607,7 @@ Global Symbols
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_app_on_get_dev_name
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler
 <LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_adcval1_timer_cb_handler
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_add_ad_struct
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_add_ad_struct
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_update_timer_cb
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc3_read_non_db_val_handler
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_led_wr_ind_handler
@@ -755,10 +755,10 @@ Global Symbols
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_gap_process_handler
 </UL>
 
-<P><STRONG><a name="[19d]"></a>app_get_address_type_ROM</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[1a7]"></a>app_get_address_type_ROM</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
-<P><STRONG><a name="[19b]"></a>app_fill_random_byte_array_ROM</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[1a5]"></a>app_fill_random_byte_array_ROM</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[c7]"></a>__aeabi_uldivmod</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
@@ -777,7 +777,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_gap_undirected_advertise_start_create_msg
 </UL>
 
-<P><STRONG><a name="[178]"></a>app_easy_gap_update_adv_data</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
+<P><STRONG><a name="[17e]"></a>app_easy_gap_update_adv_data</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, da14531_symbols.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_update_timer_cb
 </UL>
 
@@ -793,29 +793,29 @@ Global Symbols
 <P><STRONG><a name="[20]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_da14531.o(.text)
 </UL>
-<P><STRONG><a name="[1b6]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[1c0]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[ab]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[184]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<P><STRONG><a name="[18e]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[1b7]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[1c1]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[1b8]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[1c2]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[1b9]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[1c3]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
 <P><STRONG><a name="[ad]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
 <BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_fini_ (Weak Reference)
 </UL>
 
-<P><STRONG><a name="[1ba]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[1c4]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
 
-<P><STRONG><a name="[1bb]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
+<P><STRONG><a name="[1c5]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
 
 <P><STRONG><a name="[1f]"></a>SystemInit</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, system_da14531.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SystemInit
@@ -1376,7 +1376,7 @@ Global Symbols
 <LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_adcval1_timer_cb_handler
 </UL>
 
-<P><STRONG><a name="[179]"></a>adc_disable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, adc_531.o(.text))
+<P><STRONG><a name="[17f]"></a>adc_disable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, adc_531.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_adcval1_timer_cb_handler
 </UL>
 
@@ -2015,15 +2015,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
-<P><STRONG><a name="[17d]"></a>user_svc1_long_val_wr_ind_handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, user_custs1_impl.o(.text))
+<P><STRONG><a name="[183]"></a>user_svc1_long_val_wr_ind_handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, user_custs1_impl.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
-<P><STRONG><a name="[17b]"></a>user_svc1_adc_val_1_cfg_ind_handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, user_custs1_impl.o(.text))
+<P><STRONG><a name="[181]"></a>user_svc1_adc_val_1_cfg_ind_handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, user_custs1_impl.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
-<P><STRONG><a name="[17c]"></a>user_svc1_button_cfg_ind_handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, user_custs1_impl.o(.text))
+<P><STRONG><a name="[182]"></a>user_svc1_button_cfg_ind_handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, user_custs1_impl.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
@@ -2056,13 +2056,25 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
-<P><STRONG><a name="[2e]"></a>app_adcval1_timer_cb_handler</STRONG> (Thumb, 174 bytes, Stack size 232 bytes, user_peripheral.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = app_adcval1_timer_cb_handler &rArr; adc_offset_calibrate &rArr; adc_init &rArr; adc_configure
+<P><STRONG><a name="[177]"></a>lowPassFrequency</STRONG> (Thumb, 70 bytes, Stack size 40 bytes, user_peripheral.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = lowPassFrequency &rArr; __aeabi_fadd &rArr; _float_epilogue
+</UL>
+<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_adcval1_timer_cb_handler
+</UL>
+
+<P><STRONG><a name="[2e]"></a>app_adcval1_timer_cb_handler</STRONG> (Thumb, 182 bytes, Stack size 432 bytes, user_peripheral.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 508<LI>Call Chain = app_adcval1_timer_cb_handler &rArr; lowPassFrequency &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_start
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_offset_calibrate
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_get_sample
-<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_disable
+<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_disable
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_correct_sample
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_init
@@ -2070,6 +2082,7 @@ Global Symbols
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_timer
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc
+<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lowPassFrequency
 <LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prf_get_task_from_id
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> user_peripheral.o(.text)
@@ -2089,7 +2102,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_timer
 <LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_gap_undirected_advertise_get_active
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_gap_undirected_advertise_start
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_add_ad_struct
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_add_ad_struct
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_app_disconnect
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_app_connection
@@ -2125,7 +2138,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_timer_cancel
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_app_adv_start
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mnf_data_update
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mnf_data_update
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_disconnect_ind_handler
 </UL>
@@ -2139,9 +2152,9 @@ Global Symbols
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc3_read_non_db_val_handler
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_rest_att_info_req_handler
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_long_val_att_info_req_handler
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_button_cfg_ind_handler
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_adc_val_1_cfg_ind_handler
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_long_val_wr_ind_handler
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_button_cfg_ind_handler
+<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_adc_val_1_cfg_ind_handler
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_long_val_wr_ind_handler
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_long_val_cfg_ind_handler
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_led_wr_ind_handler
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_svc1_ctrl_wr_ind_handler
@@ -2154,9 +2167,9 @@ Global Symbols
 <P><STRONG><a name="[57]"></a>JT_lld_test_mode_rx_func</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, patch.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = JT_lld_test_mode_rx_func
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_util_freq2chnl
-<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_evt_adv_create
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_evt_elt_insert
+<BR>[Calls]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_util_freq2chnl
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_evt_adv_create
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_evt_elt_insert
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> jump_table.o(.constdata)
 </UL>
@@ -2164,7 +2177,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = JT_l2cc_pdu_unpack_func
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_lecnx_check_rx
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_lecnx_check_rx
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> jump_table.o(.constdata)
 </UL>
@@ -2172,8 +2185,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = JT_l2cc_pdu_recv_ind_handler_func
 </UL>
 <BR>[Calls]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_get
-<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_recv_ind_handler_func
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_pdu_recv
+<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_recv_ind_handler_func
+<LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_pdu_recv
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> jump_table.o(.constdata)
 </UL>
@@ -2185,13 +2198,72 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arch_rom_init
 </UL>
 
+<P><STRONG><a name="[17b]"></a>__aeabi_fadd</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, fadd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = __aeabi_fadd &rArr; _float_epilogue
+</UL>
+<BR>[Calls]<UL><LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lowPassFrequency
+<LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+</UL>
+
+<P><STRONG><a name="[18c]"></a>__aeabi_fsub</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+</UL>
+
+<P><STRONG><a name="[18d]"></a>__aeabi_frsub</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+</UL>
+
+<P><STRONG><a name="[179]"></a>__aeabi_fmul</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, fmul.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fmul
+</UL>
+<BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lowPassFrequency
+</UL>
+
+<P><STRONG><a name="[178]"></a>__aeabi_i2f</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, fflti.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = __aeabi_i2f &rArr; _float_epilogue
+</UL>
+<BR>[Calls]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lowPassFrequency
+</UL>
+
+<P><STRONG><a name="[17a]"></a>__aeabi_ui2f</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, ffltui.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = __aeabi_ui2f &rArr; _float_epilogue
+</UL>
+<BR>[Calls]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lowPassFrequency
+</UL>
+
+<P><STRONG><a name="[17c]"></a>__aeabi_f2uiz</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, ffixui.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lowPassFrequency
+</UL>
+
+<P><STRONG><a name="[1c6]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+
+<P><STRONG><a name="[18b]"></a>_float_round</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, fepilogue.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+</UL>
+
+<P><STRONG><a name="[18a]"></a>_float_epilogue</STRONG> (Thumb, 114 bytes, Stack size 12 bytes, fepilogue.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = _float_epilogue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+</UL>
+
 <P><STRONG><a name="[ac]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[1bc]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[1c7]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[c9]"></a>__ARM_common_ll_muluu</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, arch_system.o(i.__ARM_common_ll_muluu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __ARM_common_ll_muluu
@@ -2199,11 +2271,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_sleep_lpcycles_2_us_rcx_func
 </UL>
 
-<P><STRONG><a name="[1bd]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[1c8]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[1be]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[1c9]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[1bf]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[1ca]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols
@@ -2547,7 +2619,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_api_process_handler
 </UL>
 
-<P><STRONG><a name="[177]"></a>mnf_data_update</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, user_peripheral.o(.text))
+<P><STRONG><a name="[17d]"></a>mnf_data_update</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, user_peripheral.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_app_disconnect
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_update_timer_cb
 </UL>
@@ -2557,8 +2629,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_timer
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_gap_update_adv_data
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mnf_data_update
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_easy_gap_update_adv_data
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mnf_data_update
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> user_peripheral.o(.text)
 </UL>
@@ -2569,7 +2641,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> user_peripheral.o(.text)
 </UL>
-<P><STRONG><a name="[17a]"></a>app_add_ad_struct</STRONG> (Thumb, 130 bytes, Stack size 32 bytes, user_peripheral.o(.text))
+<P><STRONG><a name="[180]"></a>app_add_ad_struct</STRONG> (Thumb, 130 bytes, Stack size 32 bytes, user_peripheral.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = app_add_ad_struct
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy

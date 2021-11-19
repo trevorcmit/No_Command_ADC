@@ -59,6 +59,7 @@
  * FUNCTION DECLARATIONS
  ****************************************************************************************
  */
+void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha);
 
 void app_adcval1_timer_cb_handler(void);
 
