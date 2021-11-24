@@ -50,16 +50,34 @@
 
 #define APP_PERIPHERAL_CTRL_TIMER_DELAY 100
 
+
+// Butterworth Filter Definitions
+#define M_PI 3.14159265
+#define FTR_PRECISION float
+
 /*
  * TYPE DEFINITIONS
  ****************************************************************************************
  */
+typedef struct {
+    int n;
+	FTR_PRECISION *A;
+    FTR_PRECISION *d1;
+    FTR_PRECISION *d2;
+    FTR_PRECISION *w0;
+    FTR_PRECISION *w1;
+    FTR_PRECISION *w2;
+} BWLowPass;
 
 /*
  * FUNCTION DECLARATIONS
  ****************************************************************************************
  */
 void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha);
+
+BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION sampling_frequency, FTR_PRECISION half_power_frequency);
+void free_bw_low_pass(BWLowPass* filter);
+FTR_PRECISION bw_low_pass(BWLowPass* filter, FTR_PRECISION input);
 
 void app_adcval1_timer_cb_handler(void);
 

@@ -25,6 +25,10 @@
 #include "co_bt.h"
 #include "adc.h"
 #include "adc_531.h"
+#include <math.h>
+
+#define SIN sin
+#define TAN tan
 
 /*
  * TYPE DEFINITIONS
@@ -63,12 +67,62 @@ uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN] __SECTION_ZERO("retention_mem_ar
  * FUNCTION DEFINITIONS
  ****************************************************************************************
 */
+BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION s, FTR_PRECISION f) {
+    BWLowPass* filter = (BWLowPass *) malloc(sizeof(BWLowPass));
+    filter -> n = order/2;
+    filter -> A = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
+    filter -> d1 = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
+    filter -> d2 = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
+    filter -> w0 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
+    filter -> w1 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
+    filter -> w2 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
+
+    FTR_PRECISION a = TAN(M_PI * f/s);
+    FTR_PRECISION a2 = a * a;
+    FTR_PRECISION r;
+    
+    int i;
+    for(i=0; i < filter -> n; ++i){
+        r = SIN(M_PI*(2.0*i+1.0)/(4.0*filter -> n));
+        s = a2 + 2.0*a*r + 1.0;
+        filter -> A[i] = a2/s;
+        filter -> d1[i] = 2.0*(1-a2)/s;
+        filter -> d2[i] = -(a2 - 2.0*a*r + 1.0)/s;
+    }
+    return filter;
+}
+
+
+void free_bw_low_pass(BWLowPass* filter) {
+    free(filter -> A);
+    free(filter -> d1);
+    free(filter -> d2);
+    free(filter -> w0);
+    free(filter -> w1);
+    free(filter -> w2);
+    free(filter);
+}
+
+
+FTR_PRECISION bw_low_pass(BWLowPass* filter, FTR_PRECISION x) {
+    int i;
+    for (i = 0; i < filter -> n; ++i) {
+        filter -> w0[i] = filter -> d1[i] * filter -> w1[i] + filter -> d2[i] * filter -> w2[i] + x;
+        x = filter -> A[i] * (filter -> w0[i] + 2.0 * filter -> w1[i] + filter -> w2[i]);
+        filter -> w2[i] = filter -> w1[i];
+        filter -> w1[i] = filter -> w0[i];
+    }
+    return x;
+}
+
+
 void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha) { 
     output[0] = input[0];
     for (int i = 1; i < 100; i++) {  
         output[i] = (uint16_t)(output[i-1] + (alpha*(input[i] - output[i-1]))); 
     } 
-}   
+}  
+
 
 static uint16_t gpadc_read(void) {
     /* Initialize the ADC */
@@ -104,6 +158,7 @@ static uint16_t gpadc_sample_to_mv(uint16_t sample)
     return (uint16_t) ((((uint32_t)sample) * ref_mv) >> adc_res);
 }
 
+
 /**
  ****************************************************************************************
  * @brief Initialize Manufacturer Specific Data
@@ -117,6 +172,7 @@ static void mnf_data_init() {
     mnf_data.proprietary_data[0] = 0;
     mnf_data.proprietary_data[1] = 0;
 }
+
 
 /**
  ****************************************************************************************
@@ -136,6 +192,7 @@ static void mnf_data_update()
          mnf_data.proprietary_data[1] = 0;
     }
 }
+
 
 /**
  ****************************************************************************************
@@ -188,6 +245,7 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
     memcpy(stored_scan_rsp_data, cmd->info.host.scan_rsp_data, stored_scan_rsp_data_len); // Store scan_response data
 }
 
+
 /**
  ****************************************************************************************
  * @brief Advertisement data update timer callback function.
@@ -211,6 +269,7 @@ static void adv_data_update_timer_cb()
     app_adv_data_update_timer_used = app_easy_timer(APP_ADV_DATA_UPDATE_TO, adv_data_update_timer_cb);
 }
 
+
 /**
  ****************************************************************************************
  * @brief Parameter update request timer callback function.
@@ -231,27 +290,30 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
+    BWLowPass* filter = create_bw_low_pass_filter(4, 1000, 55);
+
     uint16_t out[100];
     for (int i = 0; i < 100; i++) {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
         out[i] = output;
+        out[i] = (uint16_t)(bw_low_pass(filter, output));
     }
 
-    uint16_t packet[100];
-    float RC = 1.0f / (55 * 2 * 3.14159265); // 1 / (cutoff * 2 * pi)  
-    float dt = 1.0f / 2000.0f;               // 1 / sample rate  
-    float alpha = dt / (RC + dt); 
-
-    lowPassFrequency(out, packet, alpha);
+    // uint16_t packet[100];
+    // float RC = 1.0f / (55 * 2 * 3.14159265); // 1 / (cutoff * 2 * pi)  
+    // float dt = 1.0f / 2000.0f;               // 1 / sample rate  
+    // float alpha = dt / (RC + dt); 
+    // lowPassFrequency(out, packet, alpha);
 
     req->handle = SVC1_IDX_ADC_VAL_1_VAL;      // Location to send it to
     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
     req->notification = true;
-    memcpy(req->value, &packet, DEF_SVC1_ADC_VAL_1_CHAR_LEN);
+    memcpy(req->value, &out, DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     ke_msg_send(req);
 
     if (ke_state_get(TASK_APP) == APP_CONNECTED) {timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler);};
 }
+
 
 void user_app_init(void)
 {
@@ -263,6 +325,7 @@ void user_app_init(void)
     stored_scan_rsp_data_len = USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN;
     default_app_on_init();
 }
+
 
 void user_app_adv_start(void)
 {
@@ -276,6 +339,7 @@ void user_app_adv_start(void)
     app_add_ad_struct(cmd, &mnf_data, sizeof(struct mnf_specific_data_ad_structure), 1);
     app_easy_gap_undirected_advertise_start();
 }
+
 
 void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param)
 {
@@ -297,10 +361,12 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
 
+
 void user_app_adv_undirect_complete(uint8_t status) {
     // If advertising was canceled then update advertising data and start advertising again
     if (status == GAP_ERR_CANCELED) {user_app_adv_start();}
 }
+
 
 void user_app_disconnect(struct gapc_disconnect_ind const *param) {
     if (app_param_update_request_timer_used != EASY_TIMER_INVALID_TIMER) { // Cancel the parameter update request timer
@@ -310,6 +376,7 @@ void user_app_disconnect(struct gapc_disconnect_ind const *param) {
     mnf_data_update();    // Update manufacturer data for the next advertsing event
     user_app_adv_start(); // Restart Advertising
 }
+
 
 void user_catch_rest_hndl(ke_msg_id_t const msgid,
                           void const *param,

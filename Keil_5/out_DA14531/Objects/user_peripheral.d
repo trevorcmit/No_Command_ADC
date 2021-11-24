@@ -112,3 +112,4 @@
 .\out_da14531\objects\user_peripheral.o: .\..\..\..\..\..\sdk\platform\driver\adc\adc.h
 .\out_da14531\objects\user_peripheral.o: .\..\..\..\..\..\sdk\platform\driver\adc\adc_531.h
 .\out_da14531\objects\user_peripheral.o: .\..\..\..\..\..\sdk\platform\driver\adc\adc_531.h
+.\out_da14531\objects\user_peripheral.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

@@ -557,19 +557,75 @@ Section Cross References
     user_custs1_impl.o(.text) refers to gpio.o(.text) for GPIO_SetInactive
     user_custs1_impl.o(.text) refers to app.o(retention_mem_area0) for app_env
     user_custs1_impl.o(.text) refers to user_custs1_impl.o(retention_mem_area0) for retention_mem_area0
+    user_peripheral.o(.text) refers to malloc.o(i.malloc) for malloc
+    user_peripheral.o(.text) refers to calloc.o(.text) for calloc
+    user_peripheral.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    user_peripheral.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    user_peripheral.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    user_peripheral.o(.text) refers to tan.o(i.tan) for tan
+    user_peripheral.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    user_peripheral.o(.text) refers to fmul.o(.text) for __aeabi_fmul
+    user_peripheral.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    user_peripheral.o(.text) refers to dscalb.o(.text) for __ARM_scalbn
+    user_peripheral.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    user_peripheral.o(.text) refers to sin.o(i.sin) for sin
+    user_peripheral.o(.text) refers to fdiv.o(.text) for __aeabi_fdiv
+    user_peripheral.o(.text) refers to fadd.o(.text) for __aeabi_fsub
+    user_peripheral.o(.text) refers to app_easy_timer.o(.text) for app_easy_timer
+    user_peripheral.o(.text) refers to app.o(.text) for app_easy_gap_param_update_start
+    user_peripheral.o(.text) refers to adc_531.o(.text) for adc_init
+    user_peripheral.o(.text) refers to ffltui.o(.text) for __aeabi_ui2f
+    user_peripheral.o(.text) refers to ffixui.o(.text) for __aeabi_f2uiz
+    user_peripheral.o(.text) refers to app_default_handlers.o(.text) for default_app_on_init
+    user_peripheral.o(.text) refers to user_peripheral.o(retention_mem_area0) for retention_mem_area0
+    user_peripheral.o(.text) refers to user_peripheral.o(.constdata) for .constdata
+    user_peripheral.o(.text) refers to app.o(retention_mem_area0) for app_env
+    user_peripheral.o(.text) refers to user_custs1_impl.o(.text) for user_svc1_rest_att_info_req_handler
+    user_peripheral.o(.text) refers to malloc.o(i.free) for free
     user_peripheral.o(.text) refers to fflti.o(.text) for __aeabi_i2f
     user_peripheral.o(.text) refers to fmul.o(.text) for __aeabi_fmul
     user_peripheral.o(.text) refers to ffltui.o(.text) for __aeabi_ui2f
     user_peripheral.o(.text) refers to fadd.o(.text) for __aeabi_fadd
     user_peripheral.o(.text) refers to ffixui.o(.text) for __aeabi_f2uiz
-    user_peripheral.o(.text) refers to app_easy_timer.o(.text) for app_easy_timer
-    user_peripheral.o(.text) refers to app.o(.text) for app_easy_gap_param_update_start
-    user_peripheral.o(.text) refers to adc_531.o(.text) for adc_init
-    user_peripheral.o(.text) refers to app_default_handlers.o(.text) for default_app_on_init
-    user_peripheral.o(.text) refers to user_custs1_impl.o(.text) for user_svc1_rest_att_info_req_handler
-    user_peripheral.o(.text) refers to user_peripheral.o(retention_mem_area0) for retention_mem_area0
-    user_peripheral.o(.text) refers to user_peripheral.o(.constdata) for .constdata
-    user_peripheral.o(.text) refers to app.o(retention_mem_area0) for app_env
+    sin.o(i.__softfp_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.__softfp_sin) refers to sin.o(i.sin) for sin
+    sin.o(i.sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.sin) refers to errno.o(i.__set_errno) for __set_errno
+    sin.o(i.sin) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    sin.o(i.sin) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    sin.o(i.sin) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    sin.o(i.sin) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    sin.o(i.sin) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    sin_x.o(i.____softfp_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.____softfp_sin$lsc) refers to sin_x.o(i.__sin$lsc) for __sin$lsc
+    sin_x.o(i.__sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.__sin$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sin_x.o(i.__sin$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    sin_x.o(i.__sin$lsc) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    sin_x.o(i.__sin$lsc) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    sin_x.o(i.__sin$lsc) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    tan.o(i.__softfp_tan) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan.o(i.__softfp_tan) refers to errno.o(i.__set_errno) for __set_errno
+    tan.o(i.__softfp_tan) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    tan.o(i.__softfp_tan) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    tan.o(i.__softfp_tan) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    tan.o(i.__softfp_tan) refers to tan_i.o(i.__kernel_tan) for __kernel_tan
+    tan.o(i.tan) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan.o(i.tan) refers to errno.o(i.__set_errno) for __set_errno
+    tan.o(i.tan) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    tan.o(i.tan) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    tan.o(i.tan) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    tan.o(i.tan) refers to tan_i.o(i.__kernel_tan) for __kernel_tan
+    tan_x.o(i.____softfp_tan$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan_x.o(i.____softfp_tan$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    tan_x.o(i.____softfp_tan$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    tan_x.o(i.____softfp_tan$lsc) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    tan_x.o(i.____softfp_tan$lsc) refers to tan_i.o(i.__kernel_tan) for __kernel_tan
+    tan_x.o(i.__tan$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan_x.o(i.__tan$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    tan_x.o(i.__tan$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    tan_x.o(i.__tan$lsc) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    tan_x.o(i.__tan$lsc) refers to tan_i.o(i.__kernel_tan) for __kernel_tan
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000F) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$00000011) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry12b.o(.ARM.Collect$$$$0000000E) for __rt_lib_shutdown_fini
@@ -578,14 +634,124 @@ Section Cross References
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to startup_da14531.o(HEAP) for __heap_base
+    mallocr.o(i.__free$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.__malloc$realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocr.o(i.__malloc$realloc) refers to startup_da14531.o(HEAP) for __heap_base
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.realloc) refers to mallocr.o(i.__free$realloc) for __free$realloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.__malloc$realloc) for __malloc$realloc
+    mallocr.o(i.realloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloca.o(i.__aligned_malloc) refers to startup_da14531.o(HEAP) for __heap_base
+    malloca.o(i.__free$memalign) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__malloc$memalign) refers to malloca.o(i.__aligned_malloc) for __aligned_malloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to startup_da14531.o(HEAP) for __heap_base
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocra.o(i.__free$realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__malloc$realloc$memalign) refers to mallocra.o(i.__aligned_malloc$realloc) for __aligned_malloc$realloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__free$realloc$memalign) for __free$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__malloc$realloc$memalign) for __malloc$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    calloc.o(.text) refers to malloc.o(i.malloc) for malloc
     fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
     fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dscalb.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     fflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     fflti.o(.text) refers to fepilogue.o(.text) for _float_epilogue
     ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
     ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    cos_i.o(i.__kernel_cos) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_i.o(i.__kernel_cos) refers to dfixi.o(.text) for __aeabi_d2iz
+    cos_i.o(i.__kernel_cos) refers to dmul.o(.text) for __aeabi_dmul
+    cos_i.o(i.__kernel_cos) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    cos_i.o(i.__kernel_cos) refers to dadd.o(.text) for __aeabi_dsub
+    cos_i.o(i.__kernel_cos) refers to dscalb.o(.text) for __ARM_scalbn
+    cos_i.o(i.__kernel_cos) refers to cos_i.o(.constdata) for .constdata
+    cos_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalb.o(.text) for __ARM_scalbn
+    rred.o(i.__ieee754_rem_pio2) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(i.__ieee754_rem_pio2) refers to dadd.o(.text) for __aeabi_dsub
+    rred.o(i.__ieee754_rem_pio2) refers to dmul.o(.text) for __aeabi_dmul
+    rred.o(i.__ieee754_rem_pio2) refers to dfixi.o(.text) for __aeabi_d2iz
+    rred.o(i.__ieee754_rem_pio2) refers to dflti.o(.text) for __aeabi_i2d
+    rred.o(i.__ieee754_rem_pio2) refers to arch_system.o(i.__ARM_common_ll_muluu) for __ARM_common_ll_muluu
+    rred.o(i.__ieee754_rem_pio2) refers to dfltui.o(.text) for __aeabi_ui2d
+    rred.o(i.__ieee754_rem_pio2) refers to dscalb.o(.text) for __ARM_scalbn
+    rred.o(i.__ieee754_rem_pio2) refers to rred.o(.constdata) for .constdata
+    rred.o(i.__use_accurate_range_reduction) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i.o(i.__kernel_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i.o(i.__kernel_sin) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    sin_i.o(i.__kernel_sin) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    sin_i.o(i.__kernel_sin) refers to dmul.o(.text) for __aeabi_dmul
+    sin_i.o(i.__kernel_sin) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    sin_i.o(i.__kernel_sin) refers to dscalb.o(.text) for __ARM_scalbn
+    sin_i.o(i.__kernel_sin) refers to dadd.o(.text) for __aeabi_dsub
+    sin_i.o(i.__kernel_sin) refers to sin_i.o(.constdata) for .constdata
+    sin_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i_x.o(i.____kernel_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    sin_i_x.o(i.____kernel_sin$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    sin_i_x.o(i.____kernel_sin$lsc) refers to sin_i_x.o(.constdata) for .constdata
+    sin_i_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan_i.o(i.__kernel_tan) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan_i.o(i.__kernel_tan) refers to dfixi.o(.text) for __aeabi_d2iz
+    tan_i.o(i.__kernel_tan) refers to dadd.o(.text) for __aeabi_drsub
+    tan_i.o(i.__kernel_tan) refers to dmul.o(.text) for __aeabi_dmul
+    tan_i.o(i.__kernel_tan) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    tan_i.o(i.__kernel_tan) refers to dflti.o(.text) for __aeabi_i2d
+    tan_i.o(i.__kernel_tan) refers to ddiv.o(.text) for __aeabi_ddiv
+    tan_i.o(i.__kernel_tan) refers to dscalb.o(.text) for __ARM_scalbn
+    tan_i.o(i.__kernel_tan) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    tan_i.o(i.__kernel_tan) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    tan_i.o(i.__kernel_tan) refers to tan_i.o(.constdata) for .constdata
+    tan_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan_i_x.o(i.____kernel_tan$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    tan_i_x.o(i.____kernel_tan$lsc) refers to dfixi.o(.text) for __aeabi_d2iz
+    tan_i_x.o(i.____kernel_tan$lsc) refers to dadd.o(.text) for __aeabi_drsub
+    tan_i_x.o(i.____kernel_tan$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    tan_i_x.o(i.____kernel_tan$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    tan_i_x.o(i.____kernel_tan$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    tan_i_x.o(i.____kernel_tan$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    tan_i_x.o(i.____kernel_tan$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    tan_i_x.o(i.____kernel_tan$lsc) refers to tan_i_x.o(.constdata) for .constdata
+    tan_i_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to startup_da14531.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to startup_da14531.o(STACK) for __initial_sp
@@ -593,7 +759,16 @@ Section Cross References
     entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
     entry9a.o(.ARM.Collect$$$$0000000B) refers to arch_main.o(.text) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to arch_main.o(.text) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    fpclassify.o(i.__ARM_fpclassify) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
     init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
 
 
 ==============================================================================
@@ -602,7 +777,6 @@ Removing Unused input sections from the image.
 
     Removing system_da14531.o(.text), (16 bytes).
     Removing system_da14531.o(.data), (4 bytes).
-    Removing startup_da14531.o(HEAP), (256 bytes).
     Removing arch_main.o(.constdata), (28 bytes).
     Removing jump_table.o(.text), (2 bytes).
     Removing arch_sleep.o(.text), (276 bytes).
@@ -859,10 +1033,13 @@ Removing Unused input sections from the image.
     Removing user_custs1_impl.o(.text), (2 bytes).
     Removing user_custs1_impl.o(.text), (2 bytes).
     Removing user_custs1_impl.o(.text), (2 bytes).
+    Removing user_peripheral.o(.text), (48 bytes).
+    Removing user_peripheral.o(.text), (70 bytes).
     Removing user_peripheral.o(.constdata), (12 bytes).
+    Removing fflti.o(.text), (22 bytes).
     Removing otp_cs.o(i.__ARM_common_switch8), (26 bytes).
 
-261 unused section(s) (total 14376 bytes) removed from the image.
+263 unused section(s) (total 14260 bytes) removed from the image.
 
 ==============================================================================
 
@@ -872,28 +1049,60 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/malloc/calloc.c         0x00000000   Number         0  calloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../mathlib/cos_i.c                       0x00000000   Number         0  cos_i.o ABSOLUTE
+    ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
+    ../mathlib/fpclassify.c                  0x00000000   Number         0  fpclassify.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/rred.c                        0x00000000   Number         0  rred.o ABSOLUTE
+    ../mathlib/sin.c                         0x00000000   Number         0  sin_x.o ABSOLUTE
+    ../mathlib/sin.c                         0x00000000   Number         0  sin.o ABSOLUTE
+    ../mathlib/sin_i.c                       0x00000000   Number         0  sin_i.o ABSOLUTE
+    ../mathlib/sin_i.c                       0x00000000   Number         0  sin_i_x.o ABSOLUTE
+    ../mathlib/tan.c                         0x00000000   Number         0  tan_x.o ABSOLUTE
+    ../mathlib/tan.c                         0x00000000   Number         0  tan.o ABSOLUTE
+    ../mathlib/tan_i.c                       0x00000000   Number         0  tan_i_x.o ABSOLUTE
+    ../mathlib/tan_i.c                       0x00000000   Number         0  tan_i.o ABSOLUTE
     ..\..\..\..\..\sdk\app_modules\src\app_bass\app_bass.c 0x00000000   Number         0  app_bass.o ABSOLUTE
     ..\..\..\..\..\sdk\app_modules\src\app_bass\app_bass_task.c 0x00000000   Number         0  app_bass_task.o ABSOLUTE
     ..\..\..\..\..\sdk\app_modules\src\app_bond_db\app_bond_db.c 0x00000000   Number         0  app_bond_db.o ABSOLUTE
@@ -1069,116 +1278,157 @@ Image Symbol Table
     .text                                    0x07fc3344   Section        0  user_periph_setup.o(.text)
     .text                                    0x07fc3414   Section        0  user_custs1_impl.o(.text)
     .text                                    0x07fc355c   Section        0  user_peripheral.o(.text)
-    mnf_data_update                          0x07fc35a3   Thumb Code    28  user_peripheral.o(.text)
-    adv_data_update_timer_cb                 0x07fc35bf   Thumb Code    70  user_peripheral.o(.text)
-    param_update_request_timer_cb            0x07fc3605   Thumb Code    18  user_peripheral.o(.text)
-    app_add_ad_struct                        0x07fc386d   Thumb Code   130  user_peripheral.o(.text)
-    .text                                    0x07fc393c   Section        0  patch.o(.text)
-    .text                                    0x07fc3d64   Section        0  fadd.o(.text)
-    .text                                    0x07fc3e16   Section        0  fmul.o(.text)
-    .text                                    0x07fc3e90   Section        0  fflti.o(.text)
-    .text                                    0x07fc3ea6   Section        0  ffltui.o(.text)
-    .text                                    0x07fc3eb4   Section        0  ffixui.o(.text)
-    .text                                    0x07fc3edc   Section        0  iusefp.o(.text)
-    .text                                    0x07fc3edc   Section        0  fepilogue.o(.text)
-    .text                                    0x07fc3f60   Section       36  init.o(.text)
-    i.__ARM_common_ll_muluu                  0x07fc3f84   Section        0  arch_system.o(i.__ARM_common_ll_muluu)
-    i.__scatterload_copy                     0x07fc3fb4   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x07fc3fc2   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x07fc3fc4   Section       14  handlers.o(i.__scatterload_zeroinit)
-    .constdata                               0x07fc3fd2   Section       14  nvds.o(.constdata)
-    nvds_data_storage                        0x07fc3fd2   Data          14  nvds.o(.constdata)
-    .constdata                               0x07fc3fe0   Section        8  nvds.o(.constdata)
-    .constdata                               0x07fc3fe8   Section      380  jump_table.o(.constdata)
-    .constdata                               0x07fc4164   Section      236  jump_table.o(.constdata)
-    .constdata                               0x07fc4250   Section        8  arch_system.o(.constdata)
-    .constdata                               0x07fc4258   Section       80  arch_rom.o(.constdata)
-    .constdata                               0x07fc42a8   Section        2  gpio.o(.constdata)
-    p_mask                                   0x07fc42a8   Data           2  gpio.o(.constdata)
-    .constdata                               0x07fc42ac   Section       28  hw_otpc_531.o(.constdata)
-    tim1                                     0x07fc42ac   Data          28  hw_otpc_531.o(.constdata)
-    .constdata                               0x07fc42c8   Section      112  ble_arp.o(.constdata)
-    .constdata                               0x07fc4338   Section       16  custs1.o(.constdata)
-    .constdata                               0x07fc4348   Section       72  custs1_task.o(.constdata)
-    .constdata                               0x07fc4390   Section        8  custs1_task.o(.constdata)
-    .constdata                               0x07fc4398   Section       24  prf.o(.constdata)
-    .constdata                               0x07fc43b0   Section       12  prf.o(.constdata)
-    .constdata                               0x07fc43bc   Section       80  app.o(.constdata)
-    user_adv_conf                            0x07fc43bc   Data          16  app.o(.constdata)
-    user_prf_funcs                           0x07fc43cc   Data          12  app.o(.constdata)
-    TASK_DESC_APP                            0x07fc43f0   Data          16  app.o(.constdata)
-    <Data1>                                  0x07fc4400   Data          12  app.o(.constdata)
-    .constdata                               0x07fc440c   Section      104  app_task.o(.constdata)
-    app_gap_process_handlers                 0x07fc440c   Data         104  app_task.o(.constdata)
-    .constdata                               0x07fc4474   Section        8  app_diss_task.o(.constdata)
-    app_diss_process_handlers                0x07fc4474   Data           8  app_diss_task.o(.constdata)
-    .constdata                               0x07fc447c   Section       84  app_entry_point.o(.constdata)
-    user_app_callbacks                       0x07fc447c   Data          84  app_entry_point.o(.constdata)
-    .constdata                               0x07fc44d0   Section       20  app_entry_point.o(.constdata)
-    .constdata                               0x07fc44e4   Section       32  app_entry_point.o(.constdata)
-    .constdata                               0x07fc4504   Section       56  user_custs_config.o(.constdata)
-    .constdata                               0x07fc453c   Section       16  user_custs1_def.o(.constdata)
-    custs1_svc1                              0x07fc453c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc454c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_CTRL_POINT_UUID_128                 0x07fc454c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc455c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_LED_STATE_UUID_128                  0x07fc455c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc456c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_ADC_VAL_1_UUID_128                  0x07fc456c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc457c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_ADC_VAL_2_UUID_128                  0x07fc457c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc458c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_BUTTON_STATE_UUID_128               0x07fc458c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc459c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_INDICATEABLE_UUID_128               0x07fc459c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc45ac   Section       16  user_custs1_def.o(.constdata)
-    SVC1_LONG_VALUE_UUID_128                 0x07fc45ac   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc45bc   Section       16  user_custs1_def.o(.constdata)
-    custs1_svc2                              0x07fc45bc   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc45cc   Section       16  user_custs1_def.o(.constdata)
-    SVC2_WRITE_VAL_1_UUID_128                0x07fc45cc   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc45dc   Section       16  user_custs1_def.o(.constdata)
-    SVC2_WRITE_VAL_2_UUID_128                0x07fc45dc   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc45ec   Section       16  user_custs1_def.o(.constdata)
-    custs1_svc3                              0x07fc45ec   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc45fc   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_1_UUID_128                 0x07fc45fc   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc460c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_2_UUID_128                 0x07fc460c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc461c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_3_UUID_128                 0x07fc461c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc462c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_4_UUID_128                 0x07fc462c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc463c   Section        2  user_custs1_def.o(.constdata)
-    att_decl_svc                             0x07fc463c   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc463e   Section        2  user_custs1_def.o(.constdata)
-    att_decl_char                            0x07fc463e   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4640   Section        2  user_custs1_def.o(.constdata)
-    att_desc_cfg                             0x07fc4640   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4642   Section        2  user_custs1_def.o(.constdata)
-    att_desc_user_desc                       0x07fc4642   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4644   Section        4  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4648   Section        1  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc464c   Section      960  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4a0c   Section        8  user_peripheral.o(.constdata)
-    .conststring                             0x07fc4a14   Section      190  user_custs1_def.o(.conststring)
-    .data                                    0x07fc4af4   Section        1  rf_531.o(.data)
-    .bss                                     0x07fc4af8   Section       12  arch_system.o(.bss)
-    .bss                                     0x07fc4b04   Section        4  otp_cs.o(.bss)
-    txdiv_trim                               0x07fc4b04   Data           4  otp_cs.o(.bss)
-    .bss                                     0x07fc4b08   Section        2  syscntl.o(.bss)
-    .bss                                     0x07fc4b0a   Section        2  adc_531.o(.bss)
-    cal_val                                  0x07fc4b0a   Data           2  adc_531.o(.bss)
-    .bss                                     0x07fc4b0c   Section       48  i2c.o(.bss)
-    i2c_env                                  0x07fc4b0c   Data          48  i2c.o(.bss)
-    .bss                                     0x07fc4b3c   Section       20  trng.o(.bss)
-    extra_samples                            0x07fc4b3c   Data           4  trng.o(.bss)
-    trng_bits                                0x07fc4b40   Data          16  trng.o(.bss)
-    .bss                                     0x07fc4b50   Section        4  rwip.o(.bss)
-    .bss                                     0x07fc4b54   Section       46  rf_531.o(.bss)
-    fsm_ctrl_reg                             0x07fc4b54   Data           4  rf_531.o(.bss)
-    STACK                                    0x07fc4b88   Section     1536  startup_da14531.o(STACK)
-    heap_mem_area_not_ret                    0x07fc5188   Section     1036  jump_table.o(heap_mem_area_not_ret)
+    mnf_data_update                          0x07fc377d   Thumb Code    28  user_peripheral.o(.text)
+    adv_data_update_timer_cb                 0x07fc3799   Thumb Code    70  user_peripheral.o(.text)
+    param_update_request_timer_cb            0x07fc37df   Thumb Code    18  user_peripheral.o(.text)
+    app_add_ad_struct                        0x07fc3ab5   Thumb Code   128  user_peripheral.o(.text)
+    .text                                    0x07fc3b48   Section        0  patch.o(.text)
+    .text                                    0x07fc3f70   Section        0  calloc.o(.text)
+    .text                                    0x07fc3f8c   Section        0  fadd.o(.text)
+    .text                                    0x07fc403e   Section        0  fmul.o(.text)
+    .text                                    0x07fc40b8   Section        0  fdiv.o(.text)
+    .text                                    0x07fc4134   Section        0  dadd.o(.text)
+    .text                                    0x07fc429c   Section        0  dmul.o(.text)
+    .text                                    0x07fc436c   Section        0  ddiv.o(.text)
+    .text                                    0x07fc445c   Section        0  dscalb.o(.text)
+    .text                                    0x07fc4488   Section        0  ffltui.o(.text)
+    .text                                    0x07fc4498   Section        0  dflti.o(.text)
+    .text                                    0x07fc44c0   Section        0  ffixui.o(.text)
+    .text                                    0x07fc44e8   Section        0  f2d.o(.text)
+    .text                                    0x07fc4510   Section        0  d2f.o(.text)
+    .text                                    0x07fc4548   Section        0  llsshr.o(.text)
+    .text                                    0x07fc456e   Section        0  iusefp.o(.text)
+    .text                                    0x07fc456e   Section        0  fepilogue.o(.text)
+    .text                                    0x07fc45f0   Section        0  depilogue.o(.text)
+    .text                                    0x07fc46b0   Section       36  init.o(.text)
+    .text                                    0x07fc46d4   Section        0  dfltui.o(.text)
+    .text                                    0x07fc46f0   Section        0  dfixi.o(.text)
+    i.__ARM_clz                              0x07fc4738   Section        0  depilogue.o(i.__ARM_clz)
+    i.__ARM_common_ll_muluu                  0x07fc4766   Section        0  arch_system.o(i.__ARM_common_ll_muluu)
+    i.__ARM_fpclassify                       0x07fc4798   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__ieee754_rem_pio2                     0x07fc47c4   Section        0  rred.o(i.__ieee754_rem_pio2)
+    i.__kernel_cos                           0x07fc4b60   Section        0  cos_i.o(i.__kernel_cos)
+    i.__kernel_poly                          0x07fc4c54   Section        0  poly.o(i.__kernel_poly)
+    i.__kernel_sin                           0x07fc4d00   Section        0  sin_i.o(i.__kernel_sin)
+    i.__kernel_tan                           0x07fc4dec   Section        0  tan_i.o(i.__kernel_tan)
+    i.__mathlib_dbl_infnan                   0x07fc505c   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_invalid                  0x07fc5066   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__mathlib_dbl_underflow                0x07fc5078   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i.__scatterload_copy                     0x07fc508c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x07fc509a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x07fc509c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x07fc50ac   Section        0  errno.o(i.__set_errno)
+    i.malloc                                 0x07fc50b8   Section        0  malloc.o(i.malloc)
+    i.sin                                    0x07fc5124   Section        0  sin.o(i.sin)
+    i.tan                                    0x07fc51c0   Section        0  tan.o(i.tan)
+    .constdata                               0x07fc5220   Section       14  nvds.o(.constdata)
+    nvds_data_storage                        0x07fc5220   Data          14  nvds.o(.constdata)
+    .constdata                               0x07fc5230   Section        8  nvds.o(.constdata)
+    .constdata                               0x07fc5238   Section      380  jump_table.o(.constdata)
+    .constdata                               0x07fc53b4   Section      236  jump_table.o(.constdata)
+    .constdata                               0x07fc54a0   Section        8  arch_system.o(.constdata)
+    .constdata                               0x07fc54a8   Section       80  arch_rom.o(.constdata)
+    .constdata                               0x07fc54f8   Section        2  gpio.o(.constdata)
+    p_mask                                   0x07fc54f8   Data           2  gpio.o(.constdata)
+    .constdata                               0x07fc54fc   Section       28  hw_otpc_531.o(.constdata)
+    tim1                                     0x07fc54fc   Data          28  hw_otpc_531.o(.constdata)
+    .constdata                               0x07fc5518   Section      112  ble_arp.o(.constdata)
+    .constdata                               0x07fc5588   Section       16  custs1.o(.constdata)
+    .constdata                               0x07fc5598   Section       72  custs1_task.o(.constdata)
+    .constdata                               0x07fc55e0   Section        8  custs1_task.o(.constdata)
+    .constdata                               0x07fc55e8   Section       24  prf.o(.constdata)
+    .constdata                               0x07fc5600   Section       12  prf.o(.constdata)
+    .constdata                               0x07fc560c   Section       80  app.o(.constdata)
+    user_adv_conf                            0x07fc560c   Data          16  app.o(.constdata)
+    user_prf_funcs                           0x07fc561c   Data          12  app.o(.constdata)
+    TASK_DESC_APP                            0x07fc5640   Data          16  app.o(.constdata)
+    <Data1>                                  0x07fc5650   Data          12  app.o(.constdata)
+    .constdata                               0x07fc565c   Section      104  app_task.o(.constdata)
+    app_gap_process_handlers                 0x07fc565c   Data         104  app_task.o(.constdata)
+    .constdata                               0x07fc56c4   Section        8  app_diss_task.o(.constdata)
+    app_diss_process_handlers                0x07fc56c4   Data           8  app_diss_task.o(.constdata)
+    .constdata                               0x07fc56cc   Section       84  app_entry_point.o(.constdata)
+    user_app_callbacks                       0x07fc56cc   Data          84  app_entry_point.o(.constdata)
+    .constdata                               0x07fc5720   Section       20  app_entry_point.o(.constdata)
+    .constdata                               0x07fc5734   Section       32  app_entry_point.o(.constdata)
+    .constdata                               0x07fc5754   Section       56  user_custs_config.o(.constdata)
+    .constdata                               0x07fc578c   Section       16  user_custs1_def.o(.constdata)
+    custs1_svc1                              0x07fc578c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc579c   Section       16  user_custs1_def.o(.constdata)
+    SVC1_CTRL_POINT_UUID_128                 0x07fc579c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc57ac   Section       16  user_custs1_def.o(.constdata)
+    SVC1_LED_STATE_UUID_128                  0x07fc57ac   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc57bc   Section       16  user_custs1_def.o(.constdata)
+    SVC1_ADC_VAL_1_UUID_128                  0x07fc57bc   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc57cc   Section       16  user_custs1_def.o(.constdata)
+    SVC1_ADC_VAL_2_UUID_128                  0x07fc57cc   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc57dc   Section       16  user_custs1_def.o(.constdata)
+    SVC1_BUTTON_STATE_UUID_128               0x07fc57dc   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc57ec   Section       16  user_custs1_def.o(.constdata)
+    SVC1_INDICATEABLE_UUID_128               0x07fc57ec   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc57fc   Section       16  user_custs1_def.o(.constdata)
+    SVC1_LONG_VALUE_UUID_128                 0x07fc57fc   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc580c   Section       16  user_custs1_def.o(.constdata)
+    custs1_svc2                              0x07fc580c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc581c   Section       16  user_custs1_def.o(.constdata)
+    SVC2_WRITE_VAL_1_UUID_128                0x07fc581c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc582c   Section       16  user_custs1_def.o(.constdata)
+    SVC2_WRITE_VAL_2_UUID_128                0x07fc582c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc583c   Section       16  user_custs1_def.o(.constdata)
+    custs1_svc3                              0x07fc583c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc584c   Section       16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_1_UUID_128                 0x07fc584c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc585c   Section       16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_2_UUID_128                 0x07fc585c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc586c   Section       16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_3_UUID_128                 0x07fc586c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc587c   Section       16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_4_UUID_128                 0x07fc587c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc588c   Section        2  user_custs1_def.o(.constdata)
+    att_decl_svc                             0x07fc588c   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc588e   Section        2  user_custs1_def.o(.constdata)
+    att_decl_char                            0x07fc588e   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc5890   Section        2  user_custs1_def.o(.constdata)
+    att_desc_cfg                             0x07fc5890   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc5892   Section        2  user_custs1_def.o(.constdata)
+    att_desc_user_desc                       0x07fc5892   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc5894   Section        4  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc5898   Section        1  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc589c   Section      960  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc5c5c   Section        8  user_peripheral.o(.constdata)
+    .constdata                               0x07fc5c68   Section       48  cos_i.o(.constdata)
+    C                                        0x07fc5c68   Data          48  cos_i.o(.constdata)
+    .constdata                               0x07fc5c98   Section      200  rred.o(.constdata)
+    pio2s                                    0x07fc5c98   Data          48  rred.o(.constdata)
+    twooverpi                                0x07fc5cc8   Data         152  rred.o(.constdata)
+    .constdata                               0x07fc5d60   Section       40  sin_i.o(.constdata)
+    S                                        0x07fc5d60   Data          40  sin_i.o(.constdata)
+    .constdata                               0x07fc5d88   Section       96  tan_i.o(.constdata)
+    Todd                                     0x07fc5d88   Data          48  tan_i.o(.constdata)
+    Teven                                    0x07fc5db8   Data          48  tan_i.o(.constdata)
+    .conststring                             0x07fc5de8   Section      190  user_custs1_def.o(.conststring)
+    .data                                    0x07fc5ec8   Section        1  rf_531.o(.data)
+    .data                                    0x07fc5ecc   Section        4  mvars.o(.data)
+    .data                                    0x07fc5ed0   Section        4  mvars.o(.data)
+    .data                                    0x07fc5ed4   Section        4  errno.o(.data)
+    _errno                                   0x07fc5ed4   Data           4  errno.o(.data)
+    .bss                                     0x07fc5ed8   Section       12  arch_system.o(.bss)
+    .bss                                     0x07fc5ee4   Section        4  otp_cs.o(.bss)
+    txdiv_trim                               0x07fc5ee4   Data           4  otp_cs.o(.bss)
+    .bss                                     0x07fc5ee8   Section        2  syscntl.o(.bss)
+    .bss                                     0x07fc5eea   Section        2  adc_531.o(.bss)
+    cal_val                                  0x07fc5eea   Data           2  adc_531.o(.bss)
+    .bss                                     0x07fc5eec   Section       48  i2c.o(.bss)
+    i2c_env                                  0x07fc5eec   Data          48  i2c.o(.bss)
+    .bss                                     0x07fc5f1c   Section       20  trng.o(.bss)
+    extra_samples                            0x07fc5f1c   Data           4  trng.o(.bss)
+    trng_bits                                0x07fc5f20   Data          16  trng.o(.bss)
+    .bss                                     0x07fc5f30   Section        4  rwip.o(.bss)
+    .bss                                     0x07fc5f34   Section       46  rf_531.o(.bss)
+    fsm_ctrl_reg                             0x07fc5f34   Data           4  rf_531.o(.bss)
+    HEAP                                     0x07fc5f68   Section      256  startup_da14531.o(HEAP)
+    STACK                                    0x07fc6068   Section     1536  startup_da14531.o(STACK)
+    heap_mem_area_not_ret                    0x07fc6668   Section     1036  jump_table.o(heap_mem_area_not_ret)
     retention_mem_area0                      0x07fc8bc0   Section        8  arch_main.o(retention_mem_area0)
     ret_mode_for_non_ret_heap                0x07fc8bc0   Data           1  arch_main.o(retention_mem_area0)
     ret_mode                                 0x07fc8bc1   Data           1  arch_main.o(retention_mem_area0)
@@ -1240,7 +1490,7 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __ARM_use_no_argv                        0x00000000   Number         0  arch_main.o ABSOLUTE
     __arm_fini_                               - Undefined Weak Reference
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
@@ -1253,7 +1503,7 @@ Image Symbol Table
     reset_indication                          - Undefined Weak Reference
     __Vectors_Size                           0x000000a0   Number         0  startup_da14531.o ABSOLUTE
     heap_mem_area_not_ret$$Length            0x0000040c   Number         0  anon$$obj.o ABSOLUTE
-    Image$$ER_IROM3$$Length                  0x000049e8   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ER_IROM3$$Length                  0x00005dc8   Number         0  anon$$obj.o ABSOLUTE
     uECC_vli_add                             0x07f02001   Thumb Code     0  da14531_symbols.txt ABSOLUTE
     uECC_vli_sub                             0x07f02019   Thumb Code     0  da14531_symbols.txt ABSOLUTE
     uECC_vli_mult                            0x07f02035   Thumb Code     0  da14531_symbols.txt ABSOLUTE
@@ -2315,64 +2565,100 @@ Image Symbol Table
     user_svc1_long_val_att_info_req_handler  0x07fc34a1   Thumb Code    48  user_custs1_impl.o(.text)
     user_svc1_rest_att_info_req_handler      0x07fc34d1   Thumb Code    50  user_custs1_impl.o(.text)
     user_svc3_read_non_db_val_handler        0x07fc3503   Thumb Code    78  user_custs1_impl.o(.text)
-    lowPassFrequency                         0x07fc355d   Thumb Code    70  user_peripheral.o(.text)
-    app_adcval1_timer_cb_handler             0x07fc3617   Thumb Code   182  user_peripheral.o(.text)
-    user_app_init                            0x07fc36cd   Thumb Code    54  user_peripheral.o(.text)
-    user_app_adv_start                       0x07fc3703   Thumb Code    36  user_peripheral.o(.text)
-    user_app_connection                      0x07fc3727   Thumb Code    90  user_peripheral.o(.text)
-    user_app_adv_undirect_complete           0x07fc3781   Thumb Code     8  user_peripheral.o(.text)
-    user_app_disconnect                      0x07fc3789   Thumb Code    30  user_peripheral.o(.text)
-    user_catch_rest_hndl                     0x07fc37a7   Thumb Code   198  user_peripheral.o(.text)
-    JT_lld_test_mode_rx_func                 0x07fc393d   Thumb Code   142  patch.o(.text)
-    JT_l2cc_pdu_unpack_func                  0x07fc39cb   Thumb Code   786  patch.o(.text)
-    JT_l2cc_pdu_recv_ind_handler_func        0x07fc3cdd   Thumb Code    72  patch.o(.text)
-    patch_func                               0x07fc3d25   Thumb Code     8  patch.o(.text)
-    patch_global_vars_init                   0x07fc3d2d   Thumb Code     2  patch.o(.text)
-    __aeabi_fadd                             0x07fc3d65   Thumb Code   162  fadd.o(.text)
-    __aeabi_fsub                             0x07fc3e07   Thumb Code     8  fadd.o(.text)
-    __aeabi_frsub                            0x07fc3e0f   Thumb Code     8  fadd.o(.text)
-    __aeabi_fmul                             0x07fc3e17   Thumb Code   122  fmul.o(.text)
-    __aeabi_i2f                              0x07fc3e91   Thumb Code    22  fflti.o(.text)
-    __aeabi_ui2f                             0x07fc3ea7   Thumb Code    14  ffltui.o(.text)
-    __aeabi_f2uiz                            0x07fc3eb5   Thumb Code    40  ffixui.o(.text)
-    __I$use$fp                               0x07fc3edd   Thumb Code     0  iusefp.o(.text)
-    _float_round                             0x07fc3edd   Thumb Code    16  fepilogue.o(.text)
-    _float_epilogue                          0x07fc3eed   Thumb Code   114  fepilogue.o(.text)
-    __scatterload                            0x07fc3f61   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x07fc3f61   Thumb Code     0  init.o(.text)
-    __ARM_common_ll_muluu                    0x07fc3f85   Thumb Code    48  arch_system.o(i.__ARM_common_ll_muluu)
-    __scatterload_copy                       0x07fc3fb5   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x07fc3fc3   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x07fc3fc5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    rom_nvds_cfg                             0x07fc3fe0   Data           8  nvds.o(.constdata)
-    rom_func_addr_table_var                  0x07fc3fe8   Data         380  jump_table.o(.constdata)
-    rom_cfg_table_var                        0x07fc4164   Data         236  jump_table.o(.constdata)
-    my_custom_msg_handlers                   0x07fc4258   Data           8  arch_rom.o(.constdata)
-    arp_init_table                           0x07fc42c8   Data         112  ble_arp.o(.constdata)
-    rom_cust_prf_cfg                         0x07fc4338   Data          16  custs1.o(.constdata)
-    custs1_default_state                     0x07fc4348   Data          72  custs1_task.o(.constdata)
-    custs1_default_handler                   0x07fc4390   Data           8  custs1_task.o(.constdata)
-    prf_if                                   0x07fc4398   Data          24  prf.o(.constdata)
-    rom_prf_cfg                              0x07fc43b0   Data          12  prf.o(.constdata)
-    prf_funcs                                0x07fc43d8   Data          24  app.o(.constdata)
-    app_process_handlers                     0x07fc44d0   Data          20  app_entry_point.o(.constdata)
-    rom_app_task_cfg                         0x07fc44e4   Data          32  app_entry_point.o(.constdata)
-    cust_prf_funcs                           0x07fc4504   Data          56  user_custs_config.o(.constdata)
-    custs1_services                          0x07fc4644   Data           4  user_custs1_def.o(.constdata)
-    custs1_services_size                     0x07fc4648   Data           1  user_custs1_def.o(.constdata)
-    custs1_att_db                            0x07fc464c   Data         960  user_custs1_def.o(.constdata)
-    Region$$Table$$Base                      0x07fc4ad4   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x07fc4af4   Number         0  anon$$obj.o(Region$$Table)
-    pa_en_dcf_tx_setting                     0x07fc4af4   Data           1  rf_531.o(.data)
-    otp_hdr_timestamp                        0x07fc4af8   Data           4  arch_system.o(.bss)
-    twirq_set_value                          0x07fc4afc   Data           4  arch_system.o(.bss)
-    twirq_reset_value                        0x07fc4b00   Data           4  arch_system.o(.bss)
-    syscntl_dcdc_state                       0x07fc4b08   Data           2  syscntl.o(.bss)
-    twext_value                              0x07fc4b50   Data           4  rwip.o(.bss)
-    calibration_res                          0x07fc4b58   Data          42  rf_531.o(.bss)
-    __initial_sp                             0x07fc5188   Data           0  startup_da14531.o(STACK)
-    heap_mem_area_not_ret$$Base              0x07fc5188   Number         0  jump_table.o(heap_mem_area_not_ret)
-    rwip_heap_non_ret                        0x07fc5188   Data        1036  jump_table.o(heap_mem_area_not_ret)
+    create_bw_low_pass_filter                0x07fc355d   Thumb Code   376  user_peripheral.o(.text)
+    bw_low_pass                              0x07fc36d5   Thumb Code   168  user_peripheral.o(.text)
+    app_adcval1_timer_cb_handler             0x07fc37f1   Thumb Code   206  user_peripheral.o(.text)
+    user_app_init                            0x07fc38bf   Thumb Code    54  user_peripheral.o(.text)
+    user_app_adv_start                       0x07fc38f5   Thumb Code    36  user_peripheral.o(.text)
+    user_app_connection                      0x07fc3919   Thumb Code    90  user_peripheral.o(.text)
+    user_app_adv_undirect_complete           0x07fc3973   Thumb Code     8  user_peripheral.o(.text)
+    user_app_disconnect                      0x07fc397b   Thumb Code   118  user_peripheral.o(.text)
+    user_catch_rest_hndl                     0x07fc39f1   Thumb Code   196  user_peripheral.o(.text)
+    JT_lld_test_mode_rx_func                 0x07fc3b49   Thumb Code   142  patch.o(.text)
+    JT_l2cc_pdu_unpack_func                  0x07fc3bd7   Thumb Code   786  patch.o(.text)
+    JT_l2cc_pdu_recv_ind_handler_func        0x07fc3ee9   Thumb Code    72  patch.o(.text)
+    patch_func                               0x07fc3f31   Thumb Code     8  patch.o(.text)
+    patch_global_vars_init                   0x07fc3f39   Thumb Code     2  patch.o(.text)
+    calloc                                   0x07fc3f71   Thumb Code    28  calloc.o(.text)
+    __aeabi_fadd                             0x07fc3f8d   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x07fc402f   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x07fc4037   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x07fc403f   Thumb Code   122  fmul.o(.text)
+    __aeabi_fdiv                             0x07fc40b9   Thumb Code   124  fdiv.o(.text)
+    __aeabi_dadd                             0x07fc4135   Thumb Code   330  dadd.o(.text)
+    __aeabi_dsub                             0x07fc427f   Thumb Code    12  dadd.o(.text)
+    __aeabi_drsub                            0x07fc428b   Thumb Code    12  dadd.o(.text)
+    __aeabi_dmul                             0x07fc429d   Thumb Code   202  dmul.o(.text)
+    __aeabi_ddiv                             0x07fc436d   Thumb Code   234  ddiv.o(.text)
+    __ARM_scalbn                             0x07fc445d   Thumb Code    44  dscalb.o(.text)
+    scalbn                                   0x07fc445d   Thumb Code     0  dscalb.o(.text)
+    __aeabi_ui2f                             0x07fc4489   Thumb Code    14  ffltui.o(.text)
+    __aeabi_i2d                              0x07fc4499   Thumb Code    34  dflti.o(.text)
+    __aeabi_f2uiz                            0x07fc44c1   Thumb Code    40  ffixui.o(.text)
+    __aeabi_f2d                              0x07fc44e9   Thumb Code    40  f2d.o(.text)
+    __aeabi_d2f                              0x07fc4511   Thumb Code    56  d2f.o(.text)
+    __aeabi_lasr                             0x07fc4549   Thumb Code    38  llsshr.o(.text)
+    _ll_sshift_r                             0x07fc4549   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x07fc456f   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x07fc456f   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x07fc457f   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x07fc45f1   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x07fc460b   Thumb Code   164  depilogue.o(.text)
+    __scatterload                            0x07fc46b1   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x07fc46b1   Thumb Code     0  init.o(.text)
+    __aeabi_ui2d                             0x07fc46d5   Thumb Code    24  dfltui.o(.text)
+    __aeabi_d2iz                             0x07fc46f1   Thumb Code    62  dfixi.o(.text)
+    __ARM_clz                                0x07fc4739   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __ARM_common_ll_muluu                    0x07fc4767   Thumb Code    48  arch_system.o(i.__ARM_common_ll_muluu)
+    __ARM_fpclassify                         0x07fc4799   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
+    __ieee754_rem_pio2                       0x07fc47c5   Thumb Code   838  rred.o(i.__ieee754_rem_pio2)
+    __kernel_cos                             0x07fc4b61   Thumb Code   224  cos_i.o(i.__kernel_cos)
+    __kernel_poly                            0x07fc4c55   Thumb Code   172  poly.o(i.__kernel_poly)
+    __kernel_sin                             0x07fc4d01   Thumb Code   222  sin_i.o(i.__kernel_sin)
+    __kernel_tan                             0x07fc4ded   Thumb Code   576  tan_i.o(i.__kernel_tan)
+    __mathlib_dbl_infnan                     0x07fc505d   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_invalid                    0x07fc5067   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __mathlib_dbl_underflow                  0x07fc5079   Thumb Code    14  dunder.o(i.__mathlib_dbl_underflow)
+    __scatterload_copy                       0x07fc508d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x07fc509b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x07fc509d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x07fc50ad   Thumb Code     6  errno.o(i.__set_errno)
+    malloc                                   0x07fc50b9   Thumb Code    92  malloc.o(i.malloc)
+    sin                                      0x07fc5125   Thumb Code   146  sin.o(i.sin)
+    tan                                      0x07fc51c1   Thumb Code    86  tan.o(i.tan)
+    rom_nvds_cfg                             0x07fc5230   Data           8  nvds.o(.constdata)
+    rom_func_addr_table_var                  0x07fc5238   Data         380  jump_table.o(.constdata)
+    rom_cfg_table_var                        0x07fc53b4   Data         236  jump_table.o(.constdata)
+    my_custom_msg_handlers                   0x07fc54a8   Data           8  arch_rom.o(.constdata)
+    arp_init_table                           0x07fc5518   Data         112  ble_arp.o(.constdata)
+    rom_cust_prf_cfg                         0x07fc5588   Data          16  custs1.o(.constdata)
+    custs1_default_state                     0x07fc5598   Data          72  custs1_task.o(.constdata)
+    custs1_default_handler                   0x07fc55e0   Data           8  custs1_task.o(.constdata)
+    prf_if                                   0x07fc55e8   Data          24  prf.o(.constdata)
+    rom_prf_cfg                              0x07fc5600   Data          12  prf.o(.constdata)
+    prf_funcs                                0x07fc5628   Data          24  app.o(.constdata)
+    app_process_handlers                     0x07fc5720   Data          20  app_entry_point.o(.constdata)
+    rom_app_task_cfg                         0x07fc5734   Data          32  app_entry_point.o(.constdata)
+    cust_prf_funcs                           0x07fc5754   Data          56  user_custs_config.o(.constdata)
+    custs1_services                          0x07fc5894   Data           4  user_custs1_def.o(.constdata)
+    custs1_services_size                     0x07fc5898   Data           1  user_custs1_def.o(.constdata)
+    custs1_att_db                            0x07fc589c   Data         960  user_custs1_def.o(.constdata)
+    Region$$Table$$Base                      0x07fc5ea8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x07fc5ec8   Number         0  anon$$obj.o(Region$$Table)
+    pa_en_dcf_tx_setting                     0x07fc5ec8   Data           1  rf_531.o(.data)
+    __microlib_freelist                      0x07fc5ecc   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x07fc5ed0   Data           4  mvars.o(.data)
+    otp_hdr_timestamp                        0x07fc5ed8   Data           4  arch_system.o(.bss)
+    twirq_set_value                          0x07fc5edc   Data           4  arch_system.o(.bss)
+    twirq_reset_value                        0x07fc5ee0   Data           4  arch_system.o(.bss)
+    syscntl_dcdc_state                       0x07fc5ee8   Data           2  syscntl.o(.bss)
+    twext_value                              0x07fc5f30   Data           4  rwip.o(.bss)
+    calibration_res                          0x07fc5f38   Data          42  rf_531.o(.bss)
+    __heap_base                              0x07fc5f68   Data           0  startup_da14531.o(HEAP)
+    __heap_limit                             0x07fc6068   Data           0  startup_da14531.o(HEAP)
+    __initial_sp                             0x07fc6668   Data           0  startup_da14531.o(STACK)
+    heap_mem_area_not_ret$$Base              0x07fc6668   Number         0  jump_table.o(heap_mem_area_not_ret)
+    rwip_heap_non_ret                        0x07fc6668   Data        1036  jump_table.o(heap_mem_area_not_ret)
     Image$$RET_DATA_UNINIT$$Base             0x07fc8bc0   Number         0  anon$$obj.o ABSOLUTE
     sys_startup_flag                         0x07fc8bd0   Data           1  arch_system.o(retention_mem_area0)
     last_temp                                0x07fc8bd1   Data           1  arch_system.o(retention_mem_area0)
@@ -2547,22 +2833,22 @@ Memory Map of the image
 
 
 
-  Load Region LR_IROM3 (Base: 0x07fc0110, Size: 0x000049e8, Max: 0x00008ab0, ABSOLUTE)
+  Load Region LR_IROM3 (Base: 0x07fc0110, Size: 0x00005dc8, Max: 0x00008ab0, ABSOLUTE)
 
-    Execution Region ER_IROM3 (Exec base: 0x07fc0110, Load base: 0x07fc0110, Size: 0x000049e8, Max: 0x00008ab0, ABSOLUTE)
+    Execution Region ER_IROM3 (Exec base: 0x07fc0110, Load base: 0x07fc0110, Size: 0x00005dc8, Max: 0x00008ab0, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fc0110   0x07fc0110   0x00000000   Code   RO         3096  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x07fc0110   0x07fc0110   0x00000004   Code   RO         3107    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x07fc0114   0x07fc0114   0x00000004   Code   RO         3110    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3112    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3114    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x07fc0118   0x07fc0118   0x00000008   Code   RO         3115    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x07fc0120   0x07fc0120   0x00000004   Code   RO         3122    .ARM.Collect$$$$0000000E  mc_p.l(entry12b.o)
-    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3117    .ARM.Collect$$$$0000000F  mc_p.l(entry10a.o)
-    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3119    .ARM.Collect$$$$00000011  mc_p.l(entry11a.o)
-    0x07fc0124   0x07fc0124   0x00000004   Code   RO         3108    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x07fc0110   0x07fc0110   0x00000000   Code   RO         3128  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x07fc0110   0x07fc0110   0x00000004   Code   RO         3219    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x07fc0114   0x07fc0114   0x00000004   Code   RO         3222    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3224    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3226    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x07fc0118   0x07fc0118   0x00000008   Code   RO         3227    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x07fc0120   0x07fc0120   0x00000004   Code   RO         3234    .ARM.Collect$$$$0000000E  mc_p.l(entry12b.o)
+    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3229    .ARM.Collect$$$$0000000F  mc_p.l(entry10a.o)
+    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3231    .ARM.Collect$$$$00000011  mc_p.l(entry11a.o)
+    0x07fc0124   0x07fc0124   0x00000004   Code   RO         3220    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x07fc0128   0x07fc0128   0x00000098   Code   RO            3    .text               system_da14531.o
     0x07fc01c0   0x07fc01c0   0x00000050   Code   RO          278    .text               startup_da14531.o
     0x07fc0210   0x07fc0210   0x00000098   Code   RO          283    .text               hardfault_handler.o
@@ -2601,103 +2887,144 @@ Memory Map of the image
     0x07fc332c   0x07fc332c   0x00000018   Code   RO         2885    .text               app_customs_task.o
     0x07fc3344   0x07fc3344   0x000000d0   Code   RO         2994    .text               user_periph_setup.o
     0x07fc3414   0x07fc3414   0x00000148   Code   RO         3013    .text               user_custs1_impl.o
-    0x07fc355c   0x07fc355c   0x000003e0   Code   RO         3067    .text               user_peripheral.o
-    0x07fc393c   0x07fc393c   0x00000428   Code   RO         3094    .text               da14531.lib(patch.o)
-    0x07fc3d64   0x07fc3d64   0x000000b2   Code   RO         3097    .text               mf_p.l(fadd.o)
-    0x07fc3e16   0x07fc3e16   0x0000007a   Code   RO         3099    .text               mf_p.l(fmul.o)
-    0x07fc3e90   0x07fc3e90   0x00000016   Code   RO         3101    .text               mf_p.l(fflti.o)
-    0x07fc3ea6   0x07fc3ea6   0x0000000e   Code   RO         3103    .text               mf_p.l(ffltui.o)
-    0x07fc3eb4   0x07fc3eb4   0x00000028   Code   RO         3105    .text               mf_p.l(ffixui.o)
-    0x07fc3edc   0x07fc3edc   0x00000000   Code   RO         3123    .text               mc_p.l(iusefp.o)
-    0x07fc3edc   0x07fc3edc   0x00000082   Code   RO         3124    .text               mf_p.l(fepilogue.o)
-    0x07fc3f5e   0x07fc3f5e   0x00000002   PAD
-    0x07fc3f60   0x07fc3f60   0x00000024   Code   RO         3126    .text               mc_p.l(init.o)
-    0x07fc3f84   0x07fc3f84   0x00000030   Code   RO          717    i.__ARM_common_ll_muluu  arch_system.o
-    0x07fc3fb4   0x07fc3fb4   0x0000000e   Code   RO         3130    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x07fc3fc2   0x07fc3fc2   0x00000002   Code   RO         3131    i.__scatterload_null  mc_p.l(handlers.o)
-    0x07fc3fc4   0x07fc3fc4   0x0000000e   Code   RO         3132    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x07fc3fd2   0x07fc3fd2   0x0000000e   Data   RO          350    .constdata          nvds.o
-    0x07fc3fe0   0x07fc3fe0   0x00000008   Data   RO          351    .constdata          nvds.o
-    0x07fc3fe8   0x07fc3fe8   0x0000017c   Data   RO          552    .constdata          jump_table.o
-    0x07fc4164   0x07fc4164   0x000000ec   Data   RO          553    .constdata          jump_table.o
-    0x07fc4250   0x07fc4250   0x00000008   Data   RO          682    .constdata          arch_system.o
-    0x07fc4258   0x07fc4258   0x00000050   Data   RO          844    .constdata          arch_rom.o
-    0x07fc42a8   0x07fc42a8   0x00000002   Data   RO          981    .constdata          gpio.o
-    0x07fc42aa   0x07fc42aa   0x00000002   PAD
-    0x07fc42ac   0x07fc42ac   0x0000001c   Data   RO         1879    .constdata          hw_otpc_531.o
-    0x07fc42c8   0x07fc42c8   0x00000070   Data   RO         2165    .constdata          ble_arp.o
-    0x07fc4338   0x07fc4338   0x00000010   Data   RO         2329    .constdata          custs1.o
-    0x07fc4348   0x07fc4348   0x00000048   Data   RO         2346    .constdata          custs1_task.o
-    0x07fc4390   0x07fc4390   0x00000008   Data   RO         2347    .constdata          custs1_task.o
-    0x07fc4398   0x07fc4398   0x00000018   Data   RO         2370    .constdata          prf.o
-    0x07fc43b0   0x07fc43b0   0x0000000c   Data   RO         2371    .constdata          prf.o
-    0x07fc43bc   0x07fc43bc   0x00000050   Data   RO         2466    .constdata          app.o
-    0x07fc440c   0x07fc440c   0x00000068   Data   RO         2597    .constdata          app_task.o
-    0x07fc4474   0x07fc4474   0x00000008   Data   RO         2692    .constdata          app_diss_task.o
-    0x07fc447c   0x07fc447c   0x00000054   Data   RO         2720    .constdata          app_entry_point.o
-    0x07fc44d0   0x07fc44d0   0x00000014   Data   RO         2721    .constdata          app_entry_point.o
-    0x07fc44e4   0x07fc44e4   0x00000020   Data   RO         2722    .constdata          app_entry_point.o
-    0x07fc4504   0x07fc4504   0x00000038   Data   RO         2948    .constdata          user_custs_config.o
-    0x07fc453c   0x07fc453c   0x00000010   Data   RO         2961    .constdata          user_custs1_def.o
-    0x07fc454c   0x07fc454c   0x00000010   Data   RO         2962    .constdata          user_custs1_def.o
-    0x07fc455c   0x07fc455c   0x00000010   Data   RO         2963    .constdata          user_custs1_def.o
-    0x07fc456c   0x07fc456c   0x00000010   Data   RO         2964    .constdata          user_custs1_def.o
-    0x07fc457c   0x07fc457c   0x00000010   Data   RO         2965    .constdata          user_custs1_def.o
-    0x07fc458c   0x07fc458c   0x00000010   Data   RO         2966    .constdata          user_custs1_def.o
-    0x07fc459c   0x07fc459c   0x00000010   Data   RO         2967    .constdata          user_custs1_def.o
-    0x07fc45ac   0x07fc45ac   0x00000010   Data   RO         2968    .constdata          user_custs1_def.o
-    0x07fc45bc   0x07fc45bc   0x00000010   Data   RO         2969    .constdata          user_custs1_def.o
-    0x07fc45cc   0x07fc45cc   0x00000010   Data   RO         2970    .constdata          user_custs1_def.o
-    0x07fc45dc   0x07fc45dc   0x00000010   Data   RO         2971    .constdata          user_custs1_def.o
-    0x07fc45ec   0x07fc45ec   0x00000010   Data   RO         2972    .constdata          user_custs1_def.o
-    0x07fc45fc   0x07fc45fc   0x00000010   Data   RO         2973    .constdata          user_custs1_def.o
-    0x07fc460c   0x07fc460c   0x00000010   Data   RO         2974    .constdata          user_custs1_def.o
-    0x07fc461c   0x07fc461c   0x00000010   Data   RO         2975    .constdata          user_custs1_def.o
-    0x07fc462c   0x07fc462c   0x00000010   Data   RO         2976    .constdata          user_custs1_def.o
-    0x07fc463c   0x07fc463c   0x00000002   Data   RO         2977    .constdata          user_custs1_def.o
-    0x07fc463e   0x07fc463e   0x00000002   Data   RO         2978    .constdata          user_custs1_def.o
-    0x07fc4640   0x07fc4640   0x00000002   Data   RO         2979    .constdata          user_custs1_def.o
-    0x07fc4642   0x07fc4642   0x00000002   Data   RO         2980    .constdata          user_custs1_def.o
-    0x07fc4644   0x07fc4644   0x00000004   Data   RO         2981    .constdata          user_custs1_def.o
-    0x07fc4648   0x07fc4648   0x00000001   Data   RO         2982    .constdata          user_custs1_def.o
-    0x07fc4649   0x07fc4649   0x00000003   PAD
-    0x07fc464c   0x07fc464c   0x000003c0   Data   RO         2984    .constdata          user_custs1_def.o
-    0x07fc4a0c   0x07fc4a0c   0x00000008   Data   RO         3069    .constdata          user_peripheral.o
-    0x07fc4a14   0x07fc4a14   0x000000be   Data   RO         2985    .conststring        user_custs1_def.o
-    0x07fc4ad2   0x07fc4ad2   0x00000002   PAD
-    0x07fc4ad4   0x07fc4ad4   0x00000020   Data   RO         3128    Region$$Table       anon$$obj.o
-    0x07fc4af4   0x07fc4af4   0x00000001   Data   RW         2206    .data               rf_531.o
+    0x07fc355c   0x07fc355c   0x000005ec   Code   RO         3067    .text               user_peripheral.o
+    0x07fc3b48   0x07fc3b48   0x00000428   Code   RO         3110    .text               da14531.lib(patch.o)
+    0x07fc3f70   0x07fc3f70   0x0000001c   Code   RO         3157    .text               mc_p.l(calloc.o)
+    0x07fc3f8c   0x07fc3f8c   0x000000b2   Code   RO         3159    .text               mf_p.l(fadd.o)
+    0x07fc403e   0x07fc403e   0x0000007a   Code   RO         3161    .text               mf_p.l(fmul.o)
+    0x07fc40b8   0x07fc40b8   0x0000007c   Code   RO         3163    .text               mf_p.l(fdiv.o)
+    0x07fc4134   0x07fc4134   0x00000168   Code   RO         3165    .text               mf_p.l(dadd.o)
+    0x07fc429c   0x07fc429c   0x000000d0   Code   RO         3167    .text               mf_p.l(dmul.o)
+    0x07fc436c   0x07fc436c   0x000000f0   Code   RO         3169    .text               mf_p.l(ddiv.o)
+    0x07fc445c   0x07fc445c   0x0000002c   Code   RO         3171    .text               mf_p.l(dscalb.o)
+    0x07fc4488   0x07fc4488   0x0000000e   Code   RO         3175    .text               mf_p.l(ffltui.o)
+    0x07fc4496   0x07fc4496   0x00000002   PAD
+    0x07fc4498   0x07fc4498   0x00000028   Code   RO         3177    .text               mf_p.l(dflti.o)
+    0x07fc44c0   0x07fc44c0   0x00000028   Code   RO         3179    .text               mf_p.l(ffixui.o)
+    0x07fc44e8   0x07fc44e8   0x00000028   Code   RO         3181    .text               mf_p.l(f2d.o)
+    0x07fc4510   0x07fc4510   0x00000038   Code   RO         3183    .text               mf_p.l(d2f.o)
+    0x07fc4548   0x07fc4548   0x00000026   Code   RO         3235    .text               mc_p.l(llsshr.o)
+    0x07fc456e   0x07fc456e   0x00000000   Code   RO         3246    .text               mc_p.l(iusefp.o)
+    0x07fc456e   0x07fc456e   0x00000082   Code   RO         3247    .text               mf_p.l(fepilogue.o)
+    0x07fc45f0   0x07fc45f0   0x000000be   Code   RO         3249    .text               mf_p.l(depilogue.o)
+    0x07fc46ae   0x07fc46ae   0x00000002   PAD
+    0x07fc46b0   0x07fc46b0   0x00000024   Code   RO         3257    .text               mc_p.l(init.o)
+    0x07fc46d4   0x07fc46d4   0x0000001c   Code   RO         3259    .text               mf_p.l(dfltui.o)
+    0x07fc46f0   0x07fc46f0   0x00000048   Code   RO         3261    .text               mf_p.l(dfixi.o)
+    0x07fc4738   0x07fc4738   0x0000002e   Code   RO         3251    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x07fc4766   0x07fc4766   0x00000030   Code   RO          717    i.__ARM_common_ll_muluu  arch_system.o
+    0x07fc4796   0x07fc4796   0x00000002   PAD
+    0x07fc4798   0x07fc4798   0x0000002c   Code   RO         3253    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
+    0x07fc47c4   0x07fc47c4   0x0000039c   Code   RO         3202    i.__ieee754_rem_pio2  m_ps.l(rred.o)
+    0x07fc4b60   0x07fc4b60   0x000000f4   Code   RO         3185    i.__kernel_cos      m_ps.l(cos_i.o)
+    0x07fc4c54   0x07fc4c54   0x000000ac   Code   RO         3255    i.__kernel_poly     m_ps.l(poly.o)
+    0x07fc4d00   0x07fc4d00   0x000000ec   Code   RO         3207    i.__kernel_sin      m_ps.l(sin_i.o)
+    0x07fc4dec   0x07fc4dec   0x00000270   Code   RO         3213    i.__kernel_tan      m_ps.l(tan_i.o)
+    0x07fc505c   0x07fc505c   0x0000000a   Code   RO         3189    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x07fc5066   0x07fc5066   0x00000010   Code   RO         3191    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x07fc5076   0x07fc5076   0x00000002   PAD
+    0x07fc5078   0x07fc5078   0x00000014   Code   RO         3194    i.__mathlib_dbl_underflow  m_ps.l(dunder.o)
+    0x07fc508c   0x07fc508c   0x0000000e   Code   RO         3265    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x07fc509a   0x07fc509a   0x00000002   Code   RO         3266    i.__scatterload_null  mc_p.l(handlers.o)
+    0x07fc509c   0x07fc509c   0x0000000e   Code   RO         3267    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x07fc50aa   0x07fc50aa   0x00000002   PAD
+    0x07fc50ac   0x07fc50ac   0x0000000c   Code   RO         3241    i.__set_errno       mc_p.l(errno.o)
+    0x07fc50b8   0x07fc50b8   0x0000006c   Code   RO         3130    i.malloc            mc_p.l(malloc.o)
+    0x07fc5124   0x07fc5124   0x0000009c   Code   RO         3113    i.sin               m_ps.l(sin.o)
+    0x07fc51c0   0x07fc51c0   0x00000060   Code   RO         3121    i.tan               m_ps.l(tan.o)
+    0x07fc5220   0x07fc5220   0x0000000e   Data   RO          350    .constdata          nvds.o
+    0x07fc522e   0x07fc522e   0x00000002   PAD
+    0x07fc5230   0x07fc5230   0x00000008   Data   RO          351    .constdata          nvds.o
+    0x07fc5238   0x07fc5238   0x0000017c   Data   RO          552    .constdata          jump_table.o
+    0x07fc53b4   0x07fc53b4   0x000000ec   Data   RO          553    .constdata          jump_table.o
+    0x07fc54a0   0x07fc54a0   0x00000008   Data   RO          682    .constdata          arch_system.o
+    0x07fc54a8   0x07fc54a8   0x00000050   Data   RO          844    .constdata          arch_rom.o
+    0x07fc54f8   0x07fc54f8   0x00000002   Data   RO          981    .constdata          gpio.o
+    0x07fc54fa   0x07fc54fa   0x00000002   PAD
+    0x07fc54fc   0x07fc54fc   0x0000001c   Data   RO         1879    .constdata          hw_otpc_531.o
+    0x07fc5518   0x07fc5518   0x00000070   Data   RO         2165    .constdata          ble_arp.o
+    0x07fc5588   0x07fc5588   0x00000010   Data   RO         2329    .constdata          custs1.o
+    0x07fc5598   0x07fc5598   0x00000048   Data   RO         2346    .constdata          custs1_task.o
+    0x07fc55e0   0x07fc55e0   0x00000008   Data   RO         2347    .constdata          custs1_task.o
+    0x07fc55e8   0x07fc55e8   0x00000018   Data   RO         2370    .constdata          prf.o
+    0x07fc5600   0x07fc5600   0x0000000c   Data   RO         2371    .constdata          prf.o
+    0x07fc560c   0x07fc560c   0x00000050   Data   RO         2466    .constdata          app.o
+    0x07fc565c   0x07fc565c   0x00000068   Data   RO         2597    .constdata          app_task.o
+    0x07fc56c4   0x07fc56c4   0x00000008   Data   RO         2692    .constdata          app_diss_task.o
+    0x07fc56cc   0x07fc56cc   0x00000054   Data   RO         2720    .constdata          app_entry_point.o
+    0x07fc5720   0x07fc5720   0x00000014   Data   RO         2721    .constdata          app_entry_point.o
+    0x07fc5734   0x07fc5734   0x00000020   Data   RO         2722    .constdata          app_entry_point.o
+    0x07fc5754   0x07fc5754   0x00000038   Data   RO         2948    .constdata          user_custs_config.o
+    0x07fc578c   0x07fc578c   0x00000010   Data   RO         2961    .constdata          user_custs1_def.o
+    0x07fc579c   0x07fc579c   0x00000010   Data   RO         2962    .constdata          user_custs1_def.o
+    0x07fc57ac   0x07fc57ac   0x00000010   Data   RO         2963    .constdata          user_custs1_def.o
+    0x07fc57bc   0x07fc57bc   0x00000010   Data   RO         2964    .constdata          user_custs1_def.o
+    0x07fc57cc   0x07fc57cc   0x00000010   Data   RO         2965    .constdata          user_custs1_def.o
+    0x07fc57dc   0x07fc57dc   0x00000010   Data   RO         2966    .constdata          user_custs1_def.o
+    0x07fc57ec   0x07fc57ec   0x00000010   Data   RO         2967    .constdata          user_custs1_def.o
+    0x07fc57fc   0x07fc57fc   0x00000010   Data   RO         2968    .constdata          user_custs1_def.o
+    0x07fc580c   0x07fc580c   0x00000010   Data   RO         2969    .constdata          user_custs1_def.o
+    0x07fc581c   0x07fc581c   0x00000010   Data   RO         2970    .constdata          user_custs1_def.o
+    0x07fc582c   0x07fc582c   0x00000010   Data   RO         2971    .constdata          user_custs1_def.o
+    0x07fc583c   0x07fc583c   0x00000010   Data   RO         2972    .constdata          user_custs1_def.o
+    0x07fc584c   0x07fc584c   0x00000010   Data   RO         2973    .constdata          user_custs1_def.o
+    0x07fc585c   0x07fc585c   0x00000010   Data   RO         2974    .constdata          user_custs1_def.o
+    0x07fc586c   0x07fc586c   0x00000010   Data   RO         2975    .constdata          user_custs1_def.o
+    0x07fc587c   0x07fc587c   0x00000010   Data   RO         2976    .constdata          user_custs1_def.o
+    0x07fc588c   0x07fc588c   0x00000002   Data   RO         2977    .constdata          user_custs1_def.o
+    0x07fc588e   0x07fc588e   0x00000002   Data   RO         2978    .constdata          user_custs1_def.o
+    0x07fc5890   0x07fc5890   0x00000002   Data   RO         2979    .constdata          user_custs1_def.o
+    0x07fc5892   0x07fc5892   0x00000002   Data   RO         2980    .constdata          user_custs1_def.o
+    0x07fc5894   0x07fc5894   0x00000004   Data   RO         2981    .constdata          user_custs1_def.o
+    0x07fc5898   0x07fc5898   0x00000001   Data   RO         2982    .constdata          user_custs1_def.o
+    0x07fc5899   0x07fc5899   0x00000003   PAD
+    0x07fc589c   0x07fc589c   0x000003c0   Data   RO         2984    .constdata          user_custs1_def.o
+    0x07fc5c5c   0x07fc5c5c   0x00000008   Data   RO         3071    .constdata          user_peripheral.o
+    0x07fc5c64   0x07fc5c64   0x00000004   PAD
+    0x07fc5c68   0x07fc5c68   0x00000030   Data   RO         3186    .constdata          m_ps.l(cos_i.o)
+    0x07fc5c98   0x07fc5c98   0x000000c8   Data   RO         3204    .constdata          m_ps.l(rred.o)
+    0x07fc5d60   0x07fc5d60   0x00000028   Data   RO         3208    .constdata          m_ps.l(sin_i.o)
+    0x07fc5d88   0x07fc5d88   0x00000060   Data   RO         3214    .constdata          m_ps.l(tan_i.o)
+    0x07fc5de8   0x07fc5de8   0x000000be   Data   RO         2985    .conststring        user_custs1_def.o
+    0x07fc5ea6   0x07fc5ea6   0x00000002   PAD
+    0x07fc5ea8   0x07fc5ea8   0x00000020   Data   RO         3263    Region$$Table       anon$$obj.o
+    0x07fc5ec8   0x07fc5ec8   0x00000001   Data   RW         2206    .data               rf_531.o
+    0x07fc5ec9   0x07fc5ec9   0x00000003   PAD
+    0x07fc5ecc   0x07fc5ecc   0x00000004   Data   RW         3237    .data               mc_p.l(mvars.o)
+    0x07fc5ed0   0x07fc5ed0   0x00000004   Data   RW         3238    .data               mc_p.l(mvars.o)
+    0x07fc5ed4   0x07fc5ed4   0x00000004   Data   RW         3242    .data               mc_p.l(errno.o)
 
 
-    Execution Region ER_PRODTEST (Exec base: 0x07fc4af8, Load base: 0x07fc4af8, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
+    Execution Region ER_PRODTEST (Exec base: 0x07fc5ed8, Load base: 0x07fc5ed8, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x07fc4af8, Load base: 0x07fc4af8, Size: 0x00000690, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x07fc5ed8, Load base: 0x07fc5ed8, Size: 0x00000790, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fc4af8        -       0x0000000c   Zero   RW          680    .bss                arch_system.o
-    0x07fc4b04        -       0x00000004   Zero   RW          884    .bss                otp_cs.o
-    0x07fc4b08        -       0x00000002   Zero   RW          930    .bss                syscntl.o
-    0x07fc4b0a        -       0x00000002   Zero   RW         1212    .bss                adc_531.o
-    0x07fc4b0c        -       0x00000030   Zero   RW         1668    .bss                i2c.o
-    0x07fc4b3c        -       0x00000014   Zero   RW         2058    .bss                trng.o
-    0x07fc4b50        -       0x00000004   Zero   RW         2136    .bss                rwip.o
-    0x07fc4b54        -       0x0000002e   Zero   RW         2205    .bss                rf_531.o
-    0x07fc4b82   0x07fc4af8   0x00000006   PAD
-    0x07fc4b88        -       0x00000600   Zero   RW          275    STACK               startup_da14531.o
+    0x07fc5ed8        -       0x0000000c   Zero   RW          680    .bss                arch_system.o
+    0x07fc5ee4        -       0x00000004   Zero   RW          884    .bss                otp_cs.o
+    0x07fc5ee8        -       0x00000002   Zero   RW          930    .bss                syscntl.o
+    0x07fc5eea        -       0x00000002   Zero   RW         1212    .bss                adc_531.o
+    0x07fc5eec        -       0x00000030   Zero   RW         1668    .bss                i2c.o
+    0x07fc5f1c        -       0x00000014   Zero   RW         2058    .bss                trng.o
+    0x07fc5f30        -       0x00000004   Zero   RW         2136    .bss                rwip.o
+    0x07fc5f34        -       0x0000002e   Zero   RW         2205    .bss                rf_531.o
+    0x07fc5f62   0x07fc5ed8   0x00000006   PAD
+    0x07fc5f68        -       0x00000100   Zero   RW          276    HEAP                startup_da14531.o
+    0x07fc6068        -       0x00000600   Zero   RW          275    STACK               startup_da14531.o
 
 
-    Execution Region ER_NZI (Exec base: 0x07fc5188, Load base: 0x07fc4af8, Size: 0x0000040c, Max: 0xffffffff, ABSOLUTE, UNINIT)
+    Execution Region ER_NZI (Exec base: 0x07fc6668, Load base: 0x07fc5ed8, Size: 0x0000040c, Max: 0xffffffff, ABSOLUTE, UNINIT)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fc5188        -       0x0000040c   Zero   RW          556    heap_mem_area_not_ret  jump_table.o
+    0x07fc6668        -       0x0000040c   Zero   RW          556    heap_mem_area_not_ret  jump_table.o
 
 
-    Execution Region ER_STATEFUL_HIBERNATION (Exec base: 0x07fc5594, Load base: 0x07fc4af8, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
+    Execution Region ER_STATEFUL_HIBERNATION (Exec base: 0x07fc6a74, Load base: 0x07fc5ed8, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
 
     **** No section assigned to this execution region ****
 
@@ -2738,7 +3065,7 @@ Memory Map of the image
     0x07fc8da9   0x07fc8bc0   0x00000003   PAD
     0x07fc8dac        -       0x00000050   Zero   RW         2832    retention_mem_area0  app_easy_timer.o
     0x07fc8dfc        -       0x00000004   Zero   RW         3019    retention_mem_area0  user_custs1_impl.o
-    0x07fc8e00        -       0x0000004c   Zero   RW         3070    retention_mem_area0  user_peripheral.o
+    0x07fc8e00        -       0x0000004c   Zero   RW         3072    retention_mem_area0  user_peripheral.o
 
 
     Execution Region RET_HEAP (Exec base: 0x07fc8e4c, Load base: 0x07fc8bc0, Size: 0x00000c40, Max: 0x00000c40, ABSOLUTE, UNINIT)
@@ -2806,28 +3133,38 @@ Image component sizes
       1228        128          0          1         54       6579   rf_531.o
        472         42          0          0          8      76066   rwble.o
        480         62          0          0         16      74806   rwip.o
-        80         16        160          0       1536        824   startup_da14531.o
+        80         16        160          0       1792        824   startup_da14531.o
        280         18          0          0          2       5528   syscntl.o
        152         22          0          0          0     284776   system_da14531.o
        132         18          0          0         24       2492   trng.o
        352         14          0          0         64      11892   uart.o
          0          0       1419          0          0       2027   user_custs1_def.o
-       328         12          0          0          4       4313   user_custs1_impl.o
+       328         12          0          0          4       5489   user_custs1_impl.o
          0          0         56          0          0        945   user_custs_config.o
        208         12          0          0          0       3261   user_periph_setup.o
-       992         78          8          0         76      10284   user_peripheral.o
+      1516        108          8          0         76      10805   user_peripheral.o
        156         14          0          0         12       3986   wkupct_quadec.o
 
     ----------------------------------------------------------------------
-     14404       1310       3010         12       6588     852709   Object Totals
+     14930       1340       3016         12       6844     854406   Object Totals
          0          0         32          0         80          0   (incl. Generated)
-         0          0          7          3         18          0   (incl. Padding)
+         2          0         13          3         18          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
 
       1064         54          0          0          0        276   patch.o
+       244         20         48          0          0         92   cos_i.o
+        46          6          0          0          0        204   dunder.o
+        44          4          0          0          0         60   fpclassify.o
+       172          0          0          0          0         76   poly.o
+       924         86        200          0          0        120   rred.o
+       156         10          0          0          0        104   sin.o
+       236         14         40          0          0        100   sin_i.o
+        96         10          0          0          0         88   tan.o
+       624         48         96          0          0        104   tan_i.o
+        28          0          0          0          0         68   calloc.o
          0          0          0          0          0          0   entry.o
          0          0          0          0          0          0   entry10a.o
          0          0          0          0          0          0   entry11a.o
@@ -2837,30 +3174,45 @@ Image component sizes
          0          0          0          0          0          0   entry7b.o
          0          0          0          0          0          0   entry8b.o
          8          4          0          0          0          0   entry9a.o
+        12          6          0          4          0         60   errno.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
          0          0          0          0          0          0   iusefp.o
+        38          0          0          0          0         68   llsshr.o
+       108         16          0          0          0         76   malloc.o
+         0          0          0          8          0          0   mvars.o
+        56          0          0          0          0         68   d2f.o
+       360          6          0          0          0        140   dadd.o
+       240          6          0          0          0         84   ddiv.o
+       236          0          0          0          0        216   depilogue.o
+        72         10          0          0          0         72   dfixi.o
+        40          6          0          0          0         68   dflti.o
+        28          4          0          0          0         68   dfltui.o
+       208          6          0          0          0         88   dmul.o
+        44          0          0          0          0         72   dscalb.o
+        40          0          0          0          0         60   f2d.o
        178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
        130          0          0          0          0        144   fepilogue.o
         40          0          0          0          0         60   ffixui.o
-        22          0          0          0          0         68   fflti.o
         14          0          0          0          0         68   ffltui.o
        122          0          0          0          0         72   fmul.o
 
     ----------------------------------------------------------------------
-      1662         70          0          0          0        864   Library Totals
-         2          0          0          0          0          0   (incl. Padding)
+      5822        328        384         12          0       3024   Library Totals
+         8          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
       1064         54          0          0          0        276   da14531.lib
-        90         16          0          0          0         68   mc_p.l
-       506          0          0          0          0        520   mf_p.l
+      2542        198        384          0          0        948   m_ps.l
+       276         38          0         12          0        340   mc_p.l
+      1932         38          0          0          0       1460   mf_p.l
 
     ----------------------------------------------------------------------
-      1662         70          0          0          0        864   Library Totals
+      5822        328        384         12          0       3024   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -2869,15 +3221,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     16066       1380       3010         12       6588     850557   Grand Totals
-     16066       1380       3010         12       6588     850557   ELF Image Totals
-     16066       1380       3010         12          0          0   ROM Totals
+     20752       1668       3400         24       6844     853226   Grand Totals
+     20752       1668       3400         24       6844     853226   ELF Image Totals
+     20752       1668       3400         24          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                19076 (  18.63kB)
-    Total RW  Size (RW Data + ZI Data)              6600 (   6.45kB)
-    Total ROM Size (Code + RO Data + RW Data)      19088 (  18.64kB)
+    Total RO  Size (Code + RO Data)                24152 (  23.59kB)
+    Total RW  Size (RW Data + ZI Data)              6868 (   6.71kB)
+    Total ROM Size (Code + RO Data + RW Data)      24176 (  23.61kB)
 
 ==============================================================================
 
