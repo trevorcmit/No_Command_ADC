@@ -73,11 +73,10 @@ typedef struct {
  * FUNCTION DECLARATIONS
  ****************************************************************************************
  */
-void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha);
-
-BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION sampling_frequency, FTR_PRECISION half_power_frequency);
-void free_bw_low_pass(BWLowPass* filter);
-FTR_PRECISION bw_low_pass(BWLowPass* filter, FTR_PRECISION input);
+// void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha);
+// BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION sampling_frequency, FTR_PRECISION half_power_frequency);
+// void free_bw_low_pass(BWLowPass* filter);
+// FTR_PRECISION bw_low_pass(BWLowPass* filter, FTR_PRECISION input);
 
 void app_adcval1_timer_cb_handler(void);
 

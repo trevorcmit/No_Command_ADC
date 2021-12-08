@@ -67,61 +67,60 @@ uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN] __SECTION_ZERO("retention_mem_ar
  * FUNCTION DEFINITIONS
  ****************************************************************************************
 */
-BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION s, FTR_PRECISION f) {
-    BWLowPass* filter = (BWLowPass *) malloc(sizeof(BWLowPass));
-    filter -> n = order/2;
-    filter -> A = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
-    filter -> d1 = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
-    filter -> d2 = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
-    filter -> w0 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
-    filter -> w1 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
-    filter -> w2 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
+// BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION s, FTR_PRECISION f) {
+//     BWLowPass* filter = (BWLowPass *) malloc(sizeof(BWLowPass));
+//     filter -> n = order/2;
+//     filter -> A = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
+//     filter -> d1 = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
+//     filter -> d2 = (FTR_PRECISION *)malloc(filter -> n*sizeof(FTR_PRECISION));
+//     filter -> w0 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
+//     filter -> w1 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
+//     filter -> w2 = (FTR_PRECISION *)calloc(filter -> n, sizeof(FTR_PRECISION));
 
-    FTR_PRECISION a = TAN(M_PI * f/s);
-    FTR_PRECISION a2 = a * a;
-    FTR_PRECISION r;
+//     FTR_PRECISION a = TAN(M_PI * f/s);
+//     FTR_PRECISION a2 = a * a;
+//     FTR_PRECISION r;
     
-    int i;
-    for(i=0; i < filter -> n; ++i){
-        r = SIN(M_PI*(2.0*i+1.0)/(4.0*filter -> n));
-        s = a2 + 2.0*a*r + 1.0;
-        filter -> A[i] = a2/s;
-        filter -> d1[i] = 2.0*(1-a2)/s;
-        filter -> d2[i] = -(a2 - 2.0*a*r + 1.0)/s;
-    }
-    return filter;
-}
+//     int i;
+//     for(i=0; i < filter -> n; ++i){
+//         r = SIN(M_PI*(2.0*i+1.0)/(4.0*filter -> n));
+//         s = a2 + 2.0*a*r + 1.0;
+//         filter -> A[i] = a2/s;
+//         filter -> d1[i] = 2.0*(1-a2)/s;
+//         filter -> d2[i] = -(a2 - 2.0*a*r + 1.0)/s;
+//     }
+//     return filter;
+// }
+
+// void free_bw_low_pass(BWLowPass* filter) {
+//     free(filter -> A);
+//     free(filter -> d1);
+//     free(filter -> d2);
+//     free(filter -> w0);
+//     free(filter -> w1);
+//     free(filter -> w2);
+//     free(filter);
+// }
 
 
-void free_bw_low_pass(BWLowPass* filter) {
-    free(filter -> A);
-    free(filter -> d1);
-    free(filter -> d2);
-    free(filter -> w0);
-    free(filter -> w1);
-    free(filter -> w2);
-    free(filter);
-}
+// FTR_PRECISION bw_low_pass(BWLowPass* filter, FTR_PRECISION x) {
+//     int i;
+//     for (i = 0; i < filter -> n; ++i) {
+//         filter -> w0[i] = filter -> d1[i] * filter -> w1[i] + filter -> d2[i] * filter -> w2[i] + x;
+//         x = filter -> A[i] * (filter -> w0[i] + 2.0 * filter -> w1[i] + filter -> w2[i]);
+//         filter -> w2[i] = filter -> w1[i];
+//         filter -> w1[i] = filter -> w0[i];
+//     }
+//     return x;
+// }
 
 
-FTR_PRECISION bw_low_pass(BWLowPass* filter, FTR_PRECISION x) {
-    int i;
-    for (i = 0; i < filter -> n; ++i) {
-        filter -> w0[i] = filter -> d1[i] * filter -> w1[i] + filter -> d2[i] * filter -> w2[i] + x;
-        x = filter -> A[i] * (filter -> w0[i] + 2.0 * filter -> w1[i] + filter -> w2[i]);
-        filter -> w2[i] = filter -> w1[i];
-        filter -> w1[i] = filter -> w0[i];
-    }
-    return x;
-}
-
-
-void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha) { 
-    output[0] = input[0];
-    for (int i = 1; i < 100; i++) {  
-        output[i] = (uint16_t)(output[i-1] + (alpha*(input[i] - output[i-1]))); 
-    } 
-}  
+// void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha) { 
+//     output[0] = input[0];
+//     for (int i = 1; i < 100; i++) {  
+//         output[i] = (uint16_t)(output[i-1] + (alpha*(input[i] - output[i-1]))); 
+//     } 
+// }  
 
 
 static uint16_t gpadc_read(void) {
@@ -290,13 +289,13 @@ void app_adcval1_timer_cb_handler()
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     
-    BWLowPass* filter = create_bw_low_pass_filter(4, 1000, 55);
+    // BWLowPass* filter = create_bw_low_pass_filter(4, 1000, 55);
 
     uint16_t out[100];
     for (int i = 0; i < 100; i++) {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
         out[i] = output;
-        out[i] = (uint16_t)(bw_low_pass(filter, output));
+        // out[i] = (uint16_t)(bw_low_pass(filter, output));
     }
 
     // uint16_t packet[100];
