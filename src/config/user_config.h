@@ -12,11 +12,6 @@
 #include "app_adv_data.h"
 #include "co_bt.h"
 
-/*
- ****************************************************************************************
- * Privacy / Addressing configuration
- ****************************************************************************************
- */
 /*************************************************************************
  * Privacy Capabilities and address configuration of local device:
  * - APP_CFG_ADDR_PUB               No Privacy, Public BDA
@@ -38,12 +33,7 @@
  */
 #define USER_CFG_CNTL_PRIV_MODE     APP_CFG_CNTL_PRIV_MODE_NETWORK
 
-/*
- * VARIABLES
- ****************************************************************************************
- */
 // Possible values: ARCH_SLEEP_OFF, ARCH_EXT_SLEEP_ON, ARCH_EXT_SLEEP_OTP_COPY_ON
-// static const sleep_state_t app_default_sleep_mode = ARCH_SLEEP_OFF;
 static const sleep_state_t app_default_sleep_mode = ARCH_EXT_SLEEP_ON;
 
 /*

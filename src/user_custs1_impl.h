@@ -17,11 +17,6 @@
  ****************************************************************************************
  */
 
-/*
- * DEFINES
- ****************************************************************************************
- */
-
 enum
 {
     CUSTS1_CP_ADC_VAL1_DISABLE = 0,
@@ -34,18 +29,10 @@ enum
     CUSTS1_LED_ON,
 };
 
-/*
- * INCLUDE FILES
- ****************************************************************************************
- */
 #include "gapc_task.h"                 // gap functions and messages
 #include "gapm_task.h"                 // gap functions and messages
 #include "custs1_task.h"
 
-/*
- * FUNCTION DECLARATIONS
- ****************************************************************************************
- */
 
 /**
  ****************************************************************************************
@@ -181,5 +168,4 @@ void user_svc3_read_non_db_val_handler(ke_msg_id_t const msgid,
                                            ke_task_id_t const src_id);
 
 /// @} APP
-
 #endif // _USER_CUSTS1_IMPL_H_

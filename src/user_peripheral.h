@@ -4,7 +4,6 @@
  * @brief Peripheral project header file.
  ****************************************************************************************
  */
-
 #ifndef _USER_PERIPHERAL_H_
 #define _USER_PERIPHERAL_H_
 
@@ -14,11 +13,6 @@
  * @ingroup RICOW
  * @brief
  * @{
- ****************************************************************************************
- */
-
-/*
- * INCLUDE FILES
  ****************************************************************************************
  */
 #include "rwble_config.h"
@@ -32,11 +26,6 @@
 #include "app_default_handlers.h"
 
 
-/*
- * DEFINES
- ****************************************************************************************
- */
-
 /* Duration of timer for connection parameter update request */
 #define APP_PARAM_UPDATE_REQUEST_TO         (1000)   // 1000*10ms = 10sec, The maximum allowed value is 41943sec (4194300 * 10ms)
 
@@ -47,17 +36,12 @@
 #define APP_AD_MSD_COMPANY_ID       (0xABCD)
 #define APP_AD_MSD_COMPANY_ID_LEN   (2)
 #define APP_AD_MSD_DATA_LEN         (sizeof(uint16_t))
-
 #define APP_PERIPHERAL_CTRL_TIMER_DELAY 100
 
 // Butterworth Filter Definitions
 #define M_PI 3.14159265
 #define FTR_PRECISION float
 
-/*
- * TYPE DEFINITIONS
- ****************************************************************************************
- */
 typedef struct {
     int n;
 	FTR_PRECISION *A;
@@ -68,10 +52,6 @@ typedef struct {
     FTR_PRECISION *w2;
 } BWLowPass;
 
-/*
- * FUNCTION DECLARATIONS
- ****************************************************************************************
- */
 // void lowPassFrequency(uint16_t* input, uint16_t* output, float alpha);
 // BWLowPass* create_bw_low_pass_filter(int order, FTR_PRECISION sampling_frequency, FTR_PRECISION half_power_frequency);
 // void free_bw_low_pass(BWLowPass* filter);

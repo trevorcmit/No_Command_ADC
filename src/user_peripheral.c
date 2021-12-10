@@ -146,8 +146,7 @@ static uint16_t gpadc_read(void) {
 }
 
 
-static uint16_t gpadc_sample_to_mv(uint16_t sample)
-{
+static uint16_t gpadc_sample_to_mv(uint16_t sample) {
     /* Resolution of ADC sample depends on oversampling rate */
     uint32_t adc_res = 10 + ((6 < adc_get_oversampling()) ? 6 : adc_get_oversampling());
 
@@ -205,8 +204,7 @@ static void mnf_data_update()
  *                              28 bytes (Document CCSv6 - Part 1.3 Flags).
  ****************************************************************************************
  */
-static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_struct_data, uint8_t ad_struct_len, uint8_t adv_connectable)
-{
+static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_struct_data, uint8_t ad_struct_len, uint8_t adv_connectable) {
     uint8_t adv_data_max_size = (adv_connectable) ? (ADV_DATA_LEN - 3) : (ADV_DATA_LEN);
 
     if ((adv_data_max_size - cmd->info.host.adv_data_len) >= ad_struct_len) {
@@ -276,16 +274,12 @@ static void param_update_request_timer_cb() {
 }
 
 
-void app_adcval1_timer_cb_handler()
-{
+void app_adcval1_timer_cb_handler() {
     struct custs1_val_ntf_ind_req *req = KE_MSG_ALLOC_DYN(CUSTS1_VAL_NTF_REQ,
                                                           prf_get_task_from_id(TASK_ID_CUSTS1),
                                                           TASK_APP,
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
-    
-    // BWLowPass* filter = create_bw_low_pass_filter(4, 1000, 55);
-
     uint16_t out[50];
     for (int i = 0; i < 50; i++) {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
@@ -302,8 +296,7 @@ void app_adcval1_timer_cb_handler()
 }
 
 
-void user_app_init(void)
-{
+void user_app_init(void) {
     app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
     mnf_data_init();                                                       // Initialize Manufacturer Specific Data
     memcpy(stored_adv_data, USER_ADVERTISE_DATA, USER_ADVERTISE_DATA_LEN); // Init. Advertising and Scan Response Data
@@ -314,8 +307,7 @@ void user_app_init(void)
 }
 
 
-void user_app_adv_start(void)
-{
+void user_app_adv_start(void) {
     // Schedule the next advertising data update
     app_adv_data_update_timer_used = app_easy_timer(APP_ADV_DATA_UPDATE_TO, adv_data_update_timer_cb);
 
@@ -328,8 +320,7 @@ void user_app_adv_start(void)
 }
 
 
-void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param)
-{
+void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param) {
     if (app_env[connection_idx].conidx != GAP_INVALID_CONIDX) {
         app_connection_idx = connection_idx;
         app_easy_timer_cancel(app_adv_data_update_timer_used);             // Stop advertising data update timer
@@ -341,7 +332,6 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
         }
     }
     else {user_app_adv_start();} // No connection has been established, restart advertising
-    
     default_app_on_connection(connection_idx, param);             // Default app callback on connection
     timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }

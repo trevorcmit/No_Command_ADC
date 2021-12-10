@@ -4,11 +4,6 @@
  * @brief Peripherals setup and initialization.
  ****************************************************************************************
  */
-/*
- * INCLUDE FILES
- ****************************************************************************************
- */
-
 #include "user_periph_setup.h"
 #include "datasheet.h"
 #include "system_library.h"
@@ -25,8 +20,7 @@
 
 #if DEVELOPMENT_DEBUG
 
-void GPIO_reservations(void)
-{
+void GPIO_reservations(void) {
 /*
     i.e. to reserve P0_1 as Generic Purpose I/O:
     RESERVE_GPIO(DESCRIPTIVE_NAME, GPIO_PORT_0, GPIO_PIN_1, PID_GPIO);
@@ -47,8 +41,7 @@ RESERVE_GPIO(ADC_INPUT, ADC_INPUT_PORT, ADC_INPUT_PIN, PID_ADC);
 
 #endif
 
-void set_pad_functions(void)
-{
+void set_pad_functions(void) {
 /*
     i.e. to set P0_1 as Generic purpose Output:
     GPIO_ConfigurePin(GPIO_PORT_0, GPIO_PIN_1, OUTPUT, PID_GPIO, false);
@@ -86,8 +79,7 @@ static const uart_cfg_t uart_cfg = {
 };
 #endif
 
-void periph_init(void)
-{
+void periph_init(void) {
 #if defined (__DA14531__)
     // In Boost mode enable the DCDC converter to supply VBAT_HIGH for the used GPIOs
     syscntl_dcdc_turn_on_in_boost(SYSCNTL_DCDC_LEVEL_3V0);

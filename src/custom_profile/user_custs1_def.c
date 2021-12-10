@@ -13,21 +13,12 @@
  * @{
  ****************************************************************************************
  */
-
-/*
- * INCLUDE FILES
- ****************************************************************************************
- */
 #include <stdint.h>
 #include "co_utils.h"
 #include "prf_types.h"
 #include "attm_db_128.h"
 #include "user_custs1_def.h"
 
-/*
- * LOCAL VARIABLE DEFINITIONS
- ****************************************************************************************
- */
 // Service 1 of the custom server 1
 static const att_svc_desc128_t custs1_svc1                      = DEF_SVC1_UUID_128;
 
@@ -281,5 +272,4 @@ const struct attm_desc_128 custs1_att_db[CUSTS1_IDX_NB] =
                                             sizeof(DEF_SVC3_READ_VAL_4_USER_DESC) - 1, sizeof(DEF_SVC3_READ_VAL_4_USER_DESC) - 1,
                                             (uint8_t *) DEF_SVC3_READ_VAL_4_USER_DESC},
 };
-
 /// @} USER_CONFIG

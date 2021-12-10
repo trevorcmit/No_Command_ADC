@@ -6,7 +6,6 @@
  */
 #ifndef _DA1458X_CONFIG_ADVANCED_H_
 #define _DA1458X_CONFIG_ADVANCED_H_
-
 #include "da1458x_stack_config.h"
 
 #if !defined (__DA14531__)
@@ -27,25 +26,10 @@
 /****************************************************************************************************************/
 #define CFG_USE_DEFAULT_XTAL16M_TRIM_VALUE_IF_NOT_CALIBRATED
 
-/****************************************************************************************************************/
-/* Periodic wakeup period to poll GTL iface. Time in msec.                                                      */
-/****************************************************************************************************************/
-#define CFG_MAX_SLEEP_DURATION_PERIODIC_WAKEUP_MS                  500  // 0.5s
-
-/****************************************************************************************************************/
-/* Periodic wakeup period if GTL iface is not enabled. Time in msec.                                            */
-/****************************************************************************************************************/
-#define CFG_MAX_SLEEP_DURATION_EXTERNAL_WAKEUP_MS              600000  // 600s
-
-/****************************************************************************************************************/
-/* Wakeup from external processor running host application.                                                     */
-/****************************************************************************************************************/
-#undef CFG_EXTERNAL_WAKEUP
-
-/****************************************************************************************************************/
-/* Wakeup external processor when a message is sent to GTL                                                      */
-/****************************************************************************************************************/
-#undef CFG_WAKEUP_EXT_PROCESSOR
+#define CFG_MAX_SLEEP_DURATION_PERIODIC_WAKEUP_MS      500  // 0.5s, Periodic wakeup period to poll GTL iface. Time in msec. 
+#define CFG_MAX_SLEEP_DURATION_EXTERNAL_WAKEUP_MS      600000  // 600s, Periodic wakeup period if GTL iface is not enabled. Time in msec.   
+#undef CFG_EXTERNAL_WAKEUP      // Wakeup from external processor running host application. 
+#undef CFG_WAKEUP_EXT_PROCESSOR // Wakeup external processor when a message is sent to GTL   
 
 /****************************************************************************************************************/
 /* Enables True Random Number Generator. A true random number, generated at system initialization, is used to   */
@@ -69,11 +53,7 @@
 /*              enable faster start-up time and reduce code size.                                               */
 /****************************************************************************************************************/
 #undef CFG_ENABLE_SMP_SECURE
-
-/****************************************************************************************************************/
-/* Uses ChaCha20 random number generator instead of the C standard library random number generator.             */
-/****************************************************************************************************************/
-#undef CFG_USE_CHACHA20_RAND
+#undef CFG_USE_CHACHA20_RAND // Uses ChaCha20 random number generator instead of the C standard library random number generator.   
 
 /****************************************************************************************************************/
 /* Custom heap sizes                                                                                            */
@@ -156,11 +136,7 @@
 /* - 0 = GTL (auto), 1 = HCI (auto), 8 = GTL (fixed), 9 = HCI (fixed)                                       */
 /****************************************************************************************************************/
 #define CFG_USE_H4TL                    (0)
-
-/****************************************************************************************************************/
-/* Duplicate filter max value for the scan report list. The maximum value shall be 100.                         */
-/****************************************************************************************************************/
-#define CFG_BLE_DUPLICATE_FILTER_MAX    (10)
+#define CFG_BLE_DUPLICATE_FILTER_MAX    (10) // Duplicate filter max value for the scan report list. The maximum value shall be 100
 
 /****************************************************************************************************************/
 /* Duplicate filter flag for the scan report list. This flag controls what will be reported if the              */
@@ -168,11 +144,7 @@
 /*     - If the flag is defined, the extra devices are considered to be in the list and will not be reported.   */
 /****************************************************************************************************************/
 #undef CFG_BLE_DUPLICATE_FILTER_FOUND
-
-/****************************************************************************************************************/
-/* Resolving list maximum size.                                                                                 */
-/****************************************************************************************************************/
-#define CFG_LLM_RESOLVING_LIST_MAX      LLM_RESOLVING_LIST_MAX
+#define CFG_LLM_RESOLVING_LIST_MAX      LLM_RESOLVING_LIST_MAX // Resolving list maximum size.    
 
 /****************************************************************************************************************/
 /* Enables automatic data packet length negotiation.                                                            */
