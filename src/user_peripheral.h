@@ -50,7 +50,6 @@
 
 #define APP_PERIPHERAL_CTRL_TIMER_DELAY 100
 
-
 // Butterworth Filter Definitions
 #define M_PI 3.14159265
 #define FTR_PRECISION float
@@ -101,8 +100,7 @@ void user_app_adv_start(void);
  * @param[in] param Pointer to GAPC_CONNECTION_REQ_IND message
  ****************************************************************************************
 */
-void user_app_connection(uint8_t connection_idx, 
-                         struct gapc_connection_req_ind const *param);
+void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param);
 
 /**
  ****************************************************************************************

@@ -14,10 +14,6 @@
  * @{
  ****************************************************************************************
  */
-/*
- * DEFINES
- ****************************************************************************************
- */
 /***************************************************************************************/
 /* Exclude or not a module in user's application code.                                 */                                                                               
 /* (0) - The module is included. The module's messages are handled by the SDK.         */                                                                                   
@@ -40,5 +36,4 @@
 #define EXCLUDE_DLG_CUSTS2          (1)
 
 /// @} APP
-
 #endif // _USER_MODULES_CONFIG_H_

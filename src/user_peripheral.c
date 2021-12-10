@@ -209,8 +209,7 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
 {
     uint8_t adv_data_max_size = (adv_connectable) ? (ADV_DATA_LEN - 3) : (ADV_DATA_LEN);
 
-    if ((adv_data_max_size - cmd->info.host.adv_data_len) >= ad_struct_len)
-    {
+    if ((adv_data_max_size - cmd->info.host.adv_data_len) >= ad_struct_len) {
         // Append manufacturer data to advertising data
         memcpy(&cmd->info.host.adv_data[cmd->info.host.adv_data_len], ad_struct_data, ad_struct_len);
 
@@ -220,8 +219,7 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
         // Store index of manufacturer data which are included in the advertising data
         mnf_data_index = cmd->info.host.adv_data_len - sizeof(struct mnf_specific_data_ad_structure);
     }
-    else if ((SCAN_RSP_DATA_LEN - cmd->info.host.scan_rsp_data_len) >= ad_struct_len)
-    {
+    else if ((SCAN_RSP_DATA_LEN - cmd->info.host.scan_rsp_data_len) >= ad_struct_len) {
         // Append manufacturer data to scan response data
         memcpy(&cmd->info.host.scan_rsp_data[cmd->info.host.scan_rsp_data_len], ad_struct_data, ad_struct_len);
 
@@ -233,8 +231,7 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
         // Mark that manufacturer data is in scan response and not advertising data
         mnf_data_index |= 0x80;
     }
-    else
-    {
+    else {
         // Manufacturer Specific Data do not fit in either Advertising Data or Scan Response Data
         ASSERT_WARNING(0);
     }
@@ -250,8 +247,7 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
  * @brief Advertisement data update timer callback function.
  ****************************************************************************************
 */
-static void adv_data_update_timer_cb()
-{
+static void adv_data_update_timer_cb() {
     // If mnd_data_index has MSB set, manufacturer data is stored in scan response
     uint8_t *mnf_data_storage = (mnf_data_index & 0x80) ? stored_scan_rsp_data : stored_adv_data;
 
@@ -274,8 +270,7 @@ static void adv_data_update_timer_cb()
  * @brief Parameter update request timer callback function.
  ****************************************************************************************
 */
-static void param_update_request_timer_cb()
-{
+static void param_update_request_timer_cb() {
     app_easy_gap_param_update_start(app_connection_idx);
     app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
 }
@@ -291,18 +286,11 @@ void app_adcval1_timer_cb_handler()
     
     // BWLowPass* filter = create_bw_low_pass_filter(4, 1000, 55);
 
-    uint16_t out[100];
-    for (int i = 0; i < 100; i++) {
+    uint16_t out[50];
+    for (int i = 0; i < 50; i++) {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
         out[i] = output;
-        // out[i] = (uint16_t)(bw_low_pass(filter, output));
     }
-
-    // uint16_t packet[100];
-    // float RC = 1.0f / (55 * 2 * 3.14159265); // 1 / (cutoff * 2 * pi)  
-    // float dt = 1.0f / 2000.0f;               // 1 / sample rate  
-    // float alpha = dt / (RC + dt); 
-    // lowPassFrequency(out, packet, alpha);
 
     req->handle = SVC1_IDX_ADC_VAL_1_VAL;      // Location to send it to
     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
@@ -342,15 +330,13 @@ void user_app_adv_start(void)
 
 void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param)
 {
-    if (app_env[connection_idx].conidx != GAP_INVALID_CONIDX)
-    {
+    if (app_env[connection_idx].conidx != GAP_INVALID_CONIDX) {
         app_connection_idx = connection_idx;
         app_easy_timer_cancel(app_adv_data_update_timer_used);             // Stop advertising data update timer
         if ((param->con_interval < user_connection_param_conf.intv_min) || // Check if parameters are preferred ones.
             (param->con_interval > user_connection_param_conf.intv_max) || // If not, schedule connect. param. update req.
             (param->con_latency != user_connection_param_conf.latency) ||
-            (param->sup_to != user_connection_param_conf.time_out))
-        {
+            (param->sup_to != user_connection_param_conf.time_out)) {
             app_param_update_request_timer_used = app_easy_timer(APP_PARAM_UPDATE_REQUEST_TO, param_update_request_timer_cb);
         }
     }
@@ -380,16 +366,12 @@ void user_app_disconnect(struct gapc_disconnect_ind const *param) {
 void user_catch_rest_hndl(ke_msg_id_t const msgid,
                           void const *param,
                           ke_task_id_t const dest_id,
-                          ke_task_id_t const src_id)
-{
-    switch(msgid)
-    {
-        case CUSTS1_VAL_WRITE_IND:
-        {
+                          ke_task_id_t const src_id) {
+    switch(msgid) {
+        case CUSTS1_VAL_WRITE_IND: {
             struct custs1_val_write_ind const *msg_param = (struct custs1_val_write_ind const *) (param);
 
-            switch (msg_param->handle)
-            {
+            switch (msg_param->handle) {
                 case SVC1_IDX_CONTROL_POINT_VAL:
                     user_svc1_ctrl_wr_ind_handler(msgid, msg_param, dest_id, src_id);
                     break;
@@ -416,12 +398,10 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
             }
         } break;
 
-        case CUSTS1_VAL_NTF_CFM:
-        {
+        case CUSTS1_VAL_NTF_CFM: {
             struct custs1_val_ntf_cfm const *msg_param = (struct custs1_val_ntf_cfm const *)(param);
 
-            switch (msg_param->handle)
-            {
+            switch (msg_param->handle) {
                 case SVC1_IDX_ADC_VAL_1_VAL:
                     break;
                 case SVC1_IDX_BUTTON_STATE_VAL:
@@ -433,8 +413,7 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
             }
         } break;
 
-        case CUSTS1_VAL_IND_CFM:
-        {
+        case CUSTS1_VAL_IND_CFM: {
             struct custs1_val_ind_cfm const *msg_param = (struct custs1_val_ind_cfm const *)(param);
 
             switch (msg_param->handle)

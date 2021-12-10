@@ -37,7 +37,7 @@
 /* should be set to 1 for optimizing memory utilization.                                                        */
 /*      - MAX value for DA14585: 8                                                                              */
 /****************************************************************************************************************/
-#define CFG_MAX_CONNECTIONS     (1)
+#define CFG_MAX_CONNECTIONS     (2)
 
 /****************************************************************************************************************/
 /* Enables development/debug mode. For production mode builds it must be disabled.                              */
@@ -105,7 +105,8 @@
 /****************************************************************************************************************/
 /* Enables WatchDog timer.                                                                                      */
 /****************************************************************************************************************/
-#define CFG_WDOG
+// #define CFG_WDOG
+#undef CFG_WDOG
 
 /****************************************************************************************************************/
 /* Determines maximum concurrent connections supported by application. It configures the heap memory allocated  */
@@ -113,7 +114,7 @@
 /* should be set to 1 for optimizing memory utilization.                                                        */
 /*      - MAX value for DA14531: 3                                                                              */
 /****************************************************************************************************************/
-#define CFG_MAX_CONNECTIONS     (1)
+#define CFG_MAX_CONNECTIONS     (2)
 
 /****************************************************************************************************************/
 /* Enables development/debug mode. For production mode builds it must be disabled.                              */

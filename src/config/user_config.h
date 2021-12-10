@@ -6,20 +6,12 @@
  */
 #ifndef _USER_CONFIG_H_
 #define _USER_CONFIG_H_
-/*
- * INCLUDE FILES
- ****************************************************************************************
- */
 #include "app_user_config.h"
 #include "arch_api.h"
 #include "app_default_handlers.h"
 #include "app_adv_data.h"
 #include "co_bt.h"
 
-/*
- * DEFINES
- ****************************************************************************************
- */
 /*
  ****************************************************************************************
  * Privacy / Addressing configuration
@@ -151,7 +143,7 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
  */
-#define USER_DEVICE_NAME        "IFM-Tiny-1"                 // Device name
+#define USER_DEVICE_NAME        "IFM-Tiny-4"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 /*
@@ -165,7 +157,7 @@ static const struct gapm_configuration user_gapm_conf = {
 
     // Maximal MTU. Shall be set to 23 if Legacy Pairing is used, 65 if Secure Connection is used,
     // more if required by the application, default 23
-    .max_mtu = 220, 
+    .max_mtu = 110, 
 
     // Device Address Type
     .addr_type = APP_CFG_ADDR_TYPE(USER_CFG_ADDRESS_MODE),
@@ -230,8 +222,7 @@ static const struct connection_param_configuration user_connection_param_conf = 
     /// use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
     .intv_max = MS_TO_DOUBLESLOTS(20),
 
-    /// Latency measured in connection events
-    .latency = 0,
+    .latency = 0, // Latency measured in connection events
 
     /// Supervision timeout measured in timer units (10 ms)
     /// use the macro MS_TO_TIMERUNITS to convert from milliseconds (ms) to timer units

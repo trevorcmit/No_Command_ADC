@@ -60,19 +60,11 @@ void user_svc1_ctrl_wr_ind_handler(ke_msg_id_t const msgid,
 void user_svc1_led_wr_ind_handler(ke_msg_id_t const msgid,
                                   struct custs1_val_write_ind const *param,
                                   ke_task_id_t const dest_id,
-                                  ke_task_id_t const src_id)
-{
+                                  ke_task_id_t const src_id) {
     uint8_t val = 0;
     memcpy(&val, &param->value[0], param->length);
-
-    if (val == CUSTS1_LED_ON)
-    {
-        GPIO_SetActive(GPIO_LED_PORT, GPIO_LED_PIN);
-    }
-    else if (val == CUSTS1_LED_OFF)
-    {
-        GPIO_SetInactive(GPIO_LED_PORT, GPIO_LED_PIN);
-    }
+    if      (val == CUSTS1_LED_ON)  {GPIO_SetActive(GPIO_LED_PORT, GPIO_LED_PIN);}
+    else if (val == CUSTS1_LED_OFF) {GPIO_SetInactive(GPIO_LED_PORT, GPIO_LED_PIN);}
 }
 
 void user_svc1_long_val_cfg_ind_handler(ke_msg_id_t const msgid,
