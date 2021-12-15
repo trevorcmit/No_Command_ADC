@@ -161,7 +161,7 @@ static uint16_t gpadc_sample_to_mv(uint16_t sample) {
  ****************************************************************************************
  * @brief Initialize Manufacturer Specific Data
  ****************************************************************************************
- */
+*/
 static void mnf_data_init() {
     mnf_data.ad_structure_size = sizeof(struct mnf_specific_data_ad_structure ) - sizeof(uint8_t); // minus the size of the ad_structure_size field
     mnf_data.ad_structure_type = GAP_AD_TYPE_MANU_SPECIFIC_DATA;
@@ -176,7 +176,7 @@ static void mnf_data_init() {
  ****************************************************************************************
  * @brief Update Manufacturer Specific Data
  ****************************************************************************************
- */
+*/
 static void mnf_data_update()
 {
     uint16_t data;
@@ -203,7 +203,7 @@ static void mnf_data_update()
  *                              the advertising data use the full 31 bytes length or only
  *                              28 bytes (Document CCSv6 - Part 1.3 Flags).
  ****************************************************************************************
- */
+*/
 static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_struct_data, uint8_t ad_struct_len, uint8_t adv_connectable) {
     uint8_t adv_data_max_size = (adv_connectable) ? (ADV_DATA_LEN - 3) : (ADV_DATA_LEN);
 
@@ -280,8 +280,8 @@ void app_adcval1_timer_cb_handler() {
                                                           TASK_APP,
                                                           custs1_val_ntf_ind_req,
                                                           DEF_SVC1_ADC_VAL_1_CHAR_LEN);
-    uint16_t out[50];
-    for (int i = 0; i < 50; i++) {
+    uint16_t out[100];
+    for (int i = 0; i < 100; i++) {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
         out[i] = output;
     }

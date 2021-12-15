@@ -3,7 +3,7 @@
  * @file user_config.h
  * @brief User configuration file.
  ****************************************************************************************
- */
+*/
 #ifndef _USER_CONFIG_H_
 #define _USER_CONFIG_H_
 #include "app_user_config.h"
@@ -22,7 +22,7 @@
  * - APP_CFG_CNTL_PRIV_RPA_RAND     Controller Privacy, RPA, Public Identity
  * Select only one option for privacy / addressing configuration.
  **************************************************************************
- */
+*/
 #define USER_CFG_ADDRESS_MODE       APP_CFG_ADDR_PUB
 
 /*************************************************************************
@@ -30,7 +30,7 @@
  * - APP_CFG_CNTL_PRIV_MODE_NETWORK Controler Privacy Network mode (default)
  * - APP_CFG_CNTL_PRIV_MODE_DEVICE  Controler Privacy Device mode
  **************************************************************************
- */
+*/
 #define USER_CFG_CNTL_PRIV_MODE     APP_CFG_CNTL_PRIV_MODE_NETWORK
 
 // Possible values: ARCH_SLEEP_OFF, ARCH_EXT_SLEEP_ON, ARCH_EXT_SLEEP_OTP_COPY_ON
@@ -43,12 +43,8 @@ static const sleep_state_t app_default_sleep_mode = ARCH_EXT_SLEEP_ON;
  */
 static const struct advertise_configuration user_adv_conf = {
     .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE),
-
-    /// Minimum interval for advertising
-    .intv_min = MS_TO_BLESLOTS(687.5),                    // 687.5ms
-
-    /// Maximum interval for advertising
-    .intv_max = MS_TO_BLESLOTS(687.5),                    // 687.5ms
+    .intv_min = MS_TO_BLESLOTS(687.5),                    // 687.5ms, Minimum interval for advertising
+    .intv_max = MS_TO_BLESLOTS(687.5),                    // 687.5ms, Maximum interval for advertising
 
     /**
      *  Advertising channels map:
@@ -59,10 +55,6 @@ static const struct advertise_configuration user_adv_conf = {
      */
     .channel_map = ADV_ALL_CHNLS_EN,
 
-    /*************************
-     * Advertising information
-     *************************
-     */
     /// Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
     /// Advertising mode :
     /// - GAP_NON_DISCOVERABLE: Non discoverable mode
@@ -132,22 +124,22 @@ static const struct advertise_configuration user_adv_conf = {
  *   application supports it.
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
- */
-#define USER_DEVICE_NAME        "IFM-Tiny-4"                 // Device name
+*/
+#define USER_DEVICE_NAME        "IFM-Fiber-7"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 /*
  ****************************************************************************************
  * GAPM configuration
  ****************************************************************************************
- */
+*/
 static const struct gapm_configuration user_gapm_conf = {
     // Device Role: Central, Peripheral, Observer, Broadcaster or All roles. (@see enum gap_role)
     .role = GAP_ROLE_PERIPHERAL,
 
     // Maximal MTU. Shall be set to 23 if Legacy Pairing is used, 65 if Secure Connection is used,
     // more if required by the application, default 23
-    .max_mtu = 110, 
+    .max_mtu = 220, 
 
     // Device Address Type
     .addr_type = APP_CFG_ADDR_TYPE(USER_CFG_ADDRESS_MODE),
@@ -157,7 +149,7 @@ static const struct gapm_configuration user_gapm_conf = {
     /***********************
      * Privacy configuration
      ***********************
-     */
+    */
     // Random Static address
     // NOTE: The address shall comply with the following requirements:
     // - the two most significant bits of the address shall be equal to 1,
@@ -173,7 +165,7 @@ static const struct gapm_configuration user_gapm_conf = {
     /****************************
      * ATT database configuration
      ****************************
-     */
+    */
     /// Attribute database configuration (@see enum gapm_att_cfg_flag)
     ///    7     6    5     4     3    2    1    0
     /// +-----+-----+----+-----+-----+----+----+----+
@@ -192,7 +184,7 @@ static const struct gapm_configuration user_gapm_conf = {
     /**************************************************
      * Data packet length extension configuration (4.2)
      **************************************************
-     */
+    */
     .max_mps = 0,         // Maximal MPS
     .max_txoctets = 251,  // Maximal Tx octets (connInitialMaxTxOctets value, as defined in 4.2 Specification)
     .max_txtime = 2120,   // Maximal Tx time (connInitialMaxTxTime value, as defined in 4.2 Specification)
@@ -202,7 +194,7 @@ static const struct gapm_configuration user_gapm_conf = {
  ****************************************************************************************
  * Parameter update configuration
  ****************************************************************************************
- */
+*/
 static const struct connection_param_configuration user_connection_param_conf = {
     /// Connection interval minimum measured in ble double slots (1.25ms)
     /// use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
@@ -231,7 +223,7 @@ static const struct connection_param_configuration user_connection_param_conf = 
  ****************************************************************************************
  * Default handlers configuration (applies only for @app_default_handlers.c)
  ****************************************************************************************
- */
+*/
 static const struct default_handlers_configuration  user_default_hnd_conf = {
     // Configure the advertise operation used by the default handlers
     // Possible values:
@@ -256,14 +248,13 @@ static const struct default_handlers_configuration  user_default_hnd_conf = {
  ****************************************************************************************
  * Central configuration (not used by current example)
  ****************************************************************************************
- */
+*/
 static const struct central_configuration user_central_conf = {
     /// GAPM requested operation:
     /// - GAPM_CONNECTION_DIRECT: Direct connection operation
     /// - GAPM_CONNECTION_AUTO: Automatic connection operation
     /// - GAPM_CONNECTION_SELECTIVE: Selective connection operation
-    /// - GAPM_CONNECTION_NAME_REQUEST: Name Request operation (requires to start a direct
-    ///   connection)
+    /// - GAPM_CONNECTION_NAME_REQUEST: Name Request operation (requires to start a direct connection)
     .code = GAPM_CONNECTION_DIRECT,
     .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE), // Own BD address source of the device:
     .scan_interval = 0x180,                              // Scan interval
@@ -278,62 +269,30 @@ static const struct central_configuration user_central_conf = {
     /**************************************************************************************
      * Peer device information (maximum number of peers = 8)
      **************************************************************************************
-     */
-
-    /// BD Address of device
-    .peer_addr_0 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_0_type = 0,
-
-    /// BD Address of device
-    .peer_addr_1 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_1_type = 0,
-
-    /// BD Address of device
-    .peer_addr_2 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_2_type = 0,
-
-    /// BD Address of device
-    .peer_addr_3 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_3_type = 0,
-
-    /// BD Address of device
-    .peer_addr_4 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_4_type = 0,
-
-    /// BD Address of device
-    .peer_addr_5 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_5_type = 0,
-
-    /// BD Address of device
-    .peer_addr_6 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_6_type = 0,
-
-    /// BD Address of device
-    .peer_addr_7 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0},
-
-    /// Address type of the device 0=public/1=random
-    .peer_addr_7_type = 0,
+    */
+    .peer_addr_0 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_0_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_1 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_1_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_2 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_2_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_3 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_3_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_4 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_4_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_5 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_5_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_6 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_6_type = 0,                         // Address type of the device 0=public/1=random
+    .peer_addr_7 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
+    .peer_addr_7_type = 0,                         // Address type of the device 0=public/1=random
 };
 
 /*
  ****************************************************************************************
  * Security related configuration
  ****************************************************************************************
- */
+*/
 static const struct security_configuration user_security_conf = {
     // IO Capabilities
     #if defined (USER_CFG_FEAT_IO_CAP)
