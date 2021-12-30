@@ -111,3 +111,12 @@
 .\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\third_party\irng\iid_irng.h
 .\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\platform\arch\boot\boot.h
 .\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\platform\arch\boot\ARM/boot.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\ble_stack\controller\llc\llc.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\ble_stack\controller\llc\llc_task.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\ble_stack\controller\llc\llc_cntl.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\ble_stack\controller\lld\lld_evt.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\platform\driver\ble\reg_blecore.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\platform\driver\ble\_reg_blecore.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\platform\arch\compiler\compiler.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\platform\driver\reg\reg_access.h
+.\out_da14531\objects\arch_rom.o: .\..\..\..\..\..\sdk\ble_stack\controller\lld\lld.h
