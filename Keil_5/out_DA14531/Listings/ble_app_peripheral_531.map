@@ -694,7 +694,7 @@ Removing Unused input sections from the image.
     Removing spi_flash.o(.text), (100 bytes).
     Removing spi_flash.o(.text), (24 bytes).
     Removing spi_flash.o(.text), (24 bytes).
-    Removing spi_flash.o(.text), (34 bytes).
+    Removing spi_flash.o(.text), (24 bytes).
     Removing spi_flash.o(.text), (48 bytes).
     Removing spi_flash.o(.text), (10 bytes).
     Removing spi_flash.o(.text), (10 bytes).
@@ -725,6 +725,9 @@ Removing Unused input sections from the image.
     Removing spi_flash.o(.text), (68 bytes).
     Removing spi_flash.o(.text), (36 bytes).
     Removing spi_flash.o(.text), (40 bytes).
+    Removing spi_flash.o(.text), (4 bytes).
+    Removing spi_flash.o(.text), (2 bytes).
+    Removing spi_flash.o(.text), (4 bytes).
     Removing spi_flash.o(.bss), (12 bytes).
     Removing spi_flash.o(.constdata), (132 bytes).
     Removing i2c.o(.text), (48 bytes).
@@ -853,7 +856,7 @@ Removing Unused input sections from the image.
     Removing user_peripheral.o(.constdata), (12 bytes).
     Removing otp_cs.o(i.__ARM_common_switch8), (26 bytes).
 
-262 unused section(s) (total 14404 bytes) removed from the image.
+265 unused section(s) (total 14404 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2542,16 +2545,16 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fc0110   0x07fc0110   0x00000000   Code   RO         3108  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x07fc0110   0x07fc0110   0x00000004   Code   RO         3109    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x07fc0114   0x07fc0114   0x00000004   Code   RO         3112    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3114    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3116    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x07fc0118   0x07fc0118   0x00000008   Code   RO         3117    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x07fc0120   0x07fc0120   0x00000004   Code   RO         3124    .ARM.Collect$$$$0000000E  mc_p.l(entry12b.o)
-    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3119    .ARM.Collect$$$$0000000F  mc_p.l(entry10a.o)
-    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3121    .ARM.Collect$$$$00000011  mc_p.l(entry11a.o)
-    0x07fc0124   0x07fc0124   0x00000004   Code   RO         3110    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x07fc0110   0x07fc0110   0x00000000   Code   RO         3126  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x07fc0110   0x07fc0110   0x00000004   Code   RO         3127    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x07fc0114   0x07fc0114   0x00000004   Code   RO         3130    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3132    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x07fc0118   0x07fc0118   0x00000000   Code   RO         3134    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x07fc0118   0x07fc0118   0x00000008   Code   RO         3135    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x07fc0120   0x07fc0120   0x00000004   Code   RO         3142    .ARM.Collect$$$$0000000E  mc_p.l(entry12b.o)
+    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3137    .ARM.Collect$$$$0000000F  mc_p.l(entry10a.o)
+    0x07fc0124   0x07fc0124   0x00000000   Code   RO         3139    .ARM.Collect$$$$00000011  mc_p.l(entry11a.o)
+    0x07fc0124   0x07fc0124   0x00000004   Code   RO         3128    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x07fc0128   0x07fc0128   0x00000094   Code   RO            3    .text               system_da14531.o
     0x07fc01bc   0x07fc01bc   0x00000050   Code   RO          278    .text               startup_da14531.o
     0x07fc020c   0x07fc020c   0x0000008c   Code   RO          283    .text               hardfault_handler.o
@@ -2567,36 +2570,36 @@ Memory Map of the image
     0x07fc11e4   0x07fc11e4   0x0000023c   Code   RO          971    .text               gpio.o
     0x07fc1420   0x07fc1420   0x0000009c   Code   RO         1074    .text               wkupct_quadec.o
     0x07fc14bc   0x07fc14bc   0x000003e0   Code   RO         1207    .text               adc_531.o
-    0x07fc189c   0x07fc189c   0x00000038   Code   RO         1676    .text               i2c.o
-    0x07fc18d4   0x07fc18d4   0x00000190   Code   RO         1881    .text               hw_otpc_531.o
-    0x07fc1a64   0x07fc1a64   0x00000160   Code   RO         1939    .text               uart.o
-    0x07fc1bc4   0x07fc1bc4   0x00000084   Code   RO         2066    .text               trng.o
-    0x07fc1c48   0x07fc1c48   0x000001e0   Code   RO         2092    .text               rwble.o
-    0x07fc1e28   0x07fc1e28   0x000001e0   Code   RO         2141    .text               rwip.o
-    0x07fc2008   0x07fc2008   0x000002d0   Code   RO         2169    .text               ble_arp.o
-    0x07fc22d8   0x07fc22d8   0x000004cc   Code   RO         2197    .text               rf_531.o
-    0x07fc27a4   0x07fc27a4   0x0000012c   Code   RO         2351    .text               custs1_task.o
-    0x07fc28d0   0x07fc28d0   0x000000a0   Code   RO         2375    .text               prf.o
-    0x07fc2970   0x07fc2970   0x000000e4   Code   RO         2403    .text               app_default_handlers.o
-    0x07fc2a54   0x07fc2a54   0x0000033c   Code   RO         2455    .text               app.o
-    0x07fc2d90   0x07fc2d90   0x000001f4   Code   RO         2601    .text               app_task.o
-    0x07fc2f84   0x07fc2f84   0x0000003c   Code   RO         2685    .text               app_diss.o
-    0x07fc2fc0   0x07fc2fc0   0x000000e0   Code   RO         2697    .text               app_diss_task.o
-    0x07fc30a0   0x07fc30a0   0x00000028   Code   RO         2755    .text               app_msg_utils.o
-    0x07fc30c8   0x07fc30c8   0x00000002   Code   RO         2833    .text               app_easy_timer.o
-    0x07fc30ca   0x07fc30ca   0x00000002   Code   RO         2834    .text               app_easy_timer.o
-    0x07fc30cc   0x07fc30cc   0x000001d4   Code   RO         2835    .text               app_easy_timer.o
-    0x07fc32a0   0x07fc32a0   0x00000060   Code   RO         2869    .text               app_customs.o
-    0x07fc3300   0x07fc3300   0x00000018   Code   RO         2891    .text               app_customs_task.o
-    0x07fc3318   0x07fc3318   0x000000d0   Code   RO         3000    .text               user_periph_setup.o
-    0x07fc33e8   0x07fc33e8   0x00000158   Code   RO         3019    .text               user_custs1_impl.o
-    0x07fc3540   0x07fc3540   0x0000038c   Code   RO         3073    .text               user_peripheral.o
-    0x07fc38cc   0x07fc38cc   0x00000bd0   Code   RO         3104    .text               da14531.lib(patch.o)
-    0x07fc449c   0x07fc449c   0x00000024   Code   RO         3125    .text               mc_p.l(init.o)
+    0x07fc189c   0x07fc189c   0x00000038   Code   RO         1694    .text               i2c.o
+    0x07fc18d4   0x07fc18d4   0x00000190   Code   RO         1899    .text               hw_otpc_531.o
+    0x07fc1a64   0x07fc1a64   0x00000160   Code   RO         1957    .text               uart.o
+    0x07fc1bc4   0x07fc1bc4   0x00000084   Code   RO         2084    .text               trng.o
+    0x07fc1c48   0x07fc1c48   0x000001e0   Code   RO         2110    .text               rwble.o
+    0x07fc1e28   0x07fc1e28   0x000001e0   Code   RO         2159    .text               rwip.o
+    0x07fc2008   0x07fc2008   0x000002d0   Code   RO         2187    .text               ble_arp.o
+    0x07fc22d8   0x07fc22d8   0x000004cc   Code   RO         2215    .text               rf_531.o
+    0x07fc27a4   0x07fc27a4   0x0000012c   Code   RO         2369    .text               custs1_task.o
+    0x07fc28d0   0x07fc28d0   0x000000a0   Code   RO         2393    .text               prf.o
+    0x07fc2970   0x07fc2970   0x000000e4   Code   RO         2421    .text               app_default_handlers.o
+    0x07fc2a54   0x07fc2a54   0x0000033c   Code   RO         2473    .text               app.o
+    0x07fc2d90   0x07fc2d90   0x000001f4   Code   RO         2619    .text               app_task.o
+    0x07fc2f84   0x07fc2f84   0x0000003c   Code   RO         2703    .text               app_diss.o
+    0x07fc2fc0   0x07fc2fc0   0x000000e0   Code   RO         2715    .text               app_diss_task.o
+    0x07fc30a0   0x07fc30a0   0x00000028   Code   RO         2773    .text               app_msg_utils.o
+    0x07fc30c8   0x07fc30c8   0x00000002   Code   RO         2851    .text               app_easy_timer.o
+    0x07fc30ca   0x07fc30ca   0x00000002   Code   RO         2852    .text               app_easy_timer.o
+    0x07fc30cc   0x07fc30cc   0x000001d4   Code   RO         2853    .text               app_easy_timer.o
+    0x07fc32a0   0x07fc32a0   0x00000060   Code   RO         2887    .text               app_customs.o
+    0x07fc3300   0x07fc3300   0x00000018   Code   RO         2909    .text               app_customs_task.o
+    0x07fc3318   0x07fc3318   0x000000d0   Code   RO         3018    .text               user_periph_setup.o
+    0x07fc33e8   0x07fc33e8   0x00000158   Code   RO         3037    .text               user_custs1_impl.o
+    0x07fc3540   0x07fc3540   0x0000038c   Code   RO         3091    .text               user_peripheral.o
+    0x07fc38cc   0x07fc38cc   0x00000bd0   Code   RO         3122    .text               da14531.lib(patch.o)
+    0x07fc449c   0x07fc449c   0x00000024   Code   RO         3143    .text               mc_p.l(init.o)
     0x07fc44c0   0x07fc44c0   0x00000030   Code   RO          717    i.__ARM_common_ll_muluu  arch_system.o
-    0x07fc44f0   0x07fc44f0   0x0000000e   Code   RO         3129    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x07fc44fe   0x07fc44fe   0x00000002   Code   RO         3130    i.__scatterload_null  mc_p.l(handlers.o)
-    0x07fc4500   0x07fc4500   0x0000000e   Code   RO         3131    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x07fc44f0   0x07fc44f0   0x0000000e   Code   RO         3147    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x07fc44fe   0x07fc44fe   0x00000002   Code   RO         3148    i.__scatterload_null  mc_p.l(handlers.o)
+    0x07fc4500   0x07fc4500   0x0000000e   Code   RO         3149    i.__scatterload_zeroinit  mc_p.l(handlers.o)
     0x07fc450e   0x07fc450e   0x0000000e   Data   RO          350    .constdata          nvds.o
     0x07fc451c   0x07fc451c   0x00000008   Data   RO          351    .constdata          nvds.o
     0x07fc4524   0x07fc4524   0x0000017c   Data   RO          552    .constdata          jump_table.o
@@ -2605,50 +2608,50 @@ Memory Map of the image
     0x07fc4794   0x07fc4794   0x00000070   Data   RO          844    .constdata          arch_rom.o
     0x07fc4804   0x07fc4804   0x00000002   Data   RO          984    .constdata          gpio.o
     0x07fc4806   0x07fc4806   0x00000002   PAD
-    0x07fc4808   0x07fc4808   0x0000001c   Data   RO         1888    .constdata          hw_otpc_531.o
-    0x07fc4824   0x07fc4824   0x00000070   Data   RO         2171    .constdata          ble_arp.o
-    0x07fc4894   0x07fc4894   0x00000010   Data   RO         2335    .constdata          custs1.o
-    0x07fc48a4   0x07fc48a4   0x00000048   Data   RO         2352    .constdata          custs1_task.o
-    0x07fc48ec   0x07fc48ec   0x00000008   Data   RO         2353    .constdata          custs1_task.o
-    0x07fc48f4   0x07fc48f4   0x00000018   Data   RO         2376    .constdata          prf.o
-    0x07fc490c   0x07fc490c   0x0000000c   Data   RO         2377    .constdata          prf.o
-    0x07fc4918   0x07fc4918   0x00000050   Data   RO         2472    .constdata          app.o
-    0x07fc4968   0x07fc4968   0x00000068   Data   RO         2603    .constdata          app_task.o
-    0x07fc49d0   0x07fc49d0   0x00000008   Data   RO         2698    .constdata          app_diss_task.o
-    0x07fc49d8   0x07fc49d8   0x00000054   Data   RO         2726    .constdata          app_entry_point.o
-    0x07fc4a2c   0x07fc4a2c   0x00000014   Data   RO         2727    .constdata          app_entry_point.o
-    0x07fc4a40   0x07fc4a40   0x00000020   Data   RO         2728    .constdata          app_entry_point.o
-    0x07fc4a60   0x07fc4a60   0x00000038   Data   RO         2954    .constdata          user_custs_config.o
-    0x07fc4a98   0x07fc4a98   0x00000010   Data   RO         2967    .constdata          user_custs1_def.o
-    0x07fc4aa8   0x07fc4aa8   0x00000010   Data   RO         2968    .constdata          user_custs1_def.o
-    0x07fc4ab8   0x07fc4ab8   0x00000010   Data   RO         2969    .constdata          user_custs1_def.o
-    0x07fc4ac8   0x07fc4ac8   0x00000010   Data   RO         2970    .constdata          user_custs1_def.o
-    0x07fc4ad8   0x07fc4ad8   0x00000010   Data   RO         2971    .constdata          user_custs1_def.o
-    0x07fc4ae8   0x07fc4ae8   0x00000010   Data   RO         2972    .constdata          user_custs1_def.o
-    0x07fc4af8   0x07fc4af8   0x00000010   Data   RO         2973    .constdata          user_custs1_def.o
-    0x07fc4b08   0x07fc4b08   0x00000010   Data   RO         2974    .constdata          user_custs1_def.o
-    0x07fc4b18   0x07fc4b18   0x00000010   Data   RO         2975    .constdata          user_custs1_def.o
-    0x07fc4b28   0x07fc4b28   0x00000010   Data   RO         2976    .constdata          user_custs1_def.o
-    0x07fc4b38   0x07fc4b38   0x00000010   Data   RO         2977    .constdata          user_custs1_def.o
-    0x07fc4b48   0x07fc4b48   0x00000010   Data   RO         2978    .constdata          user_custs1_def.o
-    0x07fc4b58   0x07fc4b58   0x00000010   Data   RO         2979    .constdata          user_custs1_def.o
-    0x07fc4b68   0x07fc4b68   0x00000010   Data   RO         2980    .constdata          user_custs1_def.o
-    0x07fc4b78   0x07fc4b78   0x00000010   Data   RO         2981    .constdata          user_custs1_def.o
-    0x07fc4b88   0x07fc4b88   0x00000010   Data   RO         2982    .constdata          user_custs1_def.o
-    0x07fc4b98   0x07fc4b98   0x00000002   Data   RO         2983    .constdata          user_custs1_def.o
-    0x07fc4b9a   0x07fc4b9a   0x00000002   Data   RO         2984    .constdata          user_custs1_def.o
-    0x07fc4b9c   0x07fc4b9c   0x00000002   Data   RO         2985    .constdata          user_custs1_def.o
-    0x07fc4b9e   0x07fc4b9e   0x00000002   Data   RO         2986    .constdata          user_custs1_def.o
-    0x07fc4ba0   0x07fc4ba0   0x00000004   Data   RO         2987    .constdata          user_custs1_def.o
-    0x07fc4ba4   0x07fc4ba4   0x00000001   Data   RO         2988    .constdata          user_custs1_def.o
+    0x07fc4808   0x07fc4808   0x0000001c   Data   RO         1906    .constdata          hw_otpc_531.o
+    0x07fc4824   0x07fc4824   0x00000070   Data   RO         2189    .constdata          ble_arp.o
+    0x07fc4894   0x07fc4894   0x00000010   Data   RO         2353    .constdata          custs1.o
+    0x07fc48a4   0x07fc48a4   0x00000048   Data   RO         2370    .constdata          custs1_task.o
+    0x07fc48ec   0x07fc48ec   0x00000008   Data   RO         2371    .constdata          custs1_task.o
+    0x07fc48f4   0x07fc48f4   0x00000018   Data   RO         2394    .constdata          prf.o
+    0x07fc490c   0x07fc490c   0x0000000c   Data   RO         2395    .constdata          prf.o
+    0x07fc4918   0x07fc4918   0x00000050   Data   RO         2490    .constdata          app.o
+    0x07fc4968   0x07fc4968   0x00000068   Data   RO         2621    .constdata          app_task.o
+    0x07fc49d0   0x07fc49d0   0x00000008   Data   RO         2716    .constdata          app_diss_task.o
+    0x07fc49d8   0x07fc49d8   0x00000054   Data   RO         2744    .constdata          app_entry_point.o
+    0x07fc4a2c   0x07fc4a2c   0x00000014   Data   RO         2745    .constdata          app_entry_point.o
+    0x07fc4a40   0x07fc4a40   0x00000020   Data   RO         2746    .constdata          app_entry_point.o
+    0x07fc4a60   0x07fc4a60   0x00000038   Data   RO         2972    .constdata          user_custs_config.o
+    0x07fc4a98   0x07fc4a98   0x00000010   Data   RO         2985    .constdata          user_custs1_def.o
+    0x07fc4aa8   0x07fc4aa8   0x00000010   Data   RO         2986    .constdata          user_custs1_def.o
+    0x07fc4ab8   0x07fc4ab8   0x00000010   Data   RO         2987    .constdata          user_custs1_def.o
+    0x07fc4ac8   0x07fc4ac8   0x00000010   Data   RO         2988    .constdata          user_custs1_def.o
+    0x07fc4ad8   0x07fc4ad8   0x00000010   Data   RO         2989    .constdata          user_custs1_def.o
+    0x07fc4ae8   0x07fc4ae8   0x00000010   Data   RO         2990    .constdata          user_custs1_def.o
+    0x07fc4af8   0x07fc4af8   0x00000010   Data   RO         2991    .constdata          user_custs1_def.o
+    0x07fc4b08   0x07fc4b08   0x00000010   Data   RO         2992    .constdata          user_custs1_def.o
+    0x07fc4b18   0x07fc4b18   0x00000010   Data   RO         2993    .constdata          user_custs1_def.o
+    0x07fc4b28   0x07fc4b28   0x00000010   Data   RO         2994    .constdata          user_custs1_def.o
+    0x07fc4b38   0x07fc4b38   0x00000010   Data   RO         2995    .constdata          user_custs1_def.o
+    0x07fc4b48   0x07fc4b48   0x00000010   Data   RO         2996    .constdata          user_custs1_def.o
+    0x07fc4b58   0x07fc4b58   0x00000010   Data   RO         2997    .constdata          user_custs1_def.o
+    0x07fc4b68   0x07fc4b68   0x00000010   Data   RO         2998    .constdata          user_custs1_def.o
+    0x07fc4b78   0x07fc4b78   0x00000010   Data   RO         2999    .constdata          user_custs1_def.o
+    0x07fc4b88   0x07fc4b88   0x00000010   Data   RO         3000    .constdata          user_custs1_def.o
+    0x07fc4b98   0x07fc4b98   0x00000002   Data   RO         3001    .constdata          user_custs1_def.o
+    0x07fc4b9a   0x07fc4b9a   0x00000002   Data   RO         3002    .constdata          user_custs1_def.o
+    0x07fc4b9c   0x07fc4b9c   0x00000002   Data   RO         3003    .constdata          user_custs1_def.o
+    0x07fc4b9e   0x07fc4b9e   0x00000002   Data   RO         3004    .constdata          user_custs1_def.o
+    0x07fc4ba0   0x07fc4ba0   0x00000004   Data   RO         3005    .constdata          user_custs1_def.o
+    0x07fc4ba4   0x07fc4ba4   0x00000001   Data   RO         3006    .constdata          user_custs1_def.o
     0x07fc4ba5   0x07fc4ba5   0x00000003   PAD
-    0x07fc4ba8   0x07fc4ba8   0x000003c0   Data   RO         2990    .constdata          user_custs1_def.o
-    0x07fc4f68   0x07fc4f68   0x00000008   Data   RO         3075    .constdata          user_peripheral.o
-    0x07fc4f70   0x07fc4f70   0x00000024   Data   RO         3105    .constdata          da14531.lib(patch.o)
-    0x07fc4f94   0x07fc4f94   0x000000be   Data   RO         2991    .conststring        user_custs1_def.o
+    0x07fc4ba8   0x07fc4ba8   0x000003c0   Data   RO         3008    .constdata          user_custs1_def.o
+    0x07fc4f68   0x07fc4f68   0x00000008   Data   RO         3093    .constdata          user_peripheral.o
+    0x07fc4f70   0x07fc4f70   0x00000024   Data   RO         3123    .constdata          da14531.lib(patch.o)
+    0x07fc4f94   0x07fc4f94   0x000000be   Data   RO         3009    .conststring        user_custs1_def.o
     0x07fc5052   0x07fc5052   0x00000002   PAD
-    0x07fc5054   0x07fc5054   0x00000020   Data   RO         3127    Region$$Table       anon$$obj.o
-    0x07fc5074   0x07fc5074   0x00000001   Data   RW         2212    .data               rf_531.o
+    0x07fc5054   0x07fc5054   0x00000020   Data   RO         3145    Region$$Table       anon$$obj.o
+    0x07fc5074   0x07fc5074   0x00000001   Data   RW         2230    .data               rf_531.o
 
 
     Execution Region ER_PRODTEST (Exec base: 0x07fc5078, Load base: 0x07fc5078, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
@@ -2664,10 +2667,10 @@ Memory Map of the image
     0x07fc5084        -       0x00000004   Zero   RW          887    .bss                otp_cs.o
     0x07fc5088        -       0x00000002   Zero   RW          933    .bss                syscntl.o
     0x07fc508a        -       0x00000002   Zero   RW         1215    .bss                adc_531.o
-    0x07fc508c        -       0x00000030   Zero   RW         1677    .bss                i2c.o
-    0x07fc50bc        -       0x00000014   Zero   RW         2067    .bss                trng.o
-    0x07fc50d0        -       0x00000004   Zero   RW         2142    .bss                rwip.o
-    0x07fc50d4        -       0x0000002e   Zero   RW         2211    .bss                rf_531.o
+    0x07fc508c        -       0x00000030   Zero   RW         1695    .bss                i2c.o
+    0x07fc50bc        -       0x00000014   Zero   RW         2085    .bss                trng.o
+    0x07fc50d0        -       0x00000004   Zero   RW         2160    .bss                rwip.o
+    0x07fc50d4        -       0x0000002e   Zero   RW         2229    .bss                rf_531.o
     0x07fc5102   0x07fc5078   0x00000006   PAD
     0x07fc5108        -       0x00000600   Zero   RW          275    STACK               startup_da14531.o
 
@@ -2706,22 +2709,22 @@ Memory Map of the image
     0x07fc8c60        -       0x0000004c   Zero   RW          985    retention_mem_area0  gpio.o
     0x07fc8cac        -       0x0000000c   Zero   RW         1088    retention_mem_area0  wkupct_quadec.o
     0x07fc8cb8        -       0x00000004   Zero   RW         1216    retention_mem_area0  adc_531.o
-    0x07fc8cbc        -       0x00000001   Zero   RW         1889    retention_mem_area0  hw_otpc_531.o
+    0x07fc8cbc        -       0x00000001   Zero   RW         1907    retention_mem_area0  hw_otpc_531.o
     0x07fc8cbd   0x07fc8bc0   0x00000003   PAD
-    0x07fc8cc0        -       0x00000040   Zero   RW         1958    retention_mem_area0  uart.o
-    0x07fc8d00        -       0x00000008   Zero   RW         2093    retention_mem_area0  rwble.o
-    0x07fc8d08        -       0x00000008   Zero   RW         2143    retention_mem_area0  rwip.o
-    0x07fc8d10        -       0x00000004   Zero   RW         2144    retention_mem_area0  rwip.o
-    0x07fc8d14        -       0x00000008   Zero   RW         2213    retention_mem_area0  rf_531.o
-    0x07fc8d1c        -       0x00000030   Zero   RW         2378    retention_mem_area0  prf.o
-    0x07fc8d4c        -       0x00000048   Zero   RW         2476    retention_mem_area0  app.o
-    0x07fc8d94        -       0x00000014   Zero   RW         2477    retention_mem_area0  app.o
-    0x07fc8da8        -       0x00000001   Zero   RW         2604    retention_mem_area0  app_task.o
+    0x07fc8cc0        -       0x00000040   Zero   RW         1976    retention_mem_area0  uart.o
+    0x07fc8d00        -       0x00000008   Zero   RW         2111    retention_mem_area0  rwble.o
+    0x07fc8d08        -       0x00000008   Zero   RW         2161    retention_mem_area0  rwip.o
+    0x07fc8d10        -       0x00000004   Zero   RW         2162    retention_mem_area0  rwip.o
+    0x07fc8d14        -       0x00000008   Zero   RW         2231    retention_mem_area0  rf_531.o
+    0x07fc8d1c        -       0x00000030   Zero   RW         2396    retention_mem_area0  prf.o
+    0x07fc8d4c        -       0x00000048   Zero   RW         2494    retention_mem_area0  app.o
+    0x07fc8d94        -       0x00000014   Zero   RW         2495    retention_mem_area0  app.o
+    0x07fc8da8        -       0x00000001   Zero   RW         2622    retention_mem_area0  app_task.o
     0x07fc8da9   0x07fc8bc0   0x00000003   PAD
-    0x07fc8dac        -       0x00000050   Zero   RW         2838    retention_mem_area0  app_easy_timer.o
-    0x07fc8dfc        -       0x00000004   Zero   RW         3025    retention_mem_area0  user_custs1_impl.o
-    0x07fc8e00        -       0x0000004c   Zero   RW         3076    retention_mem_area0  user_peripheral.o
-    0x07fc8e4c        -       0x00000003   Zero   RW         3106    retention_mem_area0  da14531.lib(patch.o)
+    0x07fc8dac        -       0x00000050   Zero   RW         2856    retention_mem_area0  app_easy_timer.o
+    0x07fc8dfc        -       0x00000004   Zero   RW         3043    retention_mem_area0  user_custs1_impl.o
+    0x07fc8e00        -       0x0000004c   Zero   RW         3094    retention_mem_area0  user_peripheral.o
+    0x07fc8e4c        -       0x00000003   Zero   RW         3124    retention_mem_area0  da14531.lib(patch.o)
 
 
     Execution Region RET_HEAP (Exec base: 0x07fc8e50, Load base: 0x07fc8bc0, Size: 0x00000c40, Max: 0x00000c40, ABSOLUTE, UNINIT)
@@ -2748,7 +2751,7 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fcb89c        -       0x00000004   Zero   RW         2068    trng_state          trng.o
+    0x07fcb89c        -       0x00000004   Zero   RW         2086    trng_state          trng.o
 
 
 ==============================================================================
@@ -2787,7 +2790,7 @@ Image component sizes
         16          4          0          0          0       1237   otp_hdr.o
        160         10         36          0         48       3810   prf.o
       1228        128          0          1         54       6579   rf_531.o
-       480         42          0          0          8      76118   rwble.o
+       480         42          0          0          8      76114   rwble.o
        480         62          0          0         16      74806   rwip.o
         80         16        160          0       1536        824   startup_da14531.o
        280         18          0          0          2       5528   syscntl.o
@@ -2798,11 +2801,11 @@ Image component sizes
        344         14          0          0          4       4317   user_custs1_impl.o
          0          0         56          0          0        945   user_custs_config.o
        208         12          0          0          0       3265   user_periph_setup.o
-       908         72          8          0         76       9923   user_peripheral.o
+       908         72          8          0         76       9903   user_peripheral.o
        156         14          0          0         12       3986   wkupct_quadec.o
 
     ----------------------------------------------------------------------
-     14292       1282       3042         12       6588     852608   Object Totals
+     14292       1282       3042         12       6588     852584   Object Totals
          0          0         32          0         80          0   (incl. Generated)
          0          0          7          3         18          0   (incl. Padding)
 
@@ -2844,8 +2847,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17406       1424       3078         12       6592     850532   Grand Totals
-     17406       1424       3078         12       6592     850532   ELF Image Totals
+     17406       1424       3078         12       6592     850508   Grand Totals
+     17406       1424       3078         12       6592     850508   ELF Image Totals
      17406       1424       3078         12          0          0   ROM Totals
 
 ==============================================================================

@@ -26,10 +26,10 @@
 /****************************************************************************************************************/
 #define CFG_USE_DEFAULT_XTAL16M_TRIM_VALUE_IF_NOT_CALIBRATED
 
-#define CFG_MAX_SLEEP_DURATION_PERIODIC_WAKEUP_MS      500  // 0.5s, Periodic wakeup period to poll GTL iface. Time in msec. 
+#define CFG_MAX_SLEEP_DURATION_PERIODIC_WAKEUP_MS      500     // 0.5s, Periodic wakeup period to poll GTL iface. Time in msec. 
 #define CFG_MAX_SLEEP_DURATION_EXTERNAL_WAKEUP_MS      600000  // 600s, Periodic wakeup period if GTL iface is not enabled. Time in msec.   
-#undef CFG_EXTERNAL_WAKEUP      // Wakeup from external processor running host application. 
-#undef CFG_WAKEUP_EXT_PROCESSOR // Wakeup external processor when a message is sent to GTL   
+#undef CFG_EXTERNAL_WAKEUP                                     // Wakeup from external processor running host application. 
+#undef CFG_WAKEUP_EXT_PROCESSOR                                // Wakeup external processor when a message is sent to GTL   
 
 /****************************************************************************************************************/
 /* Enables True Random Number Generator. A true random number, generated at system initialization, is used to   */
@@ -60,7 +60,7 @@
 /****************************************************************************************************************/
 // #define DB_HEAP_SZ              1024
 // #define ENV_HEAP_SZ             4928
-#define MSG_HEAP_SZ             18920 // Default 6880
+#define MSG_HEAP_SZ            27520 //18920 // Default 6880
 // #define NON_RET_HEAP_SZ         2048
 
 /****************************************************************************************************************/
