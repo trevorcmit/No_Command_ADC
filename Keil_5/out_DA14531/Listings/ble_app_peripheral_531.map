@@ -2776,7 +2776,7 @@ Image component sizes
        348        136        112          0          2       2884   arch_rom.o
        192         18          0          0          4       3249   arch_sleep.o
       1268         90          8          0         60      95819   arch_system.o
-       720         62        112          0          0      77120   ble_arp.o
+       720         62        112          0          0      77124   ble_arp.o
          0          0         16          0          0       3846   custs1.o
        300         12         80          0          0       7490   custs1_task.o
        572         22          2          0         76      15043   gpio.o
@@ -2791,7 +2791,7 @@ Image component sizes
        160         10         36          0         48       3810   prf.o
       1228        128          0          1         54       6579   rf_531.o
        480         42          0          0          8      76114   rwble.o
-       480         62          0          0         16      74806   rwip.o
+       480         62          0          0         16      74802   rwip.o
         80         16        160          0       1536        824   startup_da14531.o
        280         18          0          0          2       5528   syscntl.o
        148         22          0          0          0     284960   system_da14531.o

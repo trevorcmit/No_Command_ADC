@@ -1,9 +1,3 @@
-/**
- ****************************************************************************************
- * @file user_peripheral_proj.h
- * @brief Peripheral project header file.
- ****************************************************************************************
- */
 #ifndef _USER_PERIPHERAL_H_
 #define _USER_PERIPHERAL_H_
 

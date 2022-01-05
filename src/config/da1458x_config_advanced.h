@@ -152,10 +152,9 @@
 /****************************************************************************************************************/
 #undef AUTO_DATA_LENGTH_NEGOTIATION_UPON_NEW_CONNECTION
 
-/****************************************************************************************************************/
-/* Maximum retention memory in bytes. The base address of the retention data is calculated from the selected    */
-/* size.                                                                                                        */
-/****************************************************************************************************************/
+/********************************************************************************************************************/
+/* Maximum retention memory in bytes. The base address of the retention data is calculated from the selected size   */
+/********************************************************************************************************************/
 #define CFG_RET_DATA_SIZE    (2048)
 // #define CFG_RET_DATA_SIZE    (4096)
 
@@ -205,7 +204,6 @@
 /* NOTE: The XTAL16M adaptive settling algorithm works only with XTAL32K and not with RCX, as the LP clock.     */
 /****************************************************************************************************************/
 #define CFG_XTAL16M_ADAPTIVE_SETTLING
-
 
 
 #else

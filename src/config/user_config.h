@@ -36,11 +36,9 @@
 // Possible values: ARCH_SLEEP_OFF, ARCH_EXT_SLEEP_ON, ARCH_EXT_SLEEP_OTP_COPY_ON
 static const sleep_state_t app_default_sleep_mode = ARCH_EXT_SLEEP_ON;
 
-/*
- ****************************************************************************************
- * Advertising configuration
- ****************************************************************************************
- */
+//****************************************************************************************
+//* Advertising configuration
+//****************************************************************************************
 static const struct advertise_configuration user_adv_conf = {
     .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE),
     .intv_min = MS_TO_BLESLOTS(687.5),                    // 687.5ms, Minimum interval for advertising
@@ -125,7 +123,7 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
 */
-#define USER_DEVICE_NAME        "IFM-Fiber-7"                 // Device name
+#define USER_DEVICE_NAME        "QFN-Fiber-1"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 /*

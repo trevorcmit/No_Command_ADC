@@ -98,10 +98,8 @@
 #define ADC_INPUT_PORT                  GPIO_PORT_0
 #define ADC_INPUT_PIN                   GPIO_PIN_6
 
-/*
- * FUNCTION DECLARATIONS
- ****************************************************************************************
- */
+
+// Function Declarations
 
 #if DEVELOPMENT_DEBUG
 /**

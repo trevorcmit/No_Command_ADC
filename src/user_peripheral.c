@@ -23,8 +23,6 @@
 #include "adc_531.h"
 #include <math.h>
 
-// #define SIN sin
-// #define TAN tan
 
 // Manufacturer Specific Data ADV structure type
 struct mnf_specific_data_ad_structure
@@ -224,7 +222,7 @@ void app_adcval1_timer_cb_handler() {
     memcpy(req->value, &out, DEF_SVC1_ADC_VAL_1_CHAR_LEN);
     ke_msg_send(req);
 
-    if (ke_state_get(TASK_APP) == APP_CONNECTED) {timer_used = app_easy_timer(1, app_adcval1_timer_cb_handler);};
+    if (ke_state_get(TASK_APP) == APP_CONNECTED) {timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler);};
 }
 
 
@@ -265,7 +263,7 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     }
     else {user_app_adv_start();} // No connection has been established, restart advertising
     default_app_on_connection(connection_idx, param);             // Default app callback on connection
-    timer_used = app_easy_timer(1, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
+    timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
 
 
@@ -280,8 +278,8 @@ void user_app_disconnect(struct gapc_disconnect_ind const *param) {
         app_easy_timer_cancel(app_param_update_request_timer_used);
         app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
     }
-    mnf_data_update();    // Update manufacturer data for the next advertsing event
-    user_app_adv_start(); // Restart Advertising
+    mnf_data_update();     // Update manufacturer data for the next advertsing event
+    user_app_adv_start();  // Restart Advertising
 }
 
 
@@ -292,7 +290,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
     switch(msgid) {
         case CUSTS1_VAL_WRITE_IND: {
             struct custs1_val_write_ind const *msg_param = (struct custs1_val_write_ind const *) (param);
-
             switch (msg_param->handle) {
                 case SVC1_IDX_CONTROL_POINT_VAL:
                     user_svc1_ctrl_wr_ind_handler(msgid, msg_param, dest_id, src_id);
@@ -319,10 +316,8 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                     break;
             }
         } break;
-
         case CUSTS1_VAL_NTF_CFM: {
             struct custs1_val_ntf_cfm const *msg_param = (struct custs1_val_ntf_cfm const *)(param);
-
             switch (msg_param->handle) {
                 case SVC1_IDX_ADC_VAL_1_VAL:
                     break;
@@ -334,7 +329,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                     break;
             }
         } break;
-
         case CUSTS1_VAL_IND_CFM: {
             struct custs1_val_ind_cfm const *msg_param = (struct custs1_val_ind_cfm const *)(param);
 
@@ -344,7 +338,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                 default:                        break;
              }
         } break;
-
         case CUSTS1_ATT_INFO_REQ:
         {
             struct custs1_att_info_req const *msg_param = (struct custs1_att_info_req const *)param;
@@ -358,7 +351,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
                     break;
              }
         } break;
-
         case GAPC_PARAM_UPDATED_IND: {
             // Cast the "param" pointer to the appropriate message structure
             struct gapc_param_updated_ind const *msg_param = (struct gapc_param_updated_ind const *)(param);
@@ -370,7 +362,6 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
             {
             }
         } break;
-
         case CUSTS1_VALUE_REQ_IND:
         {
             struct custs1_value_req_ind const *msg_param = (struct custs1_value_req_ind const *) param;
