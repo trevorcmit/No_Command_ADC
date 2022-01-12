@@ -53,26 +53,26 @@ static const struct advertise_configuration user_adv_conf = {
      */
     .channel_map = ADV_ALL_CHNLS_EN,
 
-    /// Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
-    /// Advertising mode :
-    /// - GAP_NON_DISCOVERABLE: Non discoverable mode
-    /// - GAP_GEN_DISCOVERABLE: General discoverable mode
-    /// - GAP_LIM_DISCOVERABLE: Limited discoverable mode
-    /// - GAP_BROADCASTER_MODE: Broadcaster mode
+    // Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
+    // Advertising mode :
+    // - GAP_NON_DISCOVERABLE: Non discoverable mode
+    // - GAP_GEN_DISCOVERABLE: General discoverable mode
+    // - GAP_LIM_DISCOVERABLE: Limited discoverable mode
+    // - GAP_BROADCASTER_MODE: Broadcaster mode
     .mode = GAP_GEN_DISCOVERABLE,
 
-    /// Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
-    /// Advertising filter policy:
-    /// - ADV_ALLOW_SCAN_ANY_CON_ANY: Allow both scan and connection requests from anyone
-    /// - ADV_ALLOW_SCAN_ANY_CON_WLST: Allow both scan req from anyone and connection req from White List devices only
+    // Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
+    // Advertising filter policy:
+    // - ADV_ALLOW_SCAN_ANY_CON_ANY: Allow both scan and connection requests from anyone
+    // - ADV_ALLOW_SCAN_ANY_CON_WLST: Allow both scan req from anyone and connection req from White List devices only
     .adv_filt_policy = ADV_ALLOW_SCAN_ANY_CON_ANY,
 
-    /// Address of peer device
-    /// NOTE: Meant for directed advertising (ADV_DIRECT_IND)
+    // Address of peer device
+    // NOTE: Meant for directed advertising (ADV_DIRECT_IND)
     .peer_addr = {0x1, 0x2, 0x3, 0x4, 0x5, 0x6},
 
-    /// Address type of peer device (0=public/1=random)
-    /// NOTE: Meant for directed advertising (ADV_DIRECT_IND)
+    // Address type of peer device (0=public/1=random)
+    // NOTE: Meant for directed advertising (ADV_DIRECT_IND)
     .peer_addr_type = 0,
 };
 
@@ -87,13 +87,11 @@ static const struct advertise_configuration user_adv_conf = {
  *    - The maximum length of the user defined response data shall be 31 bytes.
  * - ADV_NONCONN_IND: Non-connectable undirected advertising event.
  *    - The maximum length of the user defined advertising data shall be 31 bytes.
- *    - The Flags data type may be omitted, hence the user can use all the 31 bytes for
- *      data.
+ *    - The Flags data type may be omitted, hence the user can use all the 31 bytes for data.
  *    - The scan response data shall be empty.
  * - ADV_SCAN_IND: Scannable undirected advertising event.
  *    - The maximum length of the user defined advertising data shall be 31 bytes.
- *    - The Flags data type may be omitted, hence the user can use all the 31 bytes for
- *      data.
+ *    - The Flags data type may be omitted, hence the user can use all the 31 bytes for data.
  *    - The maximum length of the user defined response data shall be 31 bytes.
  ****************************************************************************************
  */
@@ -105,13 +103,13 @@ static const struct advertise_configuration user_adv_conf = {
                                     ADV_TYPE_COMPLETE_LIST_128BIT_SERVICE_IDS\
                                     "\x59\x5A\x08\xE4\x86\x2A\x9E\x8F\xE9\x11\xBC\x7C\x98\x43\x42\x18")
 
-/// Advertising data length - maximum 28 bytes, 3 bytes are reserved to set
+// Advertising data length - maximum 28 bytes, 3 bytes are reserved to set
 #define USER_ADVERTISE_DATA_LEN               (sizeof(USER_ADVERTISE_DATA)-1)
 
-/// Scan response data
+// Scan response data
 #define USER_ADVERTISE_SCAN_RESPONSE_DATA ""
 
-/// Scan response data length- maximum 31 bytes
+// Scan response data length- maximum 31 bytes
 #define USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN (sizeof(USER_ADVERTISE_SCAN_RESPONSE_DATA)-1)
 
 /*
@@ -123,14 +121,11 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
 */
-#define USER_DEVICE_NAME        "QFN-Fiber-1"                 // Device name
+#define USER_DEVICE_NAME        "QFN-Fiber-3"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
-/*
- ****************************************************************************************
- * GAPM configuration
- ****************************************************************************************
-*/
+
+// GAPM configuration
 static const struct gapm_configuration user_gapm_conf = {
     // Device Role: Central, Peripheral, Observer, Broadcaster or All roles. (@see enum gap_role)
     .role = GAP_ROLE_PERIPHERAL,

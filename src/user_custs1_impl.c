@@ -33,21 +33,7 @@ void user_svc1_ctrl_wr_ind_handler(ke_msg_id_t const msgid,
                                    ke_task_id_t const src_id) {
     uint8_t val = 0;
     memcpy(&val, &param->value[0], param->length);
-
     SetBits16(SYS_CTRL_REG, SW_RESET, 1);
-
-    // if (val != CUSTS1_CP_ADC_VAL1_DISABLE)
-    // {
-    //     timer_used = app_easy_timer(5, app_adcval1_timer_cb_handler);
-    // }
-    // else
-    // {
-    //     if (timer_used != EASY_TIMER_INVALID_TIMER)
-    //     {
-    //         app_easy_timer_cancel(timer_used);
-    //         timer_used = EASY_TIMER_INVALID_TIMER;
-    //     }
-    // }
 }
 
 void user_svc1_led_wr_ind_handler(ke_msg_id_t const msgid,

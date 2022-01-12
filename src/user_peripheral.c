@@ -36,19 +36,19 @@ struct mnf_specific_data_ad_structure
 
 // GLOBAL VARIABLE DEFINITIONS
 
-uint8_t app_connection_idx                      __SECTION_ZERO("retention_mem_area0");
-timer_hnd app_adv_data_update_timer_used        __SECTION_ZERO("retention_mem_area0");
-timer_hnd app_param_update_request_timer_used   __SECTION_ZERO("retention_mem_area0");
-ke_msg_id_t timer_used      __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+uint8_t app_connection_idx                       __SECTION_ZERO("retention_mem_area0");
+timer_hnd app_adv_data_update_timer_used         __SECTION_ZERO("retention_mem_area0");
+timer_hnd app_param_update_request_timer_used    __SECTION_ZERO("retention_mem_area0");
+ke_msg_id_t timer_used                           __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
 
 // Retained variables
-struct mnf_specific_data_ad_structure mnf_data  __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+struct mnf_specific_data_ad_structure mnf_data   __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
 // Index of manufacturer data in advertising data or scan response data (when MSB is 1)
-uint8_t mnf_data_index                          __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
-uint8_t stored_adv_data_len                     __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
-uint8_t stored_scan_rsp_data_len                __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
-uint8_t stored_adv_data[ADV_DATA_LEN]           __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
-uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN] __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+uint8_t mnf_data_index                           __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+uint8_t stored_adv_data_len                      __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+uint8_t stored_scan_rsp_data_len                 __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+uint8_t stored_adv_data[ADV_DATA_LEN]            __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
+uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN]  __SECTION_ZERO("retention_mem_area0"); //@RETENTION MEMORY
 
 
 // FUNCTION DEFINITIONS
@@ -215,7 +215,6 @@ void app_adcval1_timer_cb_handler() {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
         out[i] = output;
     }
-
     req->handle = SVC1_IDX_ADC_VAL_1_VAL;      // Location to send it to
     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
     req->notification = true;
@@ -266,11 +265,8 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     timer_used = app_easy_timer(10, app_adcval1_timer_cb_handler); // Begin collection of ADC readings
 }
 
-
-void user_app_adv_undirect_complete(uint8_t status) {
-    // If advertising was canceled then update advertising data and start advertising again
-    if (status == GAP_ERR_CANCELED) {user_app_adv_start();}
-}
+// If advertising was canceled then update advertising data and start advertising again
+void user_app_adv_undirect_complete(uint8_t status) {if (status == GAP_ERR_CANCELED) {user_app_adv_start();}}
 
 
 void user_app_disconnect(struct gapc_disconnect_ind const *param) {

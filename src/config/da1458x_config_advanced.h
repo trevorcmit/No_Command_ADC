@@ -418,5 +418,4 @@
 #define CFG_DISABLE_QUADEC_ON_START_UP
 
 #endif
-
 #endif // _DA1458X_CONFIG_ADVANCED_H_
