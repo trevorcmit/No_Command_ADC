@@ -4,7 +4,6 @@
  * @brief Basic compile configuration file.
  ****************************************************************************************
  */
-
 #ifndef _DA1458X_CONFIG_BASIC_H_
 #define _DA1458X_CONFIG_BASIC_H_
 #include "da1458x_stack_config.h"
@@ -102,11 +101,7 @@
 /****************************************************************************************************************/
 #undef CFG_APP_SECURITY
 
-/****************************************************************************************************************/
-/* Enables WatchDog timer.                                                                                      */
-/****************************************************************************************************************/
-// #define CFG_WDOG
-#undef CFG_WDOG
+#undef CFG_WDOG      // Enables WatchDog timer. Set to off for continuous looping ADC reading.
 
 /****************************************************************************************************************/
 /* Determines maximum concurrent connections supported by application. It configures the heap memory allocated  */

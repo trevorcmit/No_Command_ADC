@@ -35,7 +35,6 @@ struct mnf_specific_data_ad_structure
 
 
 // GLOBAL VARIABLE DEFINITIONS
-
 uint8_t app_connection_idx                       __SECTION_ZERO("retention_mem_area0");
 timer_hnd app_adv_data_update_timer_used         __SECTION_ZERO("retention_mem_area0");
 timer_hnd app_param_update_request_timer_used    __SECTION_ZERO("retention_mem_area0");
@@ -84,6 +83,33 @@ static uint16_t gpadc_sample_to_mv(uint16_t sample) {
     uint32_t ref_mv = 900 * (GetBits16(GP_ADC_CTRL2_REG, GP_ADC_ATTN) + 1);
 
     return (uint16_t) ((((uint32_t)sample) * ref_mv) >> adc_res);
+}
+
+
+void bandstop_filter(uint16_t *x, uint16_t *y) {
+    static uint16_t x_2 = 0;                    // delayed x, y samples
+    static uint16_t x_1 = 0;
+    static uint16_t y_2 = 0;
+    static uint16_t y_1 = 0;
+
+    // Bandstop (Notch) filter variables
+    const float f = 0.06f;
+    const float bw = 0.005f;
+    const float R = 1.0f - 3.0f * bw;
+    const float K = (1.0f - 2.0f * R * cos(2.0f * M_PI * f) + pow(R, 2)) / (2.0f - 2.0f * cos(2.0f * M_PI * f));
+    const float a0 = K;
+    const float a1 = -2.0f * K * cos(2.0f * M_PI * f);
+    const float a2 = K;
+    const float b1 = 2.0f * R * cos(2.0f * M_PI * f);
+    const float b2 = -1.0f * pow(R, 2);
+
+    for (int i = 0; i < 100; ++i) {
+        y[i] = a0 * x[i] + a1 * x_1 + a2 * x_2 + b1 * y_1 + b2 * y_2;  // IIR difference equation
+        x_2 = x_1;                                                     // Shift delayed x, y samples
+        x_1 = x[i];
+        y_2 = y_1;
+        y_1 = y[i];
+    }
 }
 
 
@@ -215,6 +241,10 @@ void app_adcval1_timer_cb_handler() {
         uint16_t output = gpadc_sample_to_mv(gpadc_read()); // Get uint16_t ADC reading
         out[i] = output;
     }
+
+    // uint16_t filtered[100];
+    // bandstop_filter(out, filtered);   // Bandstop filter, 55-65Hz (assuming 1kHz SR)
+
     req->handle = SVC1_IDX_ADC_VAL_1_VAL;      // Location to send it to
     req->length = DEF_SVC1_ADC_VAL_1_CHAR_LEN;
     req->notification = true;
@@ -274,8 +304,8 @@ void user_app_disconnect(struct gapc_disconnect_ind const *param) {
         app_easy_timer_cancel(app_param_update_request_timer_used);
         app_param_update_request_timer_used = EASY_TIMER_INVALID_TIMER;
     }
-    mnf_data_update();     // Update manufacturer data for the next advertsing event
-    user_app_adv_start();  // Restart Advertising
+    mnf_data_update();       // Update manufacturer data for the next advertsing event
+    user_app_adv_start();    // Restart Advertising
 }
 
 

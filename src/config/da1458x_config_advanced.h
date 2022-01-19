@@ -206,6 +206,14 @@
 #define CFG_XTAL16M_ADAPTIVE_SETTLING
 
 
+
+
+
+
+//******************************************//
+// ONLY IMPORTANT SECTION: DA14531 section  // 
+//******************************************//
+
 #else
 
 /****************************************************************************************************************/
@@ -226,15 +234,9 @@
 /****************************************************************************************************************/
 #define CFG_MAX_SLEEP_DURATION_EXTERNAL_WAKEUP_MS              600000   // 600s
 
-/****************************************************************************************************************/
-/* Wakeup from external processor running host application.                                                     */
-/****************************************************************************************************************/
-#undef CFG_EXTERNAL_WAKEUP
+#undef CFG_EXTERNAL_WAKEUP            // Wakeup from external processor running host application
 
-/****************************************************************************************************************/
-/* Wakeup external processor when a message is sent to GTL                                                      */
-/****************************************************************************************************************/
-#undef CFG_WAKEUP_EXT_PROCESSOR
+#undef CFG_WAKEUP_EXT_PROCESSOR       // Wakeup external processor when a message is sent to GTL
 
 /****************************************************************************************************************/
 /* Enables True Random Number Generator. A true random number, generated at system initialization, is used to   */
@@ -251,10 +253,7 @@
 /****************************************************************************************************************/
 #undef CFG_ENABLE_SMP_SECURE
 
-/****************************************************************************************************************/
-/* Uses ChaCha20 random number generator instead of the C standard library random number generator.             */
-/****************************************************************************************************************/
-#undef CFG_USE_CHACHA20_RAND
+#undef CFG_USE_CHACHA20_RAND       // Use ChaCha20 RNG instead of C Standard Library RNG
 
 /****************************************************************************************************************/
 /* Custom heap sizes                                                                                            */
@@ -300,15 +299,9 @@
 /****************************************************************************************************************/
 #undef CFG_LOG_HEAP_USAGE
 
-/****************************************************************************************************************/
-/* Enables the BLE statistics measurement feature.                                                              */
-/****************************************************************************************************************/
-#undef CFG_BLE_METRICS
+#undef CFG_BLE_METRICS                 // Enables the BLE statistics measurement feature.   
 
-/****************************************************************************************************************/
-/* Output the Hardfault arguments to serial/UART interface.                                                     */
-/****************************************************************************************************************/
-#undef CFG_PRODUCTION_DEBUG_OUTPUT
+#undef CFG_PRODUCTION_DEBUG_OUTPUT     // Output the Hardfault arguments to serial/UART interface.      
 
 /****************************************************************************************************************/
 /* Maximum supported TX data packet length (supportedMaxTxOctets value, as defined in 4.2 Specification).       */
@@ -343,10 +336,7 @@
 /****************************************************************************************************************/
 #define CFG_USE_H4TL                    (0)
 
-/****************************************************************************************************************/
-/* Duplicate filter max value for the scan report list. The maximum value shall be 100.                         */
-/****************************************************************************************************************/
-#define CFG_BLE_DUPLICATE_FILTER_MAX    (10)
+#define CFG_BLE_DUPLICATE_FILTER_MAX    (10) // Duplicate filter max value for the scan report list. Max of 100.
 
 /****************************************************************************************************************/
 /* Duplicate filter flag for the scan report list. This flag controls what will be reported if the              */
@@ -355,10 +345,7 @@
 /****************************************************************************************************************/
 #undef CFG_BLE_DUPLICATE_FILTER_FOUND
 
-/****************************************************************************************************************/
-/* Resolving list maximum size.                                                                                 */
-/****************************************************************************************************************/
-#define CFG_LLM_RESOLVING_LIST_MAX      LLM_RESOLVING_LIST_MAX
+#define CFG_LLM_RESOLVING_LIST_MAX      LLM_RESOLVING_LIST_MAX  // Resolving list maximum size
 
 /****************************************************************************************************************/
 /* Enables automatic data packet length negotiation.                                                            */
@@ -372,10 +359,7 @@
 /****************************************************************************************************************/
 #define CFG_RET_DATA_SIZE    (2048)
 
-/****************************************************************************************************************/
-/* Maximum uninitialized retained data required by the application.                                             */
-/****************************************************************************************************************/
-#define CFG_RET_DATA_UNINIT_SIZE (0)
+#define CFG_RET_DATA_UNINIT_SIZE (0)      // Maximum uninitialized retained data required by the application
 
 /****************************************************************************************************************/
 /* The Keil scatter file may be provided by the user. If the user provides his own scatter file, the system has */

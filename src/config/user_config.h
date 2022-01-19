@@ -121,7 +121,7 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
 */
-#define USER_DEVICE_NAME        "QFN-Fiber-3"                 // Device name
+#define USER_DEVICE_NAME        "IFM-Fiber-No-Filter"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 
@@ -189,33 +189,33 @@ static const struct gapm_configuration user_gapm_conf = {
  ****************************************************************************************
 */
 static const struct connection_param_configuration user_connection_param_conf = {
-    /// Connection interval minimum measured in ble double slots (1.25ms)
-    /// use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
+    // Connection interval minimum measured in ble double slots (1.25ms)
+    // use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
     .intv_min = MS_TO_DOUBLESLOTS(10),
 
-    /// Connection interval maximum measured in ble double slots (1.25ms)
-    /// use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
+    // Connection interval maximum measured in ble double slots (1.25ms)
+    // use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
     .intv_max = MS_TO_DOUBLESLOTS(20),
 
     .latency = 0, // Latency measured in connection events
 
-    /// Supervision timeout measured in timer units (10 ms)
-    /// use the macro MS_TO_TIMERUNITS to convert from milliseconds (ms) to timer units
+    // Supervision timeout measured in timer units (10 ms)
+    // use the macro MS_TO_TIMERUNITS to convert from milliseconds (ms) to timer units
     .time_out = MS_TO_TIMERUNITS(1250),
 
-    /// Minimum Connection Event Duration measured in ble double slots (1.25ms)
-    /// use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
+    // Minimum Connection Event Duration measured in ble double slots (1.25ms)
+    // use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
     .ce_len_min = MS_TO_DOUBLESLOTS(0),
 
-    /// Maximum Connection Event Duration measured in ble double slots (1.25ms)
-    /// use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
+    // Maximum Connection Event Duration measured in ble double slots (1.25ms)
+    // use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
     .ce_len_max = MS_TO_DOUBLESLOTS(0),
 };
 
 /*
- ****************************************************************************************
- * Default handlers configuration (applies only for @app_default_handlers.c)
- ****************************************************************************************
+****************************************************************************************
+* Default handlers configuration (applies only for @app_default_handlers.c)
+****************************************************************************************
 */
 static const struct default_handlers_configuration  user_default_hnd_conf = {
     // Configure the advertise operation used by the default handlers
@@ -243,11 +243,11 @@ static const struct default_handlers_configuration  user_default_hnd_conf = {
  ****************************************************************************************
 */
 static const struct central_configuration user_central_conf = {
-    /// GAPM requested operation:
-    /// - GAPM_CONNECTION_DIRECT: Direct connection operation
-    /// - GAPM_CONNECTION_AUTO: Automatic connection operation
-    /// - GAPM_CONNECTION_SELECTIVE: Selective connection operation
-    /// - GAPM_CONNECTION_NAME_REQUEST: Name Request operation (requires to start a direct connection)
+    // GAPM requested operation:
+    // - GAPM_CONNECTION_DIRECT: Direct connection operation
+    // - GAPM_CONNECTION_AUTO: Automatic connection operation
+    // - GAPM_CONNECTION_SELECTIVE: Selective connection operation
+    // - GAPM_CONNECTION_NAME_REQUEST: Name Request operation (requires to start a direct connection)
     .code = GAPM_CONNECTION_DIRECT,
     .addr_src = APP_CFG_ADDR_SRC(USER_CFG_ADDRESS_MODE), // Own BD address source of the device:
     .scan_interval = 0x180,                              // Scan interval
@@ -260,8 +260,8 @@ static const struct central_configuration user_central_conf = {
     .ce_len_max = 0x5,                                   // Maximum CE length
 
     /**************************************************************************************
-     * Peer device information (maximum number of peers = 8)
-     **************************************************************************************
+    * Peer device information (maximum number of peers = 8)
+    **************************************************************************************
     */
     .peer_addr_0 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
     .peer_addr_0_type = 0,                         // Address type of the device 0=public/1=random
@@ -282,9 +282,9 @@ static const struct central_configuration user_central_conf = {
 };
 
 /*
- ****************************************************************************************
- * Security related configuration
- ****************************************************************************************
+****************************************************************************************
+* Security related configuration
+*****************************************************************************************
 */
 static const struct security_configuration user_security_conf = {
     // IO Capabilities

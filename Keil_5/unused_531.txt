@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060960: Last Updated: Wed Jan 12 12:01:08 2022
+;#<FEEDBACK># ARM Linker, 5060960: Last Updated: Wed Jan 19 15:19:10 2022
 ;VERSION 0.2
 ;FILE adc_531.o
 adc_get_temp_async <= USED 0
@@ -243,6 +243,7 @@ user_svc1_indicateable_ind_cfm_handler <= USED 0
 user_svc1_long_val_ntf_cfm_handler <= USED 0
 ;FILE user_periph_setup.o
 ;FILE user_peripheral.o
+bandstop_filter <= USED 0
 ;FILE wkupct_quadec.o
 quad_decoder_clear_irq <= USED 0
 quad_decoder_disable_irq <= USED 0
