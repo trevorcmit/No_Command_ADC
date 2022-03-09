@@ -285,7 +285,7 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
         app_easy_timer_cancel(app_adv_data_update_timer_used);             // Stop advertising data update timer
         if ((param->con_interval < user_connection_param_conf.intv_min) || // Check if parameters are preferred ones.
             (param->con_interval > user_connection_param_conf.intv_max) || // If not, schedule connect. param. update req.
-            (param->con_latency != user_connection_param_conf.latency) ||
+            (param->con_latency != user_connection_param_conf.latency)  ||
             (param->sup_to != user_connection_param_conf.time_out)) {
             app_param_update_request_timer_used = app_easy_timer(APP_PARAM_UPDATE_REQUEST_TO, param_update_request_timer_cb);
         }

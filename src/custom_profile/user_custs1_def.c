@@ -58,8 +58,7 @@ const uint8_t custs1_services_size = ARRAY_LEN(custs1_services) - 1;
 const uint16_t custs1_att_max_nb = CUSTS1_IDX_NB;
 
 /// Full CUSTS1 Database Description - Used to add attributes into the database
-const struct attm_desc_128 custs1_att_db[CUSTS1_IDX_NB] =
-{
+const struct attm_desc_128 custs1_att_db[CUSTS1_IDX_NB] = {
     /*************************
      * Service 1 configuration
      *************************

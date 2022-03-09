@@ -21,8 +21,7 @@ extern const struct attm_desc_128 custs1_att_db[CUSTS1_IDX_NB];
 #endif
 
 // Custom1/2 server function callback table
-const struct cust_prf_func_callbacks cust_prf_funcs[] =
-{
+const struct cust_prf_func_callbacks cust_prf_funcs[] = {
 #if (BLE_CUSTOM1_SERVER)
     {   TASK_ID_CUSTS1,
         custs1_att_db,

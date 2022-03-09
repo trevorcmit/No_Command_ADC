@@ -158,35 +158,17 @@
 #define CFG_RET_DATA_SIZE    (2048)
 // #define CFG_RET_DATA_SIZE    (4096)
 
-/****************************************************************************************************************/
-/* Maximum uninitialized retained data required by the application.                                             */
-/****************************************************************************************************************/
-#define CFG_RET_DATA_UNINIT_SIZE (0)
+#define CFG_RET_DATA_UNINIT_SIZE (0) // Maximum uninitialized retained data required by the application.  
 
-/****************************************************************************************************************/
-/* The Keil scatter file may be provided by the user. If the user provides his own scatter file, the system has */
-/* to be aware which RAM blocks has to retain. The 4th RAM block is always retained, since it contains the ROM  */
-/* data.                                                                                                        */
-/*     - CFG_RETAIN_RAM_1_BLOCK: if defined, the 1st RAM block must be retained.                                */
-/*     - CFG_RETAIN_RAM_2_BLOCK: if defined, the 2nd RAM block must be retained.                                */
-/*     - CFG_RETAIN_RAM_3_BLOCK: if defined, the 3rd RAM block must be retained.                                */                                                                                                           
-/* If the CFG_CUSTOM_SCATTER_FILE flag is undefined, the system knows which blocks to retain based on the       */
-/* default SDK scatter file.                                                                                    */
-/****************************************************************************************************************/
-#undef CFG_CUSTOM_SCATTER_FILE
+#undef CFG_CUSTOM_SCATTER_FILE       // if undef, system knows which blocks to retain based on default SDK.
 #ifdef CFG_CUSTOM_SCATTER_FILE
-    #define CFG_RETAIN_RAM_1_BLOCK
-    #define CFG_RETAIN_RAM_2_BLOCK
-    #define CFG_RETAIN_RAM_3_BLOCK
+    #define CFG_RETAIN_RAM_1_BLOCK   // if defined, the 1st RAM block must be retained.    
+    #define CFG_RETAIN_RAM_2_BLOCK   // if defined, the 2nd RAM block must be retained.    
+    #define CFG_RETAIN_RAM_3_BLOCK   // if defined, the 3rd RAM block must be retained.    
 #endif
 
-/****************************************************************************************************************/                                                                                
-/* - CFG_CODE_LOCATION_EXT: Code is loaded from SPI flash / I2C EEPROM / UART                                   */
-/* - CFG_CODE_LOCATION_OTP: Code is burned in the OTP                                                           */
-/* The above options are mutually exclusive and exactly one of them must be enabled.                            */
-/****************************************************************************************************************/
-#define CFG_CODE_LOCATION_EXT
-#undef CFG_CODE_LOCATION_OTP
+#define CFG_CODE_LOCATION_EXT        // Code is loaded from SPI flash / I2C EEPROM / UART        
+#undef CFG_CODE_LOCATION_OTP         // Code is burned in the OTP      
 
 /****************************************************************************************************************/
 /* Temperature range selection.                                                                                 */

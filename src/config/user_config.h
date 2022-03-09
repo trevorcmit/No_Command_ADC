@@ -121,7 +121,7 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
 */
-#define USER_DEVICE_NAME        "IFM-Fiber-No-Filter"                 // Device name
+#define USER_DEVICE_NAME        "IFM-Fiber-Test"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 
@@ -174,10 +174,9 @@ static const struct gapm_configuration user_gapm_conf = {
     .gap_start_hdl = 0,    // GAP service start handle
     .gatt_start_hdl = 0,   // GATT service start handle
 
-    /**************************************************
-     * Data packet length extension configuration (4.2)
-     **************************************************
-    */
+    // **************************************************
+    // * Data packet length extension configuration (4.2)
+    // **************************************************
     .max_mps = 0,         // Maximal MPS
     .max_txoctets = 251,  // Maximal Tx octets (connInitialMaxTxOctets value, as defined in 4.2 Specification)
     .max_txtime = 2120,   // Maximal Tx time (connInitialMaxTxTime value, as defined in 4.2 Specification)
