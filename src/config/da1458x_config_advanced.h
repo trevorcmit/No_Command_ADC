@@ -1,9 +1,9 @@
 /**
- ****************************************************************************************
- * @file da1458x_config_advanced.h
- * @brief Advanced compile configuration file.
- ****************************************************************************************
- */
+****************************************************************************************
+* @file da1458x_config_advanced.h
+* @brief Advanced compile configuration file.
+****************************************************************************************
+*/
 #ifndef _DA1458X_CONFIG_ADVANCED_H_
 #define _DA1458X_CONFIG_ADVANCED_H_
 #include "da1458x_stack_config.h"
@@ -35,15 +35,8 @@
 /* Enables True Random Number Generator. A true random number, generated at system initialization, is used to   */
 /* seed any random number generator (C standard library, ChaCha20, etc.). The following supported options       */
 /* provide a trade-off between code size and start-up latency.                                                  */
-/* - undefined (or 0): TRNG is disabled.                                                                        */
-/* -   32:  Enables TRNG with   32 Bytes Buffer.                                                                */
-/* -   64:  Enables TRNG with   64 Bytes Buffer.                                                                */
-/* -  128:  Enables TRNG with  128 Bytes Buffer.                                                                */
-/* -  256:  Enables TRNG with  256 Bytes Buffer.                                                                */
-/* -  512:  Enables TRNG with  512 Bytes Buffer.                                                                */
-/* - 1024:  Enables TRNG with 1024 Bytes Buffer.                                                                */
 /****************************************************************************************************************/
-#define CFG_TRNG (1024)
+#define CFG_TRNG (1024)        // Enables TRNG with 1024 Bytes buffer. (Can do 32, 64, 128, 256, 512, 1024)
 
 /****************************************************************************************************************/
 /* Creation of private and public keys using Elliptic Curve Diffie Hellman algorithms.                          */
@@ -100,12 +93,8 @@
 /****************************************************************************************************************/
 #undef CFG_LOG_HEAP_USAGE
 
-/****************************************************************************************************************/
-/* CFG_BLE_METRICS: Enables the BLE statistics measurement feature.                                                              */
-/* CFG_PRODUCTION_DEBUG_OUTPUT: Output the Hardfault arguments to serial/UART interface.                                                     */
-/****************************************************************************************************************/
-#undef CFG_BLE_METRICS
-#undef CFG_PRODUCTION_DEBUG_OUTPUT
+#undef CFG_BLE_METRICS                     // Enables the BLE statistics measurement feature.          
+#undef CFG_PRODUCTION_DEBUG_OUTPUT         // Output the Hardfault arguments to serial/UART interface. 
 
 /****************************************************************************************************************/
 /* Maximum supported TX data packet length (supportedMaxTxOctets value, as defined in 4.2 Specification).       */
@@ -133,9 +122,9 @@
 
 /****************************************************************************************************************/
 /* Select external application/host transport layer:                                                            */
-/* - 0 = GTL (auto), 1 = HCI (auto), 8 = GTL (fixed), 9 = HCI (fixed)                                       */
+/* - 0 = GTL (auto), 1 = HCI (auto), 8 = GTL (fixed), 9 = HCI (fixed)                                           */
 /****************************************************************************************************************/
-#define CFG_USE_H4TL                    (0)
+#define CFG_USE_H4TL                    (0) 
 #define CFG_BLE_DUPLICATE_FILTER_MAX    (10) // Duplicate filter max value for the scan report list. The maximum value shall be 100
 
 /****************************************************************************************************************/

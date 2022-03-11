@@ -25,8 +25,7 @@
 
 
 // Manufacturer Specific Data ADV structure type
-struct mnf_specific_data_ad_structure
-{
+struct mnf_specific_data_ad_structure {
     uint8_t ad_structure_size;
     uint8_t ad_structure_type;
     uint8_t company_id[APP_AD_MSD_COMPANY_ID_LEN];
@@ -114,9 +113,9 @@ void bandstop_filter(uint16_t *x, uint16_t *y) {
 
 
 /**
- ****************************************************************************************
- * @brief Initialize Manufacturer Specific Data
- ****************************************************************************************
+****************************************************************************************
+* @brief Initialize Manufacturer Specific Data
+****************************************************************************************
 */
 static void mnf_data_init() {
     mnf_data.ad_structure_size = sizeof(struct mnf_specific_data_ad_structure ) - sizeof(uint8_t); // minus the size of the ad_structure_size field
@@ -129,9 +128,9 @@ static void mnf_data_init() {
 
 
 /**
- ****************************************************************************************
- * @brief Update Manufacturer Specific Data
- ****************************************************************************************
+****************************************************************************************
+* @brief Update Manufacturer Specific Data
+****************************************************************************************
 */
 static void mnf_data_update()
 {
@@ -149,16 +148,16 @@ static void mnf_data_update()
 
 
 /**
- ****************************************************************************************
- * @brief Add an AD structure in the Advertising or Scan Response Data of the
- *        GAPM_START_ADVERTISE_CMD parameter struct.
- * @param[in] cmd               GAPM_START_ADVERTISE_CMD parameter struct
- * @param[in] ad_struct_data    AD structure buffer
- * @param[in] ad_struct_len     AD structure length
- * @param[in] adv_connectable   Connectable advertising event or not. It controls whether
- *                              the advertising data use the full 31 bytes length or only
- *                              28 bytes (Document CCSv6 - Part 1.3 Flags).
- ****************************************************************************************
+****************************************************************************************
+* @brief Add an AD structure in the Advertising or Scan Response Data of the
+*        GAPM_START_ADVERTISE_CMD parameter struct.
+* @param[in] cmd               GAPM_START_ADVERTISE_CMD parameter struct
+* @param[in] ad_struct_data    AD structure buffer
+* @param[in] ad_struct_len     AD structure length
+* @param[in] adv_connectable   Connectable advertising event or not. It controls whether
+*                              the advertising data use the full 31 bytes length or only
+*                              28 bytes (Document CCSv6 - Part 1.3 Flags).
+****************************************************************************************
 */
 static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_struct_data, uint8_t ad_struct_len, uint8_t adv_connectable) {
     uint8_t adv_data_max_size = (adv_connectable) ? (ADV_DATA_LEN - 3) : (ADV_DATA_LEN);
@@ -197,9 +196,9 @@ static void app_add_ad_struct(struct gapm_start_advertise_cmd *cmd, void *ad_str
 
 
 /**
- ****************************************************************************************
- * @brief Advertisement data update timer callback function.
- ****************************************************************************************
+****************************************************************************************
+* @brief Advertisement data update timer callback function.
+****************************************************************************************
 */
 static void adv_data_update_timer_cb() {
     // If mnd_data_index has MSB set, manufacturer data is stored in scan response
@@ -220,9 +219,9 @@ static void adv_data_update_timer_cb() {
 
 
 /**
- ****************************************************************************************
- * @brief Parameter update request timer callback function.
- ****************************************************************************************
+****************************************************************************************
+* @brief Parameter update request timer callback function.
+****************************************************************************************
 */
 static void param_update_request_timer_cb() {
     app_easy_gap_param_update_start(app_connection_idx);

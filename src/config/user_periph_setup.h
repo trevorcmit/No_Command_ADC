@@ -95,7 +95,7 @@
 /* ADC Configuration                                                                   */
 /***************************************************************************************/
 #define ADC_INPUT_PORT                  GPIO_PORT_0
-#define ADC_INPUT_PIN                   GPIO_PIN_6
+#define ADC_INPUT_PIN                   GPIO_PIN_3   // Testing pin_3 (pin. 13)
 
 
 // Function Declarations
@@ -127,6 +127,5 @@ void set_pad_functions(void);
  ****************************************************************************************
  */
 void periph_init(void);
-
 
 #endif // _USER_PERIPH_SETUP_H_
