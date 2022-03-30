@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\out_DA14531\Objects\ble_app_peripheral_531.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\out_DA14531\Objects\ble_app_peripheral_531.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Mar 09 18:01:45 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Mar 30 16:00:31 2022
 <BR><P>
 <H3>Maximum Stack Usage =        296 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1513,6 +1513,7 @@ Global Symbols
 
 <P><STRONG><a name="[108]"></a>adc_set_diff_input</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, adc_531.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_configure
+<LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_adcval1_timer_cb_handler
 </UL>
 
 <P><STRONG><a name="[107]"></a>adc_set_se_input</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, adc_531.o(.text))
@@ -2217,10 +2218,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_catch_rest_hndl
 </UL>
 
-<P><STRONG><a name="[2e]"></a>app_adcval1_timer_cb_handler</STRONG> (Thumb, 174 bytes, Stack size 232 bytes, user_peripheral.o(.text))
+<P><STRONG><a name="[2e]"></a>app_adcval1_timer_cb_handler</STRONG> (Thumb, 190 bytes, Stack size 232 bytes, user_peripheral.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = app_adcval1_timer_cb_handler &rArr; adc_offset_calibrate &rArr; adc_init &rArr; adc_configure
 </UL>
 <BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_start
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_set_diff_input
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_offset_calibrate
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_get_sample
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_disable
