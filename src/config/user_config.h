@@ -25,12 +25,7 @@
 */
 #define USER_CFG_ADDRESS_MODE       APP_CFG_ADDR_PUB
 
-/*************************************************************************
- * Controller Privacy Mode (Select only one option for controller privacy mode configuration):
- * - APP_CFG_CNTL_PRIV_MODE_NETWORK Controler Privacy Network mode (default)
- * - APP_CFG_CNTL_PRIV_MODE_DEVICE  Controler Privacy Device mode
- **************************************************************************
-*/
+// Controller Privacy Network mode or Device mode
 #define USER_CFG_CNTL_PRIV_MODE     APP_CFG_CNTL_PRIV_MODE_NETWORK
 
 // Possible values: ARCH_SLEEP_OFF, ARCH_EXT_SLEEP_ON, ARCH_EXT_SLEEP_OTP_COPY_ON
@@ -67,13 +62,8 @@ static const struct advertise_configuration user_adv_conf = {
     // - ADV_ALLOW_SCAN_ANY_CON_WLST: Allow both scan req from anyone and connection req from White List devices only
     .adv_filt_policy = ADV_ALLOW_SCAN_ANY_CON_ANY,
 
-    // Address of peer device
-    // NOTE: Meant for directed advertising (ADV_DIRECT_IND)
-    .peer_addr = {0x1, 0x2, 0x3, 0x4, 0x5, 0x6},
-
-    // Address type of peer device (0=public/1=random)
-    // NOTE: Meant for directed advertising (ADV_DIRECT_IND)
-    .peer_addr_type = 0,
+    .peer_addr = {0x1, 0x2, 0x3, 0x4, 0x5, 0x6}, // Address of peer device, for (ADV_DIRECT_IND)
+    .peer_addr_type = 0, // Address type of peer device (0=public/1=random), for (ADV_DIRECT_IND)
 };
 
 /*
@@ -104,13 +94,11 @@ static const struct advertise_configuration user_adv_conf = {
                                     "\x59\x5A\x08\xE4\x86\x2A\x9E\x8F\xE9\x11\xBC\x7C\x98\x43\x42\x18")
 
 // Advertising data length - maximum 28 bytes, 3 bytes are reserved to set
-#define USER_ADVERTISE_DATA_LEN               (sizeof(USER_ADVERTISE_DATA)-1)
+#define USER_ADVERTISE_DATA_LEN                (sizeof(USER_ADVERTISE_DATA)-1)
 
-// Scan response data
+// Scan response data and data length- maximum 31 bytes
 #define USER_ADVERTISE_SCAN_RESPONSE_DATA ""
-
-// Scan response data length- maximum 31 bytes
-#define USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN (sizeof(USER_ADVERTISE_SCAN_RESPONSE_DATA)-1)
+#define USER_ADVERTISE_SCAN_RESPONSE_DATA_LEN  (sizeof(USER_ADVERTISE_SCAN_RESPONSE_DATA)-1)
 
 /*
  ****************************************************************************************
@@ -121,7 +109,7 @@ static const struct advertise_configuration user_adv_conf = {
  * - The Bluetooth device name can be up to 248 bytes.
  ****************************************************************************************
 */
-#define USER_DEVICE_NAME        "IFM-Fiber-Test"                 // Device name
+#define USER_DEVICE_NAME        "IFM-Fiber-Pin3"                 // Device name
 #define USER_DEVICE_NAME_LEN    (sizeof(USER_DEVICE_NAME)-1)  // Device name length
 
 

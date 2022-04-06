@@ -1202,110 +1202,110 @@ Image Symbol Table
     mnf_data_update                          0x07fc3545   Thumb Code    28  user_peripheral.o(.text)
     adv_data_update_timer_cb                 0x07fc3561   Thumb Code    70  user_peripheral.o(.text)
     param_update_request_timer_cb            0x07fc35a7   Thumb Code    18  user_peripheral.o(.text)
-    app_add_ad_struct                        0x07fc3817   Thumb Code   130  user_peripheral.o(.text)
-    .text                                    0x07fc38e0   Section        0  patch.o(.text)
-    PATCHED_smpc_recv_pair_rand_pdu          0x07fc3ff9   Thumb Code   272  patch.o(.text)
-    .text                                    0x07fc44b0   Section       36  init.o(.text)
-    i.__ARM_common_ll_muluu                  0x07fc44d4   Section        0  arch_system.o(i.__ARM_common_ll_muluu)
-    i.__scatterload_copy                     0x07fc4504   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x07fc4512   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x07fc4514   Section       14  handlers.o(i.__scatterload_zeroinit)
-    .constdata                               0x07fc4522   Section       14  nvds.o(.constdata)
-    nvds_data_storage                        0x07fc4522   Data          14  nvds.o(.constdata)
-    .constdata                               0x07fc4530   Section        8  nvds.o(.constdata)
-    .constdata                               0x07fc4538   Section      380  jump_table.o(.constdata)
-    .constdata                               0x07fc46b4   Section      236  jump_table.o(.constdata)
-    .constdata                               0x07fc47a0   Section        8  arch_system.o(.constdata)
-    .constdata                               0x07fc47a8   Section      112  arch_rom.o(.constdata)
-    .constdata                               0x07fc4818   Section        2  gpio.o(.constdata)
-    p_mask                                   0x07fc4818   Data           2  gpio.o(.constdata)
-    .constdata                               0x07fc481c   Section       28  hw_otpc_531.o(.constdata)
-    tim1                                     0x07fc481c   Data          28  hw_otpc_531.o(.constdata)
-    .constdata                               0x07fc4838   Section      112  ble_arp.o(.constdata)
-    .constdata                               0x07fc48a8   Section       16  custs1.o(.constdata)
-    .constdata                               0x07fc48b8   Section       72  custs1_task.o(.constdata)
-    .constdata                               0x07fc4900   Section        8  custs1_task.o(.constdata)
-    .constdata                               0x07fc4908   Section       24  prf.o(.constdata)
-    .constdata                               0x07fc4920   Section       12  prf.o(.constdata)
-    .constdata                               0x07fc492c   Section       80  app.o(.constdata)
-    user_adv_conf                            0x07fc492c   Data          16  app.o(.constdata)
-    user_prf_funcs                           0x07fc493c   Data          12  app.o(.constdata)
-    TASK_DESC_APP                            0x07fc4960   Data          16  app.o(.constdata)
-    <Data1>                                  0x07fc4970   Data          12  app.o(.constdata)
-    .constdata                               0x07fc497c   Section      104  app_task.o(.constdata)
-    app_gap_process_handlers                 0x07fc497c   Data         104  app_task.o(.constdata)
-    .constdata                               0x07fc49e4   Section        8  app_diss_task.o(.constdata)
-    app_diss_process_handlers                0x07fc49e4   Data           8  app_diss_task.o(.constdata)
-    .constdata                               0x07fc49ec   Section       84  app_entry_point.o(.constdata)
-    user_app_callbacks                       0x07fc49ec   Data          84  app_entry_point.o(.constdata)
-    .constdata                               0x07fc4a40   Section       20  app_entry_point.o(.constdata)
-    .constdata                               0x07fc4a54   Section       32  app_entry_point.o(.constdata)
-    .constdata                               0x07fc4a74   Section       56  user_custs_config.o(.constdata)
+    app_add_ad_struct                        0x07fc3807   Thumb Code   130  user_peripheral.o(.text)
+    .text                                    0x07fc38d0   Section        0  patch.o(.text)
+    PATCHED_smpc_recv_pair_rand_pdu          0x07fc3fe9   Thumb Code   272  patch.o(.text)
+    .text                                    0x07fc44a0   Section       36  init.o(.text)
+    i.__ARM_common_ll_muluu                  0x07fc44c4   Section        0  arch_system.o(i.__ARM_common_ll_muluu)
+    i.__scatterload_copy                     0x07fc44f4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x07fc4502   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x07fc4504   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .constdata                               0x07fc4512   Section       14  nvds.o(.constdata)
+    nvds_data_storage                        0x07fc4512   Data          14  nvds.o(.constdata)
+    .constdata                               0x07fc4520   Section        8  nvds.o(.constdata)
+    .constdata                               0x07fc4528   Section      380  jump_table.o(.constdata)
+    .constdata                               0x07fc46a4   Section      236  jump_table.o(.constdata)
+    .constdata                               0x07fc4790   Section        8  arch_system.o(.constdata)
+    .constdata                               0x07fc4798   Section      112  arch_rom.o(.constdata)
+    .constdata                               0x07fc4808   Section        2  gpio.o(.constdata)
+    p_mask                                   0x07fc4808   Data           2  gpio.o(.constdata)
+    .constdata                               0x07fc480c   Section       28  hw_otpc_531.o(.constdata)
+    tim1                                     0x07fc480c   Data          28  hw_otpc_531.o(.constdata)
+    .constdata                               0x07fc4828   Section      112  ble_arp.o(.constdata)
+    .constdata                               0x07fc4898   Section       16  custs1.o(.constdata)
+    .constdata                               0x07fc48a8   Section       72  custs1_task.o(.constdata)
+    .constdata                               0x07fc48f0   Section        8  custs1_task.o(.constdata)
+    .constdata                               0x07fc48f8   Section       24  prf.o(.constdata)
+    .constdata                               0x07fc4910   Section       12  prf.o(.constdata)
+    .constdata                               0x07fc491c   Section       80  app.o(.constdata)
+    user_adv_conf                            0x07fc491c   Data          16  app.o(.constdata)
+    user_prf_funcs                           0x07fc492c   Data          12  app.o(.constdata)
+    TASK_DESC_APP                            0x07fc4950   Data          16  app.o(.constdata)
+    <Data1>                                  0x07fc4960   Data          12  app.o(.constdata)
+    .constdata                               0x07fc496c   Section      104  app_task.o(.constdata)
+    app_gap_process_handlers                 0x07fc496c   Data         104  app_task.o(.constdata)
+    .constdata                               0x07fc49d4   Section        8  app_diss_task.o(.constdata)
+    app_diss_process_handlers                0x07fc49d4   Data           8  app_diss_task.o(.constdata)
+    .constdata                               0x07fc49dc   Section       84  app_entry_point.o(.constdata)
+    user_app_callbacks                       0x07fc49dc   Data          84  app_entry_point.o(.constdata)
+    .constdata                               0x07fc4a30   Section       20  app_entry_point.o(.constdata)
+    .constdata                               0x07fc4a44   Section       32  app_entry_point.o(.constdata)
+    .constdata                               0x07fc4a64   Section       56  user_custs_config.o(.constdata)
+    .constdata                               0x07fc4a9c   Section       16  user_custs1_def.o(.constdata)
+    custs1_svc1                              0x07fc4a9c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4aac   Section       16  user_custs1_def.o(.constdata)
-    custs1_svc1                              0x07fc4aac   Data          16  user_custs1_def.o(.constdata)
+    SVC1_CTRL_POINT_UUID_128                 0x07fc4aac   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4abc   Section       16  user_custs1_def.o(.constdata)
-    SVC1_CTRL_POINT_UUID_128                 0x07fc4abc   Data          16  user_custs1_def.o(.constdata)
+    SVC1_LED_STATE_UUID_128                  0x07fc4abc   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4acc   Section       16  user_custs1_def.o(.constdata)
-    SVC1_LED_STATE_UUID_128                  0x07fc4acc   Data          16  user_custs1_def.o(.constdata)
+    SVC1_ADC_VAL_1_UUID_128                  0x07fc4acc   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4adc   Section       16  user_custs1_def.o(.constdata)
-    SVC1_ADC_VAL_1_UUID_128                  0x07fc4adc   Data          16  user_custs1_def.o(.constdata)
+    SVC1_ADC_VAL_2_UUID_128                  0x07fc4adc   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4aec   Section       16  user_custs1_def.o(.constdata)
-    SVC1_ADC_VAL_2_UUID_128                  0x07fc4aec   Data          16  user_custs1_def.o(.constdata)
+    SVC1_BUTTON_STATE_UUID_128               0x07fc4aec   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4afc   Section       16  user_custs1_def.o(.constdata)
-    SVC1_BUTTON_STATE_UUID_128               0x07fc4afc   Data          16  user_custs1_def.o(.constdata)
+    SVC1_INDICATEABLE_UUID_128               0x07fc4afc   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b0c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_INDICATEABLE_UUID_128               0x07fc4b0c   Data          16  user_custs1_def.o(.constdata)
+    SVC1_LONG_VALUE_UUID_128                 0x07fc4b0c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b1c   Section       16  user_custs1_def.o(.constdata)
-    SVC1_LONG_VALUE_UUID_128                 0x07fc4b1c   Data          16  user_custs1_def.o(.constdata)
+    custs1_svc2                              0x07fc4b1c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b2c   Section       16  user_custs1_def.o(.constdata)
-    custs1_svc2                              0x07fc4b2c   Data          16  user_custs1_def.o(.constdata)
+    SVC2_WRITE_VAL_1_UUID_128                0x07fc4b2c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b3c   Section       16  user_custs1_def.o(.constdata)
-    SVC2_WRITE_VAL_1_UUID_128                0x07fc4b3c   Data          16  user_custs1_def.o(.constdata)
+    SVC2_WRITE_VAL_2_UUID_128                0x07fc4b3c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b4c   Section       16  user_custs1_def.o(.constdata)
-    SVC2_WRITE_VAL_2_UUID_128                0x07fc4b4c   Data          16  user_custs1_def.o(.constdata)
+    custs1_svc3                              0x07fc4b4c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b5c   Section       16  user_custs1_def.o(.constdata)
-    custs1_svc3                              0x07fc4b5c   Data          16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_1_UUID_128                 0x07fc4b5c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b6c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_1_UUID_128                 0x07fc4b6c   Data          16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_2_UUID_128                 0x07fc4b6c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b7c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_2_UUID_128                 0x07fc4b7c   Data          16  user_custs1_def.o(.constdata)
+    SVC3_READ_VAL_3_UUID_128                 0x07fc4b7c   Data          16  user_custs1_def.o(.constdata)
     .constdata                               0x07fc4b8c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_3_UUID_128                 0x07fc4b8c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4b9c   Section       16  user_custs1_def.o(.constdata)
-    SVC3_READ_VAL_4_UUID_128                 0x07fc4b9c   Data          16  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bac   Section        2  user_custs1_def.o(.constdata)
-    att_decl_svc                             0x07fc4bac   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bae   Section        2  user_custs1_def.o(.constdata)
-    att_decl_char                            0x07fc4bae   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bb0   Section        2  user_custs1_def.o(.constdata)
-    att_desc_cfg                             0x07fc4bb0   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bb2   Section        2  user_custs1_def.o(.constdata)
-    att_desc_user_desc                       0x07fc4bb2   Data           2  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bb4   Section        4  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bb8   Section        1  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4bbc   Section      960  user_custs1_def.o(.constdata)
-    .constdata                               0x07fc4f7c   Section        8  user_peripheral.o(.constdata)
-    .constdata                               0x07fc4f84   Section       36  patch.o(.constdata)
-    patch_new_table                          0x07fc4f84   Data          12  patch.o(.constdata)
-    patch_orig_table                         0x07fc4f90   Data          24  patch.o(.constdata)
-    .conststring                             0x07fc4fa8   Section      190  user_custs1_def.o(.conststring)
-    .data                                    0x07fc5088   Section        1  rf_531.o(.data)
-    .bss                                     0x07fc5090   Section       12  arch_system.o(.bss)
-    .bss                                     0x07fc509c   Section        4  otp_cs.o(.bss)
-    txdiv_trim                               0x07fc509c   Data           4  otp_cs.o(.bss)
-    .bss                                     0x07fc50a0   Section        2  syscntl.o(.bss)
-    .bss                                     0x07fc50a2   Section        2  adc_531.o(.bss)
-    cal_val                                  0x07fc50a2   Data           2  adc_531.o(.bss)
-    .bss                                     0x07fc50a4   Section       48  i2c.o(.bss)
-    i2c_env                                  0x07fc50a4   Data          48  i2c.o(.bss)
-    .bss                                     0x07fc50d4   Section       20  trng.o(.bss)
-    extra_samples                            0x07fc50d4   Data           4  trng.o(.bss)
-    trng_bits                                0x07fc50d8   Data          16  trng.o(.bss)
-    .bss                                     0x07fc50e8   Section        4  rwip.o(.bss)
-    .bss                                     0x07fc50ec   Section       46  rf_531.o(.bss)
-    fsm_ctrl_reg                             0x07fc50ec   Data           4  rf_531.o(.bss)
-    STACK                                    0x07fc5120   Section     1536  startup_da14531.o(STACK)
-    heap_mem_area_not_ret                    0x07fc5720   Section     1036  jump_table.o(heap_mem_area_not_ret)
+    SVC3_READ_VAL_4_UUID_128                 0x07fc4b8c   Data          16  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4b9c   Section        2  user_custs1_def.o(.constdata)
+    att_decl_svc                             0x07fc4b9c   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4b9e   Section        2  user_custs1_def.o(.constdata)
+    att_decl_char                            0x07fc4b9e   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4ba0   Section        2  user_custs1_def.o(.constdata)
+    att_desc_cfg                             0x07fc4ba0   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4ba2   Section        2  user_custs1_def.o(.constdata)
+    att_desc_user_desc                       0x07fc4ba2   Data           2  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4ba4   Section        4  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4ba8   Section        1  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4bac   Section      960  user_custs1_def.o(.constdata)
+    .constdata                               0x07fc4f6c   Section        8  user_peripheral.o(.constdata)
+    .constdata                               0x07fc4f74   Section       36  patch.o(.constdata)
+    patch_new_table                          0x07fc4f74   Data          12  patch.o(.constdata)
+    patch_orig_table                         0x07fc4f80   Data          24  patch.o(.constdata)
+    .conststring                             0x07fc4f98   Section      190  user_custs1_def.o(.conststring)
+    .data                                    0x07fc5078   Section        1  rf_531.o(.data)
+    .bss                                     0x07fc5080   Section       12  arch_system.o(.bss)
+    .bss                                     0x07fc508c   Section        4  otp_cs.o(.bss)
+    txdiv_trim                               0x07fc508c   Data           4  otp_cs.o(.bss)
+    .bss                                     0x07fc5090   Section        2  syscntl.o(.bss)
+    .bss                                     0x07fc5092   Section        2  adc_531.o(.bss)
+    cal_val                                  0x07fc5092   Data           2  adc_531.o(.bss)
+    .bss                                     0x07fc5094   Section       48  i2c.o(.bss)
+    i2c_env                                  0x07fc5094   Data          48  i2c.o(.bss)
+    .bss                                     0x07fc50c4   Section       20  trng.o(.bss)
+    extra_samples                            0x07fc50c4   Data           4  trng.o(.bss)
+    trng_bits                                0x07fc50c8   Data          16  trng.o(.bss)
+    .bss                                     0x07fc50d8   Section        4  rwip.o(.bss)
+    .bss                                     0x07fc50dc   Section       46  rf_531.o(.bss)
+    fsm_ctrl_reg                             0x07fc50dc   Data           4  rf_531.o(.bss)
+    STACK                                    0x07fc5110   Section     1536  startup_da14531.o(STACK)
+    heap_mem_area_not_ret                    0x07fc5710   Section     1036  jump_table.o(heap_mem_area_not_ret)
     retention_mem_area0                      0x07fc8bc0   Section        8  arch_main.o(retention_mem_area0)
     ret_mode_for_non_ret_heap                0x07fc8bc0   Data           1  arch_main.o(retention_mem_area0)
     ret_mode                                 0x07fc8bc1   Data           1  arch_main.o(retention_mem_area0)
@@ -1383,7 +1383,7 @@ Image Symbol Table
     sb_set_debugger_mode                      - Undefined Weak Reference
     __Vectors_Size                           0x000000a0   Number         0  startup_da14531.o ABSOLUTE
     heap_mem_area_not_ret$$Length            0x0000040c   Number         0  anon$$obj.o ABSOLUTE
-    Image$$ER_IROM3$$Length                  0x00004f7c   Number         0  anon$$obj.o ABSOLUTE
+    Image$$ER_IROM3$$Length                  0x00004f6c   Number         0  anon$$obj.o ABSOLUTE
     uECC_vli_add                             0x07f02001   Thumb Code     0  da14531_symbols.txt ABSOLUTE
     uECC_vli_sub                             0x07f02019   Thumb Code     0  da14531_symbols.txt ABSOLUTE
     uECC_vli_mult                            0x07f02035   Thumb Code     0  da14531_symbols.txt ABSOLUTE
@@ -2452,61 +2452,61 @@ Image Symbol Table
     user_svc1_long_val_att_info_req_handler  0x07fc3487   Thumb Code    48  user_custs1_impl.o(.text)
     user_svc1_rest_att_info_req_handler      0x07fc34b7   Thumb Code    50  user_custs1_impl.o(.text)
     user_svc3_read_non_db_val_handler        0x07fc34e9   Thumb Code    78  user_custs1_impl.o(.text)
-    app_adcval1_timer_cb_handler             0x07fc35b9   Thumb Code   190  user_peripheral.o(.text)
-    user_app_init                            0x07fc3677   Thumb Code    54  user_peripheral.o(.text)
-    user_app_adv_start                       0x07fc36ad   Thumb Code    36  user_peripheral.o(.text)
-    user_app_connection                      0x07fc36d1   Thumb Code    90  user_peripheral.o(.text)
-    user_app_adv_undirect_complete           0x07fc372b   Thumb Code     8  user_peripheral.o(.text)
-    user_app_disconnect                      0x07fc3733   Thumb Code    30  user_peripheral.o(.text)
-    user_catch_rest_hndl                     0x07fc3751   Thumb Code   198  user_peripheral.o(.text)
-    JT_lld_test_mode_rx_func                 0x07fc38e1   Thumb Code   142  patch.o(.text)
-    JT_l2cc_pdu_unpack_func                  0x07fc396f   Thumb Code   786  patch.o(.text)
-    JT_l2cc_pdu_recv_ind_handler_func        0x07fc3c81   Thumb Code    72  patch.o(.text)
-    PATCHED_llm_con_req_ind                  0x07fc3cc9   Thumb Code   816  patch.o(.text)
-    PATCHED_smpc_recv_public_key_exchange_pdu 0x07fc4109   Thumb Code   106  patch.o(.text)
-    PATCHED_llc_data_ind_handler             0x07fc4173   Thumb Code   176  patch.o(.text)
-    PATCHED_llcp_length_req_handler          0x07fc4223   Thumb Code   118  patch.o(.text)
-    PATCHED_llcp_length_rsp_handler          0x07fc4299   Thumb Code   134  patch.o(.text)
-    JT_llc_le_length_effective_func          0x07fc431f   Thumb Code   188  patch.o(.text)
-    lld_drop_packet_fix                      0x07fc43db   Thumb Code    64  patch.o(.text)
-    PATCHED_lld_data_ind_handler             0x07fc441b   Thumb Code    58  patch.o(.text)
-    patch_func                               0x07fc4455   Thumb Code    44  patch.o(.text)
-    patch_global_vars_init                   0x07fc4481   Thumb Code     2  patch.o(.text)
-    __scatterload                            0x07fc44b1   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x07fc44b1   Thumb Code     0  init.o(.text)
-    __ARM_common_ll_muluu                    0x07fc44d5   Thumb Code    48  arch_system.o(i.__ARM_common_ll_muluu)
-    __scatterload_copy                       0x07fc4505   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x07fc4513   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x07fc4515   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    rom_nvds_cfg                             0x07fc4530   Data           8  nvds.o(.constdata)
-    rom_func_addr_table_var                  0x07fc4538   Data         380  jump_table.o(.constdata)
-    rom_cfg_table_var                        0x07fc46b4   Data         236  jump_table.o(.constdata)
-    my_custom_msg_handlers                   0x07fc47b0   Data          40  arch_rom.o(.constdata)
-    arp_init_table                           0x07fc4838   Data         112  ble_arp.o(.constdata)
-    rom_cust_prf_cfg                         0x07fc48a8   Data          16  custs1.o(.constdata)
-    custs1_default_state                     0x07fc48b8   Data          72  custs1_task.o(.constdata)
-    custs1_default_handler                   0x07fc4900   Data           8  custs1_task.o(.constdata)
-    prf_if                                   0x07fc4908   Data          24  prf.o(.constdata)
-    rom_prf_cfg                              0x07fc4920   Data          12  prf.o(.constdata)
-    prf_funcs                                0x07fc4948   Data          24  app.o(.constdata)
-    app_process_handlers                     0x07fc4a40   Data          20  app_entry_point.o(.constdata)
-    rom_app_task_cfg                         0x07fc4a54   Data          32  app_entry_point.o(.constdata)
-    cust_prf_funcs                           0x07fc4a74   Data          56  user_custs_config.o(.constdata)
-    custs1_services                          0x07fc4bb4   Data           4  user_custs1_def.o(.constdata)
-    custs1_services_size                     0x07fc4bb8   Data           1  user_custs1_def.o(.constdata)
-    custs1_att_db                            0x07fc4bbc   Data         960  user_custs1_def.o(.constdata)
-    Region$$Table$$Base                      0x07fc5068   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x07fc5088   Number         0  anon$$obj.o(Region$$Table)
-    pa_en_dcf_tx_setting                     0x07fc5088   Data           1  rf_531.o(.data)
-    otp_hdr_timestamp                        0x07fc5090   Data           4  arch_system.o(.bss)
-    twirq_set_value                          0x07fc5094   Data           4  arch_system.o(.bss)
-    twirq_reset_value                        0x07fc5098   Data           4  arch_system.o(.bss)
-    syscntl_dcdc_state                       0x07fc50a0   Data           2  syscntl.o(.bss)
-    twext_value                              0x07fc50e8   Data           4  rwip.o(.bss)
-    calibration_res                          0x07fc50f0   Data          42  rf_531.o(.bss)
-    __initial_sp                             0x07fc5720   Data           0  startup_da14531.o(STACK)
-    heap_mem_area_not_ret$$Base              0x07fc5720   Number         0  jump_table.o(heap_mem_area_not_ret)
-    rwip_heap_non_ret                        0x07fc5720   Data        1036  jump_table.o(heap_mem_area_not_ret)
+    app_adcval1_timer_cb_handler             0x07fc35b9   Thumb Code   174  user_peripheral.o(.text)
+    user_app_init                            0x07fc3667   Thumb Code    54  user_peripheral.o(.text)
+    user_app_adv_start                       0x07fc369d   Thumb Code    36  user_peripheral.o(.text)
+    user_app_connection                      0x07fc36c1   Thumb Code    90  user_peripheral.o(.text)
+    user_app_adv_undirect_complete           0x07fc371b   Thumb Code     8  user_peripheral.o(.text)
+    user_app_disconnect                      0x07fc3723   Thumb Code    30  user_peripheral.o(.text)
+    user_catch_rest_hndl                     0x07fc3741   Thumb Code   198  user_peripheral.o(.text)
+    JT_lld_test_mode_rx_func                 0x07fc38d1   Thumb Code   142  patch.o(.text)
+    JT_l2cc_pdu_unpack_func                  0x07fc395f   Thumb Code   786  patch.o(.text)
+    JT_l2cc_pdu_recv_ind_handler_func        0x07fc3c71   Thumb Code    72  patch.o(.text)
+    PATCHED_llm_con_req_ind                  0x07fc3cb9   Thumb Code   816  patch.o(.text)
+    PATCHED_smpc_recv_public_key_exchange_pdu 0x07fc40f9   Thumb Code   106  patch.o(.text)
+    PATCHED_llc_data_ind_handler             0x07fc4163   Thumb Code   176  patch.o(.text)
+    PATCHED_llcp_length_req_handler          0x07fc4213   Thumb Code   118  patch.o(.text)
+    PATCHED_llcp_length_rsp_handler          0x07fc4289   Thumb Code   134  patch.o(.text)
+    JT_llc_le_length_effective_func          0x07fc430f   Thumb Code   188  patch.o(.text)
+    lld_drop_packet_fix                      0x07fc43cb   Thumb Code    64  patch.o(.text)
+    PATCHED_lld_data_ind_handler             0x07fc440b   Thumb Code    58  patch.o(.text)
+    patch_func                               0x07fc4445   Thumb Code    44  patch.o(.text)
+    patch_global_vars_init                   0x07fc4471   Thumb Code     2  patch.o(.text)
+    __scatterload                            0x07fc44a1   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x07fc44a1   Thumb Code     0  init.o(.text)
+    __ARM_common_ll_muluu                    0x07fc44c5   Thumb Code    48  arch_system.o(i.__ARM_common_ll_muluu)
+    __scatterload_copy                       0x07fc44f5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x07fc4503   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x07fc4505   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    rom_nvds_cfg                             0x07fc4520   Data           8  nvds.o(.constdata)
+    rom_func_addr_table_var                  0x07fc4528   Data         380  jump_table.o(.constdata)
+    rom_cfg_table_var                        0x07fc46a4   Data         236  jump_table.o(.constdata)
+    my_custom_msg_handlers                   0x07fc47a0   Data          40  arch_rom.o(.constdata)
+    arp_init_table                           0x07fc4828   Data         112  ble_arp.o(.constdata)
+    rom_cust_prf_cfg                         0x07fc4898   Data          16  custs1.o(.constdata)
+    custs1_default_state                     0x07fc48a8   Data          72  custs1_task.o(.constdata)
+    custs1_default_handler                   0x07fc48f0   Data           8  custs1_task.o(.constdata)
+    prf_if                                   0x07fc48f8   Data          24  prf.o(.constdata)
+    rom_prf_cfg                              0x07fc4910   Data          12  prf.o(.constdata)
+    prf_funcs                                0x07fc4938   Data          24  app.o(.constdata)
+    app_process_handlers                     0x07fc4a30   Data          20  app_entry_point.o(.constdata)
+    rom_app_task_cfg                         0x07fc4a44   Data          32  app_entry_point.o(.constdata)
+    cust_prf_funcs                           0x07fc4a64   Data          56  user_custs_config.o(.constdata)
+    custs1_services                          0x07fc4ba4   Data           4  user_custs1_def.o(.constdata)
+    custs1_services_size                     0x07fc4ba8   Data           1  user_custs1_def.o(.constdata)
+    custs1_att_db                            0x07fc4bac   Data         960  user_custs1_def.o(.constdata)
+    Region$$Table$$Base                      0x07fc5058   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x07fc5078   Number         0  anon$$obj.o(Region$$Table)
+    pa_en_dcf_tx_setting                     0x07fc5078   Data           1  rf_531.o(.data)
+    otp_hdr_timestamp                        0x07fc5080   Data           4  arch_system.o(.bss)
+    twirq_set_value                          0x07fc5084   Data           4  arch_system.o(.bss)
+    twirq_reset_value                        0x07fc5088   Data           4  arch_system.o(.bss)
+    syscntl_dcdc_state                       0x07fc5090   Data           2  syscntl.o(.bss)
+    twext_value                              0x07fc50d8   Data           4  rwip.o(.bss)
+    calibration_res                          0x07fc50e0   Data          42  rf_531.o(.bss)
+    __initial_sp                             0x07fc5710   Data           0  startup_da14531.o(STACK)
+    heap_mem_area_not_ret$$Base              0x07fc5710   Number         0  jump_table.o(heap_mem_area_not_ret)
+    rwip_heap_non_ret                        0x07fc5710   Data        1036  jump_table.o(heap_mem_area_not_ret)
     Image$$RET_DATA_UNINIT$$Base             0x07fc8bc0   Number         0  anon$$obj.o ABSOLUTE
     sys_startup_flag                         0x07fc8bd0   Data           1  arch_system.o(retention_mem_area0)
     last_temp                                0x07fc8bd1   Data           1  arch_system.o(retention_mem_area0)
@@ -2682,9 +2682,9 @@ Memory Map of the image
 
 
 
-  Load Region LR_IROM3 (Base: 0x07fc0110, Size: 0x00004f7c, Max: 0x00008ab0, ABSOLUTE)
+  Load Region LR_IROM3 (Base: 0x07fc0110, Size: 0x00004f6c, Max: 0x00008ab0, ABSOLUTE)
 
-    Execution Region ER_IROM3 (Exec base: 0x07fc0110, Load base: 0x07fc0110, Size: 0x00004f7c, Max: 0x00008ab0, ABSOLUTE)
+    Execution Region ER_IROM3 (Exec base: 0x07fc0110, Load base: 0x07fc0110, Size: 0x00004f6c, Max: 0x00008ab0, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2736,96 +2736,96 @@ Memory Map of the image
     0x07fc3304   0x07fc3304   0x00000018   Code   RO         2909    .text               app_customs_task.o
     0x07fc331c   0x07fc331c   0x000000d0   Code   RO         3018    .text               user_periph_setup.o
     0x07fc33ec   0x07fc33ec   0x00000158   Code   RO         3037    .text               user_custs1_impl.o
-    0x07fc3544   0x07fc3544   0x0000039c   Code   RO         3092    .text               user_peripheral.o
-    0x07fc38e0   0x07fc38e0   0x00000bd0   Code   RO         3129    .text               da14531.lib(patch.o)
-    0x07fc44b0   0x07fc44b0   0x00000024   Code   RO         3226    .text               mc_p.l(init.o)
-    0x07fc44d4   0x07fc44d4   0x00000030   Code   RO          717    i.__ARM_common_ll_muluu  arch_system.o
-    0x07fc4504   0x07fc4504   0x0000000e   Code   RO         3236    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x07fc4512   0x07fc4512   0x00000002   Code   RO         3237    i.__scatterload_null  mc_p.l(handlers.o)
-    0x07fc4514   0x07fc4514   0x0000000e   Code   RO         3238    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x07fc4522   0x07fc4522   0x0000000e   Data   RO          350    .constdata          nvds.o
-    0x07fc4530   0x07fc4530   0x00000008   Data   RO          351    .constdata          nvds.o
-    0x07fc4538   0x07fc4538   0x0000017c   Data   RO          552    .constdata          jump_table.o
-    0x07fc46b4   0x07fc46b4   0x000000ec   Data   RO          553    .constdata          jump_table.o
-    0x07fc47a0   0x07fc47a0   0x00000008   Data   RO          682    .constdata          arch_system.o
-    0x07fc47a8   0x07fc47a8   0x00000070   Data   RO          844    .constdata          arch_rom.o
-    0x07fc4818   0x07fc4818   0x00000002   Data   RO          984    .constdata          gpio.o
-    0x07fc481a   0x07fc481a   0x00000002   PAD
-    0x07fc481c   0x07fc481c   0x0000001c   Data   RO         1906    .constdata          hw_otpc_531.o
-    0x07fc4838   0x07fc4838   0x00000070   Data   RO         2189    .constdata          ble_arp.o
-    0x07fc48a8   0x07fc48a8   0x00000010   Data   RO         2353    .constdata          custs1.o
-    0x07fc48b8   0x07fc48b8   0x00000048   Data   RO         2370    .constdata          custs1_task.o
-    0x07fc4900   0x07fc4900   0x00000008   Data   RO         2371    .constdata          custs1_task.o
-    0x07fc4908   0x07fc4908   0x00000018   Data   RO         2394    .constdata          prf.o
-    0x07fc4920   0x07fc4920   0x0000000c   Data   RO         2395    .constdata          prf.o
-    0x07fc492c   0x07fc492c   0x00000050   Data   RO         2490    .constdata          app.o
-    0x07fc497c   0x07fc497c   0x00000068   Data   RO         2621    .constdata          app_task.o
-    0x07fc49e4   0x07fc49e4   0x00000008   Data   RO         2716    .constdata          app_diss_task.o
-    0x07fc49ec   0x07fc49ec   0x00000054   Data   RO         2744    .constdata          app_entry_point.o
-    0x07fc4a40   0x07fc4a40   0x00000014   Data   RO         2745    .constdata          app_entry_point.o
-    0x07fc4a54   0x07fc4a54   0x00000020   Data   RO         2746    .constdata          app_entry_point.o
-    0x07fc4a74   0x07fc4a74   0x00000038   Data   RO         2972    .constdata          user_custs_config.o
-    0x07fc4aac   0x07fc4aac   0x00000010   Data   RO         2985    .constdata          user_custs1_def.o
-    0x07fc4abc   0x07fc4abc   0x00000010   Data   RO         2986    .constdata          user_custs1_def.o
-    0x07fc4acc   0x07fc4acc   0x00000010   Data   RO         2987    .constdata          user_custs1_def.o
-    0x07fc4adc   0x07fc4adc   0x00000010   Data   RO         2988    .constdata          user_custs1_def.o
-    0x07fc4aec   0x07fc4aec   0x00000010   Data   RO         2989    .constdata          user_custs1_def.o
-    0x07fc4afc   0x07fc4afc   0x00000010   Data   RO         2990    .constdata          user_custs1_def.o
-    0x07fc4b0c   0x07fc4b0c   0x00000010   Data   RO         2991    .constdata          user_custs1_def.o
-    0x07fc4b1c   0x07fc4b1c   0x00000010   Data   RO         2992    .constdata          user_custs1_def.o
-    0x07fc4b2c   0x07fc4b2c   0x00000010   Data   RO         2993    .constdata          user_custs1_def.o
-    0x07fc4b3c   0x07fc4b3c   0x00000010   Data   RO         2994    .constdata          user_custs1_def.o
-    0x07fc4b4c   0x07fc4b4c   0x00000010   Data   RO         2995    .constdata          user_custs1_def.o
-    0x07fc4b5c   0x07fc4b5c   0x00000010   Data   RO         2996    .constdata          user_custs1_def.o
-    0x07fc4b6c   0x07fc4b6c   0x00000010   Data   RO         2997    .constdata          user_custs1_def.o
-    0x07fc4b7c   0x07fc4b7c   0x00000010   Data   RO         2998    .constdata          user_custs1_def.o
-    0x07fc4b8c   0x07fc4b8c   0x00000010   Data   RO         2999    .constdata          user_custs1_def.o
-    0x07fc4b9c   0x07fc4b9c   0x00000010   Data   RO         3000    .constdata          user_custs1_def.o
-    0x07fc4bac   0x07fc4bac   0x00000002   Data   RO         3001    .constdata          user_custs1_def.o
-    0x07fc4bae   0x07fc4bae   0x00000002   Data   RO         3002    .constdata          user_custs1_def.o
-    0x07fc4bb0   0x07fc4bb0   0x00000002   Data   RO         3003    .constdata          user_custs1_def.o
-    0x07fc4bb2   0x07fc4bb2   0x00000002   Data   RO         3004    .constdata          user_custs1_def.o
-    0x07fc4bb4   0x07fc4bb4   0x00000004   Data   RO         3005    .constdata          user_custs1_def.o
-    0x07fc4bb8   0x07fc4bb8   0x00000001   Data   RO         3006    .constdata          user_custs1_def.o
-    0x07fc4bb9   0x07fc4bb9   0x00000003   PAD
-    0x07fc4bbc   0x07fc4bbc   0x000003c0   Data   RO         3008    .constdata          user_custs1_def.o
-    0x07fc4f7c   0x07fc4f7c   0x00000008   Data   RO         3095    .constdata          user_peripheral.o
-    0x07fc4f84   0x07fc4f84   0x00000024   Data   RO         3130    .constdata          da14531.lib(patch.o)
-    0x07fc4fa8   0x07fc4fa8   0x000000be   Data   RO         3009    .conststring        user_custs1_def.o
-    0x07fc5066   0x07fc5066   0x00000002   PAD
-    0x07fc5068   0x07fc5068   0x00000020   Data   RO         3234    Region$$Table       anon$$obj.o
-    0x07fc5088   0x07fc5088   0x00000001   Data   RW         2230    .data               rf_531.o
+    0x07fc3544   0x07fc3544   0x0000038c   Code   RO         3092    .text               user_peripheral.o
+    0x07fc38d0   0x07fc38d0   0x00000bd0   Code   RO         3129    .text               da14531.lib(patch.o)
+    0x07fc44a0   0x07fc44a0   0x00000024   Code   RO         3226    .text               mc_p.l(init.o)
+    0x07fc44c4   0x07fc44c4   0x00000030   Code   RO          717    i.__ARM_common_ll_muluu  arch_system.o
+    0x07fc44f4   0x07fc44f4   0x0000000e   Code   RO         3236    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x07fc4502   0x07fc4502   0x00000002   Code   RO         3237    i.__scatterload_null  mc_p.l(handlers.o)
+    0x07fc4504   0x07fc4504   0x0000000e   Code   RO         3238    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x07fc4512   0x07fc4512   0x0000000e   Data   RO          350    .constdata          nvds.o
+    0x07fc4520   0x07fc4520   0x00000008   Data   RO          351    .constdata          nvds.o
+    0x07fc4528   0x07fc4528   0x0000017c   Data   RO          552    .constdata          jump_table.o
+    0x07fc46a4   0x07fc46a4   0x000000ec   Data   RO          553    .constdata          jump_table.o
+    0x07fc4790   0x07fc4790   0x00000008   Data   RO          682    .constdata          arch_system.o
+    0x07fc4798   0x07fc4798   0x00000070   Data   RO          844    .constdata          arch_rom.o
+    0x07fc4808   0x07fc4808   0x00000002   Data   RO          984    .constdata          gpio.o
+    0x07fc480a   0x07fc480a   0x00000002   PAD
+    0x07fc480c   0x07fc480c   0x0000001c   Data   RO         1906    .constdata          hw_otpc_531.o
+    0x07fc4828   0x07fc4828   0x00000070   Data   RO         2189    .constdata          ble_arp.o
+    0x07fc4898   0x07fc4898   0x00000010   Data   RO         2353    .constdata          custs1.o
+    0x07fc48a8   0x07fc48a8   0x00000048   Data   RO         2370    .constdata          custs1_task.o
+    0x07fc48f0   0x07fc48f0   0x00000008   Data   RO         2371    .constdata          custs1_task.o
+    0x07fc48f8   0x07fc48f8   0x00000018   Data   RO         2394    .constdata          prf.o
+    0x07fc4910   0x07fc4910   0x0000000c   Data   RO         2395    .constdata          prf.o
+    0x07fc491c   0x07fc491c   0x00000050   Data   RO         2490    .constdata          app.o
+    0x07fc496c   0x07fc496c   0x00000068   Data   RO         2621    .constdata          app_task.o
+    0x07fc49d4   0x07fc49d4   0x00000008   Data   RO         2716    .constdata          app_diss_task.o
+    0x07fc49dc   0x07fc49dc   0x00000054   Data   RO         2744    .constdata          app_entry_point.o
+    0x07fc4a30   0x07fc4a30   0x00000014   Data   RO         2745    .constdata          app_entry_point.o
+    0x07fc4a44   0x07fc4a44   0x00000020   Data   RO         2746    .constdata          app_entry_point.o
+    0x07fc4a64   0x07fc4a64   0x00000038   Data   RO         2972    .constdata          user_custs_config.o
+    0x07fc4a9c   0x07fc4a9c   0x00000010   Data   RO         2985    .constdata          user_custs1_def.o
+    0x07fc4aac   0x07fc4aac   0x00000010   Data   RO         2986    .constdata          user_custs1_def.o
+    0x07fc4abc   0x07fc4abc   0x00000010   Data   RO         2987    .constdata          user_custs1_def.o
+    0x07fc4acc   0x07fc4acc   0x00000010   Data   RO         2988    .constdata          user_custs1_def.o
+    0x07fc4adc   0x07fc4adc   0x00000010   Data   RO         2989    .constdata          user_custs1_def.o
+    0x07fc4aec   0x07fc4aec   0x00000010   Data   RO         2990    .constdata          user_custs1_def.o
+    0x07fc4afc   0x07fc4afc   0x00000010   Data   RO         2991    .constdata          user_custs1_def.o
+    0x07fc4b0c   0x07fc4b0c   0x00000010   Data   RO         2992    .constdata          user_custs1_def.o
+    0x07fc4b1c   0x07fc4b1c   0x00000010   Data   RO         2993    .constdata          user_custs1_def.o
+    0x07fc4b2c   0x07fc4b2c   0x00000010   Data   RO         2994    .constdata          user_custs1_def.o
+    0x07fc4b3c   0x07fc4b3c   0x00000010   Data   RO         2995    .constdata          user_custs1_def.o
+    0x07fc4b4c   0x07fc4b4c   0x00000010   Data   RO         2996    .constdata          user_custs1_def.o
+    0x07fc4b5c   0x07fc4b5c   0x00000010   Data   RO         2997    .constdata          user_custs1_def.o
+    0x07fc4b6c   0x07fc4b6c   0x00000010   Data   RO         2998    .constdata          user_custs1_def.o
+    0x07fc4b7c   0x07fc4b7c   0x00000010   Data   RO         2999    .constdata          user_custs1_def.o
+    0x07fc4b8c   0x07fc4b8c   0x00000010   Data   RO         3000    .constdata          user_custs1_def.o
+    0x07fc4b9c   0x07fc4b9c   0x00000002   Data   RO         3001    .constdata          user_custs1_def.o
+    0x07fc4b9e   0x07fc4b9e   0x00000002   Data   RO         3002    .constdata          user_custs1_def.o
+    0x07fc4ba0   0x07fc4ba0   0x00000002   Data   RO         3003    .constdata          user_custs1_def.o
+    0x07fc4ba2   0x07fc4ba2   0x00000002   Data   RO         3004    .constdata          user_custs1_def.o
+    0x07fc4ba4   0x07fc4ba4   0x00000004   Data   RO         3005    .constdata          user_custs1_def.o
+    0x07fc4ba8   0x07fc4ba8   0x00000001   Data   RO         3006    .constdata          user_custs1_def.o
+    0x07fc4ba9   0x07fc4ba9   0x00000003   PAD
+    0x07fc4bac   0x07fc4bac   0x000003c0   Data   RO         3008    .constdata          user_custs1_def.o
+    0x07fc4f6c   0x07fc4f6c   0x00000008   Data   RO         3095    .constdata          user_peripheral.o
+    0x07fc4f74   0x07fc4f74   0x00000024   Data   RO         3130    .constdata          da14531.lib(patch.o)
+    0x07fc4f98   0x07fc4f98   0x000000be   Data   RO         3009    .conststring        user_custs1_def.o
+    0x07fc5056   0x07fc5056   0x00000002   PAD
+    0x07fc5058   0x07fc5058   0x00000020   Data   RO         3234    Region$$Table       anon$$obj.o
+    0x07fc5078   0x07fc5078   0x00000001   Data   RW         2230    .data               rf_531.o
 
 
-    Execution Region ER_PRODTEST (Exec base: 0x07fc5090, Load base: 0x07fc508c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
+    Execution Region ER_PRODTEST (Exec base: 0x07fc5080, Load base: 0x07fc507c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x07fc5090, Load base: 0x07fc508c, Size: 0x00000690, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x07fc5080, Load base: 0x07fc507c, Size: 0x00000690, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fc5090        -       0x0000000c   Zero   RW          680    .bss                arch_system.o
-    0x07fc509c        -       0x00000004   Zero   RW          887    .bss                otp_cs.o
-    0x07fc50a0        -       0x00000002   Zero   RW          933    .bss                syscntl.o
-    0x07fc50a2        -       0x00000002   Zero   RW         1215    .bss                adc_531.o
-    0x07fc50a4        -       0x00000030   Zero   RW         1695    .bss                i2c.o
-    0x07fc50d4        -       0x00000014   Zero   RW         2085    .bss                trng.o
-    0x07fc50e8        -       0x00000004   Zero   RW         2160    .bss                rwip.o
-    0x07fc50ec        -       0x0000002e   Zero   RW         2229    .bss                rf_531.o
-    0x07fc511a   0x07fc508c   0x00000006   PAD
-    0x07fc5120        -       0x00000600   Zero   RW          275    STACK               startup_da14531.o
+    0x07fc5080        -       0x0000000c   Zero   RW          680    .bss                arch_system.o
+    0x07fc508c        -       0x00000004   Zero   RW          887    .bss                otp_cs.o
+    0x07fc5090        -       0x00000002   Zero   RW          933    .bss                syscntl.o
+    0x07fc5092        -       0x00000002   Zero   RW         1215    .bss                adc_531.o
+    0x07fc5094        -       0x00000030   Zero   RW         1695    .bss                i2c.o
+    0x07fc50c4        -       0x00000014   Zero   RW         2085    .bss                trng.o
+    0x07fc50d8        -       0x00000004   Zero   RW         2160    .bss                rwip.o
+    0x07fc50dc        -       0x0000002e   Zero   RW         2229    .bss                rf_531.o
+    0x07fc510a   0x07fc507c   0x00000006   PAD
+    0x07fc5110        -       0x00000600   Zero   RW          275    STACK               startup_da14531.o
 
 
-    Execution Region ER_NZI (Exec base: 0x07fc5720, Load base: 0x07fc508c, Size: 0x0000040c, Max: 0xffffffff, ABSOLUTE, UNINIT)
+    Execution Region ER_NZI (Exec base: 0x07fc5710, Load base: 0x07fc507c, Size: 0x0000040c, Max: 0xffffffff, ABSOLUTE, UNINIT)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x07fc5720        -       0x0000040c   Zero   RW          556    heap_mem_area_not_ret  jump_table.o
+    0x07fc5710        -       0x0000040c   Zero   RW          556    heap_mem_area_not_ret  jump_table.o
 
 
-    Execution Region ER_STATEFUL_HIBERNATION (Exec base: 0x07fc5b2c, Load base: 0x07fc508c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
+    Execution Region ER_STATEFUL_HIBERNATION (Exec base: 0x07fc5b1c, Load base: 0x07fc507c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE, UNINIT)
 
     **** No section assigned to this execution region ****
 
@@ -2944,11 +2944,11 @@ Image component sizes
        344         14          0          0          4       4317   user_custs1_impl.o
          0          0         56          0          0        945   user_custs_config.o
        208         12          0          0          0       3265   user_periph_setup.o
-       924         72          8          0         76       9935   user_peripheral.o
+       908         72          8          0         76       9927   user_peripheral.o
        156         14          0          0         12       3986   wkupct_quadec.o
 
     ----------------------------------------------------------------------
-     14312       1284       3042         12       6588     852608   Object Totals
+     14296       1284       3042         12       6588     852600   Object Totals
          0          0         32          0         80          0   (incl. Generated)
          0          0          7          3         18          0   (incl. Padding)
 
@@ -2990,15 +2990,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17426       1426       3078         12       6592     850532   Grand Totals
-     17426       1426       3078         12       6592     850532   ELF Image Totals
-     17426       1426       3078         12          0          0   ROM Totals
+     17410       1426       3078         12       6592     850524   Grand Totals
+     17410       1426       3078         12       6592     850524   ELF Image Totals
+     17410       1426       3078         12          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                20504 (  20.02kB)
+    Total RO  Size (Code + RO Data)                20488 (  20.01kB)
     Total RW  Size (RW Data + ZI Data)              6604 (   6.45kB)
-    Total ROM Size (Code + RO Data + RW Data)      20516 (  20.04kB)
+    Total ROM Size (Code + RO Data + RW Data)      20500 (  20.02kB)
 
 ==============================================================================
 

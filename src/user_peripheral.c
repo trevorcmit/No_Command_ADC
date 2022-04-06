@@ -51,53 +51,53 @@ uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN]  __SECTION_ZERO("retention_mem_a
 
 // FUNCTION DEFINITIONS
 
-// static uint16_t gpadc_read(void) { // SINGLE ENDED MONITORING
-//     /* Initialize the ADC */
-//     adc_config_t adc_cfg = {
-//         .input_mode = ADC_INPUT_MODE_SINGLE_ENDED,
-//         .input = ADC_INPUT_SE_P0_6,
-//         .smpl_time_mult = 2,
-//         .continuous = false,
-//         .interval_mult = 0,
-//         .input_attenuator = ADC_INPUT_ATTN_4X,
-//         .chopping = false,
-//         .oversampling = 0,
-//     };
-//     adc_init(&adc_cfg);
-
-//     /* Perform offset calibration of the ADC */
-//     adc_offset_calibrate(ADC_INPUT_MODE_SINGLE_ENDED);
-//     adc_start();
-//     uint16_t result = adc_correct_sample(adc_get_sample());
-//     adc_disable();
-//     return (result);
-// }
-
-
-static uint16_t gpadc_read(void) { // DIFFERENTIAL MODE
+static uint16_t gpadc_read(void) { // SINGLE ENDED MONITORING
     /* Initialize the ADC */
     adc_config_t adc_cfg = {
-        .input_mode       = ADC_INPUT_MODE_DIFFERENTIAL,
-        .input            = ADC_INPUT_DIFF_P0_6,   // Where can I write ADC_INPUT_DIFF_P0_7 ?
-        .smpl_time_mult   = 2,
-        .continuous       = false,
-        .interval_mult    = 0,
-        .input_attenuator = ADC_INPUT_ATTN_NO,
-        .chopping         = false,
-        .oversampling     = 1
+        .input_mode = ADC_INPUT_MODE_SINGLE_ENDED,
+        .input = ADC_INPUT_SE_P0_6,
+        .smpl_time_mult = 2,
+        .continuous = false,
+        .interval_mult = 0,
+        .input_attenuator = ADC_INPUT_ATTN_4X,
+        .chopping = false,
+        .oversampling = 0,
     };
     adc_init(&adc_cfg);
 
-    SetBits16(GP_ADC_SEL_REG, GP_ADC_SEL_P, 2); 
-    adc_set_diff_input (ADC_INPUT_DIFF_P0_7) ;  // select P0_7 as a negative differential input channel
-
     /* Perform offset calibration of the ADC */
-    adc_offset_calibrate(ADC_INPUT_MODE_DIFFERENTIAL);
+    adc_offset_calibrate(ADC_INPUT_MODE_SINGLE_ENDED);
     adc_start();
     uint16_t result = adc_correct_sample(adc_get_sample());
     adc_disable();
     return (result);
 }
+
+
+// static uint16_t gpadc_read(void) { // DIFFERENTIAL MODE
+//     /* Initialize the ADC */
+//     adc_config_t adc_cfg = {
+//         .input_mode       = ADC_INPUT_MODE_DIFFERENTIAL,
+//         .input            = ADC_INPUT_DIFF_P0_6,   // Where can I write ADC_INPUT_DIFF_P0_7 ?
+//         .smpl_time_mult   = 2,
+//         .continuous       = false,
+//         .interval_mult    = 0,
+//         .input_attenuator = ADC_INPUT_ATTN_NO,
+//         .chopping         = false,
+//         .oversampling     = 1
+//     };
+//     adc_init(&adc_cfg);
+
+//     SetBits16(GP_ADC_SEL_REG, GP_ADC_SEL_P, 2); 
+//     adc_set_diff_input (ADC_INPUT_DIFF_P0_7) ;  // select P0_7 as a negative differential input channel
+
+//     /* Perform offset calibration of the ADC */
+//     adc_offset_calibrate(ADC_INPUT_MODE_DIFFERENTIAL);
+//     adc_start();
+//     uint16_t result = adc_correct_sample(adc_get_sample());
+//     adc_disable();
+//     return (result);
+// }
 
 
 static uint16_t gpadc_sample_to_mv(uint16_t sample) {

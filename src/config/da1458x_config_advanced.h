@@ -180,7 +180,6 @@
 
 
 
-
 //******************************************//
 // ONLY IMPORTANT SECTION: DA14531 section  // 
 //******************************************//
@@ -204,9 +203,7 @@
 /* Periodic wakeup period if GTL iface is not enabled. Time in msec.                                            */
 /****************************************************************************************************************/
 #define CFG_MAX_SLEEP_DURATION_EXTERNAL_WAKEUP_MS              600000   // 600s
-
 #undef CFG_EXTERNAL_WAKEUP            // Wakeup from external processor running host application
-
 #undef CFG_WAKEUP_EXT_PROCESSOR       // Wakeup external processor when a message is sent to GTL
 
 /****************************************************************************************************************/
@@ -269,9 +266,7 @@
 /* and type disp_heaplog() in debugger's command window. Heap memory statistics will be displayed on window     */
 /****************************************************************************************************************/
 #undef CFG_LOG_HEAP_USAGE
-
 #undef CFG_BLE_METRICS                 // Enables the BLE statistics measurement feature.   
-
 #undef CFG_PRODUCTION_DEBUG_OUTPUT     // Output the Hardfault arguments to serial/UART interface.      
 
 /****************************************************************************************************************/
