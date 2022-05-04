@@ -199,11 +199,7 @@ static const struct connection_param_configuration user_connection_param_conf = 
     .ce_len_max = MS_TO_DOUBLESLOTS(0),
 };
 
-/*
-****************************************************************************************
-* Default handlers configuration (applies only for @app_default_handlers.c)
-****************************************************************************************
-*/
+
 static const struct default_handlers_configuration  user_default_hnd_conf = {
     // Configure the advertise operation used by the default handlers
     // Possible values:
@@ -224,11 +220,7 @@ static const struct default_handlers_configuration  user_default_hnd_conf = {
     .security_request_scenario = DEF_SEC_REQ_NEVER
 };
 
-/*
- ****************************************************************************************
- * Central configuration (not used by current example)
- ****************************************************************************************
-*/
+
 static const struct central_configuration user_central_conf = {
     // GAPM requested operation:
     // - GAPM_CONNECTION_DIRECT: Direct connection operation
