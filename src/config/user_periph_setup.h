@@ -82,9 +82,7 @@
 #endif
 
 
-/***************************************************************************************/
-/* ADC Configuration                                                                   */
-/***************************************************************************************/
+// ADC Configuration
 #define ADC_INPUT_PORT                  GPIO_PORT_0
 #define ADC_INPUT_PIN                   GPIO_PIN_3    // PIN_3 for pin. 13 test for Gabriel
 
