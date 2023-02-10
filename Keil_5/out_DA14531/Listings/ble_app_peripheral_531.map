@@ -2904,7 +2904,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       992         34          0          0          6      18132   adc_531.o
+       992         34          0          0          6      18136   adc_531.o
        832         72         80          0         92      19214   app.o
         96          8          0          0          0       1976   app_customs.o
         24          0          0          0          0       1565   app_customs_task.o
@@ -2915,7 +2915,7 @@ Image component sizes
          0          0        136          0          0       4020   app_entry_point.o
         40          4          0          0          0       1535   app_msg_utils.o
        500         16        104          0          1      11166   app_task.o
-       752         78          0          0          8      27783   arch_main.o
+       752         78          0          0          8      27779   arch_main.o
        348        136        112          0          2       2884   arch_rom.o
        192         18          0          0          4       3241   arch_sleep.o
       1268         90          8          0         60      95819   arch_system.o

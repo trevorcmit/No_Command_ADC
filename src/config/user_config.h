@@ -49,11 +49,7 @@ static const struct advertise_configuration user_adv_conf = {
     .channel_map = ADV_ALL_CHNLS_EN,
 
     // Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
-    // Advertising mode :
-    // - GAP_NON_DISCOVERABLE: Non discoverable mode
-    // - GAP_GEN_DISCOVERABLE: General discoverable mode
-    // - GAP_LIM_DISCOVERABLE: Limited discoverable mode
-    // - GAP_BROADCASTER_MODE: Broadcaster mode
+    // Advertising mode: GAP_NON_DISCOVERABLE, GAP_GEN_DISCOVERABLE, GAP_LIM_DISCOVERABLE, GAP_BROADCASTER_MODE
     .mode = GAP_GEN_DISCOVERABLE,
 
     // Host information advertising data (GAPM_ADV_NON_CONN and GAPM_ADV_UNDIRECT)
@@ -170,11 +166,8 @@ static const struct gapm_configuration user_gapm_conf = {
     .max_txtime = 2120,   // Maximal Tx time (connInitialMaxTxTime value, as defined in 4.2 Specification)
 };
 
-/*
- ****************************************************************************************
- * Parameter update configuration
- ****************************************************************************************
-*/
+
+// Parameter Update Configuration
 static const struct connection_param_configuration user_connection_param_conf = {
     // Connection interval minimum measured in ble double slots (1.25ms)
     // use the macro MS_TO_DOUBLESLOTS to convert from milliseconds (ms) to double slots
@@ -202,9 +195,7 @@ static const struct connection_param_configuration user_connection_param_conf = 
 
 static const struct default_handlers_configuration  user_default_hnd_conf = {
     // Configure the advertise operation used by the default handlers
-    // Possible values:
-    //  - DEF_ADV_FOREVER
-    //  - DEF_ADV_WITH_TIMEOUT
+    // Possible values: DEF_ADV_FOREVER, DEF_ADV_WITH_TIMEOUT
     .adv_scenario = DEF_ADV_FOREVER,
 
     // Configure the advertise period in case of DEF_ADV_WITH_TIMEOUT.
@@ -214,9 +205,7 @@ static const struct default_handlers_configuration  user_default_hnd_conf = {
 
     // Configure the security start operation of the default handlers
     // if the security is enabled (CFG_APP_SECURITY)
-    // Possible values:
-    //  - DEF_SEC_REQ_NEVER
-    //  - DEF_SEC_REQ_ON_CONNECT
+    // Possible values: DEF_SEC_REQ_NEVER, DEF_SEC_REQ_ON_CONNECT
     .security_request_scenario = DEF_SEC_REQ_NEVER
 };
 
@@ -238,10 +227,7 @@ static const struct central_configuration user_central_conf = {
     .ce_len_min = 0,                                     // Minimum CE length
     .ce_len_max = 0x5,                                   // Maximum CE length
 
-    /**************************************************************************************
-    * Peer device information (maximum number of peers = 8)
-    **************************************************************************************
-    */
+    // Peer device information (maximum number of peers = 8)
     .peer_addr_0 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
     .peer_addr_0_type = 0,                         // Address type of the device 0=public/1=random
     .peer_addr_1 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, // BD Address of device
@@ -268,51 +254,51 @@ static const struct central_configuration user_central_conf = {
 static const struct security_configuration user_security_conf = {
     // IO Capabilities
     #if defined (USER_CFG_FEAT_IO_CAP)
-    .iocap          = USER_CFG_FEAT_IO_CAP,
+        .iocap          = USER_CFG_FEAT_IO_CAP,
     #else
-    .iocap          = GAP_IO_CAP_NO_INPUT_NO_OUTPUT,
+        .iocap          = GAP_IO_CAP_NO_INPUT_NO_OUTPUT,
     #endif
 
     // OOB Capabilities
     #if defined (USER_CFG_FEAT_OOB)
-    .oob            = USER_CFG_FEAT_OOB,
+        .oob            = USER_CFG_FEAT_OOB,
     #else
-    .oob            = GAP_OOB_AUTH_DATA_NOT_PRESENT,
+        .oob            = GAP_OOB_AUTH_DATA_NOT_PRESENT,
     #endif
 
     // Authentication Requirements
     #if defined (USER_CFG_FEAT_AUTH_REQ)
-    .auth           = USER_CFG_FEAT_AUTH_REQ,
+        .auth           = USER_CFG_FEAT_AUTH_REQ,
     #else
-    .auth           = GAP_AUTH_NONE,
+        .auth           = GAP_AUTH_NONE,
     #endif
 
     // LTK size
     #if defined (USER_CFG_FEAT_KEY_SIZE)
-    .key_size       = USER_CFG_FEAT_KEY_SIZE,
+        .key_size       = USER_CFG_FEAT_KEY_SIZE,
     #else
-    .key_size       = KEY_LEN,
+        .key_size       = KEY_LEN,
     #endif
 
     // Initiator key distribution
     #if defined (USER_CFG_FEAT_INIT_KDIST)
-    .ikey_dist      = USER_CFG_FEAT_INIT_KDIST,
+        .ikey_dist      = USER_CFG_FEAT_INIT_KDIST,
     #else
-    .ikey_dist      = GAP_KDIST_NONE,
+        .ikey_dist      = GAP_KDIST_NONE,
     #endif
 
     // Responder key distribution
     #if defined (USER_CFG_FEAT_RESP_KDIST)
-    .rkey_dist      = USER_CFG_FEAT_RESP_KDIST,
+        .rkey_dist      = USER_CFG_FEAT_RESP_KDIST,
     #else
-    .rkey_dist      = GAP_KDIST_ENCKEY,
+        .rkey_dist      = GAP_KDIST_ENCKEY,
     #endif
 
     // Security requirements (minimum security level)
     #if defined (USER_CFG_FEAT_SEC_REQ)
-    .sec_req        = USER_CFG_FEAT_SEC_REQ,
+        .sec_req        = USER_CFG_FEAT_SEC_REQ,
     #else
-    .sec_req        = GAP_NO_SEC,
+        .sec_req        = GAP_NO_SEC,
     #endif
 };
 #endif // _USER_CONFIG_H_

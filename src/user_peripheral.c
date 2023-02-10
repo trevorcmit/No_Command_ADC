@@ -50,7 +50,6 @@ uint8_t stored_scan_rsp_data[SCAN_RSP_DATA_LEN]  __SECTION_ZERO("retention_mem_a
 
 
 // FUNCTION DEFINITIONS
-
 static uint16_t gpadc_read(void) { // SINGLE ENDED MONITORING
     /* Initialize the ADC */
     adc_config_t adc_cfg = {
@@ -158,8 +157,7 @@ static void mnf_data_init() {
 * @brief Update Manufacturer Specific Data
 ****************************************************************************************
 */
-static void mnf_data_update()
-{
+static void mnf_data_update() {
     uint16_t data;
     data = mnf_data.proprietary_data[0] | (mnf_data.proprietary_data[1] << 8);
     data += 1;
@@ -167,8 +165,8 @@ static void mnf_data_update()
     mnf_data.proprietary_data[1] = (data >> 8) & 0xFF;
 
     if (data == 0xFFFF) {
-         mnf_data.proprietary_data[0] = 0;
-         mnf_data.proprietary_data[1] = 0;
+        mnf_data.proprietary_data[0] = 0;
+        mnf_data.proprietary_data[1] = 0;
     }
 }
 
@@ -387,7 +385,7 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
             {
                 case SVC1_IDX_INDICATEABLE_VAL: break;
                 default:                        break;
-             }
+            }
         } break;
         case CUSTS1_ATT_INFO_REQ:
         {
@@ -417,8 +415,7 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
         {
             struct custs1_value_req_ind const *msg_param = (struct custs1_value_req_ind const *) param;
 
-            switch (msg_param->att_idx)
-            {
+            switch (msg_param->att_idx) {
                 case SVC3_IDX_READ_4_VAL: {user_svc3_read_non_db_val_handler(msgid, msg_param, dest_id, src_id);} break;
                 default: {
                     // Send Error message

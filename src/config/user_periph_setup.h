@@ -25,7 +25,6 @@
     #define UART2_TX_PIN            GPIO_PIN_4
 #endif
 
-
 // Define UART2 Settings
 #define UART2_BAUDRATE              UART_BAUDRATE_115200
 #define UART2_DATABITS              UART_DATABITS_8
@@ -36,7 +35,6 @@
 #define UART2_TX_FIFO_LEVEL         UART_TX_FIFO_LEVEL_0
 #define UART2_RX_FIFO_LEVEL         UART_RX_FIFO_LEVEL_0
 
-
 // LED configuration
 #if defined (__DA14531__)
     #define GPIO_LED_PORT           GPIO_PORT_0
@@ -45,7 +43,6 @@
     #define GPIO_LED_PORT           GPIO_PORT_1
     #define GPIO_LED_PIN            GPIO_PIN_0
 #endif
-
 
 // SPI Configuration
 // Define SPI Pads
@@ -69,7 +66,6 @@
     #define SPI_DI_PIN              GPIO_PIN_5
 #endif
 
-
 // Production debug output configuration
 #if PRODUCTION_DEBUG_OUTPUT
 #if defined (__DA14531__)
@@ -81,7 +77,6 @@
 #endif
 #endif
 
-
 // ADC Configuration
 #define ADC_INPUT_PORT                  GPIO_PORT_0
 #define ADC_INPUT_PIN                   GPIO_PIN_3    // PIN_3 for pin. 13 test for Gabriel
@@ -91,7 +86,6 @@
 
 // #define ADC_INPUT_PORT_2                  GPIO_PORT_0
 // #define ADC_INPUT_PIN_2                   GPIO_PIN_7   // Testing pin 7 from Dialog support post
-
 
 
 // Function Declarations
