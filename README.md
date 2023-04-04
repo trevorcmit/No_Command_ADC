@@ -4,4 +4,4 @@ DA14531 code built on the ble_app_peripheral template. Adjustment of the ble_app
 
 Current setup has readings saved as uint16_t (unsigned 16-bit integer) type and sent as an array in a packet.
 
-These files are protected under copyright by Dialog Semiconductor. This repository does not claim ownership or authorship to the files contained within.
+These files are protected under copyright by Renesas Electronics, formerly under Dialog Semiconductor. This repository does not claim ownership or authorship to the files contained within.
